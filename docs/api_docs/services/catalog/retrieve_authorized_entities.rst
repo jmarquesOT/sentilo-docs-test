@@ -79,9 +79,18 @@ Each list element **(sensor)** will have the following structure.
 +-----------------------+-----------------------+-----------------------+
 | description           | sensor description    | Yes                   |
 +-----------------------+-----------------------+-----------------------+
-| dataType              | Data sensor type      | No                    |
-|                       | (NUMBER, BOOLEAN or   |                       |
-|                       | TEXT)                 |                       |
+| dataType              | Data sensor type:     | No                    |
+|                       |                       |                       |
+|                       | -  AUIDO_LINK         |                       |
+|                       | -  BOOLEAN            |                       |
+|                       | -  FILE_LINK          |                       |
+|                       | -  IMAGE_LINK         |                       |
+|                       | -  JSON               |                       |
+|                       | -  LINK               |                       |
+|                       | -  NUMBER             |                       |
+|                       | -  TEXT               |                       |
+|                       | -  VIDEO_LINK         |                       |
+|                       |                       |                       |
 +-----------------------+-----------------------+-----------------------+
 | location              | Location where de     | Yes                   |
 |                       | sensor is             |                       |
@@ -142,6 +151,7 @@ in the response we will receive
                "dataType": "NUMBER",
                "type": "noise",
                "unit": "dBa",
+               "state": "online",
                "component": "MAR_01_00_SN001_1010",
                "componentType": "generic",
                "timeZone": "CET"
@@ -155,6 +165,7 @@ in the response we will receive
                "dataType": "NUMBER",
                "type": "air_quality_pm10",
                "unit": "ug/m3",
+               "state": "online",
                "component": "air_quality",
                "componentType": "generic"
            }, {
@@ -163,6 +174,7 @@ in the response we will receive
                "dataType": "NUMBER",
                "type": "air_quality_pm10",
                "unit": "ug/m3",
+               "state": "online",
                "component": "air_quality",
                "componentType": "generic",
                "additionalInfo": {
@@ -236,3 +248,8 @@ Other examples
 ::
 
    http://<your_api_server.com>/catalog?componentType=air_quality&type=air_quality_pm10
+
+
+.. note::
+
+   Only sensors will "online" state are returned by the API.

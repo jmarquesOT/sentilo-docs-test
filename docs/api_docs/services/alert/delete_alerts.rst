@@ -13,7 +13,9 @@ entity’s owner token.
 
    http://<your_api_server.com>/catalog/alert/<entity_id>
 
-Remember, the entity_id can be also an Application or a Provider too.
+.. note::
+
+   entity_id can be also an Application or a Provider too.
 
 +----------------+----------------+
 | **Format**     | json           |

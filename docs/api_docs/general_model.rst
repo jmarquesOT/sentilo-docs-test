@@ -78,25 +78,12 @@ and consists of the following parts:
    (e.g. 8081).
 -  **service:** catalog, data, order, etc..
 
-Every service has a custom URL format as especified for each services.
+Every service has a custom URL format as specified for each services.
 
 Representations
 ---------------
 
-Data formats that will support the platform are: **JSON** (initial
-version) and **XML** (in a future releases).
-
-The default format used by the platform is **JSON**.
-
-To specify a different format, you must add the parameter **“format”**
-in the request, as shown in the following example:
-
-::
-
-   http://<your_api_server.com>/service/<id_provider>?format=XML
-
-JSON format
-~~~~~~~~~~~
+Data formats that will supports the platform is currently only  **JSON**.
 
 Example data in JSON format:
 
@@ -105,18 +92,6 @@ Example data in JSON format:
    {"observations":[
        {"value":"12.3","timestamp":"17/09/2012T12:34:45"}
    ]}
-
-XML format
-~~~~~~~~~~
-
-Example data in XML format:
-
-.. code:: xml
-
-   <observation>
-       <value>12.3</value>
-       <timestamp>17/09/2012T12:34:45</timestamp>
-   </observation>
 
 Operators
 ---------
@@ -135,7 +110,7 @@ are:
 used and by the service, provider or sensor specified in the URL
 invoked.**
 
-Reply
+Response
 -----
 
 The response to a request to the platform is managed through the
@@ -159,6 +134,12 @@ response **HTTP status codes.**
 | 403                   | Forbidden             | Not authorized for    |
 |                       |                       | the requested action  |
 +-----------------------+-----------------------+-----------------------+
+| 404                   | Not Found             | The requested entity  |
+|                       |                       | does not exist        |
++-----------------------+-----------------------+-----------------------+
+| 429                   | Too Many Requests     | Global quota or       |
+|                       |                       | entity quota exceed   |
++-----------------------+-----------------------+-----------------------+
 | 5xx                   | Server Error          | Error processing the  |
 |                       |                       | request               |
 +-----------------------+-----------------------+-----------------------+
@@ -176,6 +157,8 @@ This payload is returned when JSON payload could not be read as JSON:
 
 .. code:: json
 
-   {"code":400,
-    "message":"SIE03-1398350628224  Bad request data: could not read JSON payload. Please review the following error and try again",
-    "errorDetails":["org.sentilo.common.exception.MessageNotReadableException: Unexpected character ('o' (code 111)): ....."]}
+   {
+        "code":400,
+        "message":"SIE03-1398350628224  Bad request data: could not read JSON payload. Please review the following error and try again",
+        "errorDetails": ["org.sentilo.common.exception.MessageNotReadableException: Unexpected character ('o' (code 111)): ....."]
+   }

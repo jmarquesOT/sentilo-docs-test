@@ -15,9 +15,8 @@ Contents:
    quickstart
    api_docs
    architecture
-   extensions
+   integrations
    monitorization
-   historian_agent
    catalog_and_maps
    multitenant
    tutorials

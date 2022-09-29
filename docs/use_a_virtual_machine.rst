@@ -5,7 +5,16 @@ A Sentilo sample instance is available for testing purposes distributed
 as a Open Virtual Appliance file
 (`OVA <https://en.wikipedia.org/wiki/Open_Virtualization_Format>`__).
 
-The appliance contains the **1.7.0 Sentilo release**.
+The appliance is available for download `here <https://drive.google.com/file/d/1pu1GorRtaNC9kY208Obt-9dUNoUlbEnZ/view?usp=sharing>`__.
+
+It has been tested with **Virtual Box v5 and v6**.
+
+.. note::
+
+   Mac OS users might check if the downloaded file has the original :literal:`.ova` extension. If it has a :literal:`.ovf` extension,
+   you have to rename it back to :literal:`.ova`, otherwise it possibly won't import to VirtualBox (the import will stuck forever).
+
+The appliance contains the **1.9.0 Sentilo release** and runs Ubuntu Server 18.04.
 
 Components installed:
 
@@ -15,36 +24,17 @@ Components installed:
 -  Sentilo Alert Agent
 -  Sentilo Location Updater Agent
 
-Two different distribution files are available:
+The virtual machine credentials are **sentilo/sentilo**.
 
--  One designed for **Virtual Box**, available
-   `here <http://www.sentilo.io/wordpress/?wpfb_dl=24>`__. It has been
-   tested using version **5.0.24**.
--  The second one, built for **ESXI** systems, available
-   `here <http://www.sentilo.io/wordpress/?wpfb_dl=25>`__. It has been
-   tested using **VMPlayer 12.5.5** and **ESXI 6.0**.
-
-Please, keep in mind some important facts:
-
--  The virtual machine credentials are **sentilo/sentilo**.
--  You should config the network type as **“Bridged Adapter”.**
--  When stopping the virtual machine, it should be done in a organized
-   way, in a Virtual Box environment you have to do this using the
-   option **“Shutdown ACPI”**. You could also do this from the command
-   line executing **“sudo shutdown -h now”**
-
-After the virtual machine is started, all the sentilo services are
-launched automatically. The IP of the virtual machine is assigned
-automatically, to know which one is, enter into virtual machine and
-execute the **“ifconfig”** conmmand. In some settings you might need to
-port forward guest ports (essentially 8080 and 8081) and access them
-from your host machine.
+All Sentilo services are started automatically. The REST API server starts 90 seconds after Tomcat,
+because it needs to start after the Catalog is deployed. The services are exposed via NAT on localhost:
 
 First steps:
 
 -  Review the README file located in /home/sentilo.
 -  The Catalog Console webapp will be ready to access in:
-   http://your_ip:8080/sentilo-catalog-web/ with a access credentials:
+   http://localhost:8080/sentilo-catalog-web/ with a access credentials:
    admin/1234
 -  The API Rest endpoint will be listening for requests in:
-   http://your_ip:8081
+   http://localhost:8081
+-  SSH server is listening on localhost 2222. Access credentials are sentilo/sentilo

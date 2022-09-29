@@ -25,58 +25,47 @@ components in the catalog.
 Parameters
 ----------
 
-+-----------------------+-----------------------+-----------------------+
-| Key                   | Description           | Optional              |
-+=======================+=======================+=======================+
-| sensor                | Sensor ID to register | No                    |
-+-----------------------+-----------------------+-----------------------+
-| description           | Sensor description    | Yes                   |
-+-----------------------+-----------------------+-----------------------+
-| type                  | Sensor type           | No                    |
-+-----------------------+-----------------------+-----------------------+
-| dataType              | Sensor data types     | Yes                   |
-+-----------------------+-----------------------+-----------------------+
-| unit                  | Unit of measure       | Yes                   |
-+-----------------------+-----------------------+-----------------------+
-| component             | Component identifier  | Yes                   |
-|                       | to which the sensor   |                       |
-|                       | belongs               |                       |
-+-----------------------+-----------------------+-----------------------+
-| componentType         | Component type        | Yes                   |
-+-----------------------+-----------------------+-----------------------+
-| componentDesc         | Component description | Yes                   |
-+-----------------------+-----------------------+-----------------------+
-| location              | Location/s of the     | Yes                   |
-|                       | component to which    |                       |
-|                       | the sensor is         |                       |
-+-----------------------+-----------------------+-----------------------+
-| timeZone              | TimeZone used by      | Yes                   |
-|                       | sensor observations   |                       |
-|                       | when it is different  |                       |
-|                       | to UTC                |                       |
-+-----------------------+-----------------------+-----------------------+
-| publicAccess          | Visualization check   | Yes                   |
-|                       | for the sensor in the |                       |
-|                       | public zone           |                       |
-+-----------------------+-----------------------+-----------------------+
-| componentPublicAccess | Visualization check   | Yes                   |
-|                       | for the component in  |                       |
-|                       | the public zone       |                       |
-+-----------------------+-----------------------+-----------------------+
-| additionalInfo        | Additional params     | Yes                   |
-|                       | related to the sensor |                       |
-+-----------------------+-----------------------+-----------------------+
-| componentAdditionalIn | Additional params     | Yes                   |
-| fo                    | related to the        |                       |
-|                       | component             |                       |
-+-----------------------+-----------------------+-----------------------+
-| technicalDetails      | Technical params      | Yes                   |
-|                       | related to the sensor |                       |
-+-----------------------+-----------------------+-----------------------+
-| componentTechnicalDet | Technical params      | Yes                   |
-| ails                  | related to the        |                       |
-|                       | component             |                       |
-+-----------------------+-----------------------+-----------------------+
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+|            Key            |                                                          Description                                                          | Optional |
++===========================+===============================================================================================================================+==========+
+| sensor                    | Sensor ID to register                                                                                                         | No       |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| description               | Sensor description                                                                                                            | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| type                      | Sensor type                                                                                                                   | No       |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| dataType                  | Sensor data types                                                                                                             | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| unit                      | Unit of measure                                                                                                               | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| component                 | Component identifier to which the sensor belongs                                                                              | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| componentType             | Component type                                                                                                                | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| componentDesc             | Component description                                                                                                         | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| location                  | Location/s of the component to which the sensor is                                                                            | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| timeZone                  | TimeZone used by sensor observations when it is different to UTC                                                              | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| publicAccess              | Visualization check for the sensor in the public zone                                                                         | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| componentPublicAccess     | Visualization check for the component in the public zone                                                                      | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| additionalInfo            | Additional params related to the sensor                                                                                       | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| componentAdditionalInfo   | Additional params related to the component                                                                                    | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| technicalDetails          | Technical params related to the sensor                                                                                        | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| componentTechnicalDetails | Technical params related to the component                                                                                     | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| ttl                       | Time in minutes when sensor data will expire. If not set, the value of :literal:`redis.expire.data.seconds` will be applied.  | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+| state                     | State of the sensor, either :literal:`online` or :literal:`offline`                                                           | Yes      |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------+
+
+
 
 
 Please, note the following observations:
@@ -86,13 +75,13 @@ Please, note the following observations:
    value for substate is empty.
 -  The identifier must identify an univocal sensor provider, e.g., 2
    sensors of the same provider may not have the same ID.
--  The identifier must have only alphanumeric (i.e. letters and
+-  The identifier must have only alphanumeric (i.e.letters and
    numbers), undescores and hyphens characters, with no embedded spaces.
 -  The list of sensor’s types are configured in the platform through the
    catalog web app. If you need a new one, it must be added using the
    administration.
--  The possible values ​​for the data type of the sensor is also defined
-   in the platform configuration. The possible values ​​are: number,
+-  The possible values for the data type of the sensor is also defined
+   in the platform configuration. The possible values are: number,
    text or boolean. The default value is number.
 -  If the attribute component is not passed as a parameter, the platform
    itself will create a catalog component with the same name as the
@@ -105,7 +94,7 @@ Please, note the following observations:
    defined as static and set its location with the coordinates provided.
    If the element has several locations they should be informed
    separated by comma character.
--  If the attribute type and / or componentType values are ​​not
+-  If the attribute type and / or componentType values are not
    configured in the catalog, the system will return a 400 error
    indicating that the parameters received are invalid .
 -  publicAccess param refers to the sensor’s visibility in the sensor’s
@@ -189,7 +178,7 @@ request (componentType, componentDesc and location).
 Adding several sensors
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In case it is necessary to add a serie of sensors, the request will be
+In case it is necessary to add a set of sensors, the request will be
 very similar to the previous one, modifying the message body:
 
 ::
@@ -224,7 +213,7 @@ in the body message
 In this case, instead of registering a single sensor, there will be
 added two new sensors associated with the component named METEO-1. If
 the component does not yet exist in the system, will be registered with
-the properties especified in the request (type and localtzació).
+the properties specified in the request (type and location).
 
 Adding one sensor with additional info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

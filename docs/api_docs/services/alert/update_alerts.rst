@@ -59,7 +59,7 @@ Please, note the following observations:
 
 -  The list of trigger’s types and expressions are defined in: `Trigger
    types <../alert/alert.html#InternalTriggerTypes>`__.
--  The possible values ​​for the alert type are: INTERNAL or EXTERNAL.
+-  The possible values ​​for the alert type are: :literal:`INTERNAL` or :literal:`EXTERNAL`.
 
 Response data
 -------------
@@ -94,9 +94,12 @@ and in the body message:
 This request will update the external alert with REC_ALERT_001
 identifier updating its name to REC_EXTERNAL_ALERT_001.
 
-Remember, the external alerts are defined by third party
-entities(providers or applications), which will be the responsibles of
-calculating their logic and throw the related alarms when applies.
+.. note::
+
+   External alerts are defined by third party
+   entities(providers or applications), which will be the responsibles of
+   calculating their logic and throw the related alarms when applies.
+
 
 Update one internal alert
 ~~~~~~~~~~~~~~~~~~~~~~~~~
