@@ -7,11 +7,7 @@ Environment info band
 It is now possible to indicate the environment in which the catalog 
 application works by of an informative band.
 
-|catalog_env_band.png|
-
-|delete_error.png|
-
-.. image:: images/catalog_and_maps/catalog_env_band.png.png
+|universal_viewer_170_001.jpg|
 
 If this feature is enabled, the band will be displayed throughout 
 the catalog application.
