@@ -9,6 +9,8 @@ application works by of an informative band.
 
 |catalog_env_band.png|
 
+|delete_error.png|
+
 If this feature is enabled, the band will be displayed throughout 
 the catalog application.
 
