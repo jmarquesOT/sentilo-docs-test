@@ -14,4 +14,3 @@ Contents:
    catalog_and_maps/map_viewers
    catalog_and_maps/administration_console
    catalog_and_maps/statistics_page
-   catalog_and_maps/site_customization

@@ -6,7 +6,7 @@ all the entities of the Catalog such as providers, components, sensors,
 users, … Only registered users can access it, so you must be logged
 before starting to manage the Catalog (the login access is located at
 the top right menu bar). Remember that, by default, the admin user has
-**admin/1234** as access credentials.
+admin/1234 as access credentials.
 
 All admin pages follow the same structure and layout for ease of use and
 to facilitate future maintenance. Therefore, below there is only a brief
