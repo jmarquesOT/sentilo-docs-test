@@ -19,18 +19,18 @@ all the public components registered at the platform. If the user is
 logged as administrator, all the private components will be displayed as
 well.
 
-.. image:: /docs/_static/images/universal_viewer_001.png
+.. image:: /_static/images/universal_viewer_001.png
 
 On this page, you can filter the components to show by selecting a
 *component type* from the top left select.
 
-.. image:: /docs/_static/images/universal_viewer_002.png
+.. image:: /_static/images/universal_viewer_002.png
 
 Depending on the zoom level, the map will display the elements as
 individuals POIs or grouped in clusters, showing the number of
 components in each group.
 
-.. image:: /docs/_static/images/universal_viewer_003.png
+.. image:: /_static/images/universal_viewer_003.png
 
 Component details
 ^^^^^^^^^^^^^^^^^
