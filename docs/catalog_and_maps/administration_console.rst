@@ -68,7 +68,7 @@ Detail
 By default, this organization is created and its identifier is
 **sentilo**.
 
-|Organitzation_detail.png|
+.. image:: /_static/images/organization_details.png
 
 We can also edit the organization's name other contact details, except the.
 
@@ -78,7 +78,7 @@ Config params
 In addition, we can edit the visualization formats and public map
 settings, using the **Config params** tab:
 
-|organization_170_001.jpg|
+.. image:: /_static/images/organization_details_config_params.png
 
 There we can configure the Visual configuration and the Map
 configuration.
@@ -154,11 +154,11 @@ These params configure the universal map visualization.
 
 For example, set the map background color to #ffc900:
 
-|organization_170_002.jpg|
+.. image:: /_static/images/organization_details_config_params_map_color
 
 will result in:
 
-|Changing_map_color.png|
+.. image:: /_static/images/main_map.png
 
 
 Users
@@ -173,7 +173,7 @@ A catalog user can be one of these three roles:
    console and read all the data, but they haven’t permission for
    changing anything, except own contact details and password.
 
-|users_170_001.jpg|
+.. image:: /_static/images/users_list.png
 
 .. note::
 
@@ -217,7 +217,7 @@ A catalog user can be one of these three roles:
 Edit a User
 ^^^^^^^^^^^
 
-|users_170_002.jpg|
+.. image:: /_static/images/user_edition.png
 
 
 .. note::
@@ -249,7 +249,7 @@ Access the Application list. This is the main Application page. From
 here you’ll can access to the desired application to show its details by
 click on it.
 
-|applications_170_000.jpg|
+.. image:: /_static/images/applications_list.png
 
 You’ll be able to list, filter, show application details, create (*New
 application* button) and delete selected applications (select from left
@@ -270,7 +270,7 @@ Details tab
 
 The detail page is structured into three tabs:
 
-|applications_170_001.jpg|
+.. image:: /_static/images/application_details.png
 
 where:
 
