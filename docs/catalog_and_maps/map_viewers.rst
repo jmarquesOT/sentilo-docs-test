@@ -43,7 +43,7 @@ displays the list of sensors related to it with the last activity for
 each one of them (as noted above, the private sensors will be displayed
 only for logged users):
 
-.. image:: /docs/_static/images/component_popup_001.png
+.. image:: /_static/images/component_popup_001.png
 
 Sensors last activity view
 ''''''''''''''''''''''''''
@@ -52,12 +52,12 @@ If you click into the content area of the popup window, a new page is
 open displaying some basic details about the component, and a
 time-series graph with the last activity of each of its sensors:
 
-.. image:: /docs/_static/images/component_map_extended_details_001.png
+.. image:: /_static/images/component_map_extended_details_001.png
 
 You may also click the bottom-right corner icon |universal_viewer_190_006.png|
 and get a page with bigger detail. The URL of this page is shareable, i.e. it is possible to send it by email.
 
-.. image:: /docs/_static/images/component_map_extended_details_002.png
+.. image:: /_static/images/component_map_extended_details_002.png
 
 .. _navigate-the-last-data-chart-1:
 
@@ -66,7 +66,7 @@ Navigate the last data chart
 You can navigate along the dates of the graph by using the buttons
 located in the lower right corner of it:
 
-.. image:: /docs/_static/images/chart_controls.png
+.. image:: /_static/images/chart_controls.png
 
 -  **left arrow**: navigate to the past (only if there are older data)
 -  **reload data (center button)**: reload last data / reset chart data
@@ -82,7 +82,7 @@ on Sentilo, such like a large json object. For these cases, Sentilo will
 detect that the text is a json object and then it will be shown to you
 as a prettify json value:
 
-.. image:: /docs/_static/images/complex_data_001.png
+.. image:: /_static/images/complex_data_001.png
 
 You can expand or compress the prettified json with the bottom buttons
 under the status field,
@@ -96,14 +96,14 @@ As the name suggest, the route viewer is a specific map that shows the
 routes followed by the mobile components (keep in mind that only the
 last 20 points are displayed for each route):
 
-.. image:: /docs/_static/images/routes_viewer_001.png
+.. image:: /_static/images/routes_viewer_001.png
 
 The same features described previously apply on this map and its markers
 (popup window, … ), but with the particularity that if you click over a
 *route point* then the popup window displays sensor activity related to
 the time instant in which component was at that location.
 
-.. image:: /docs/_static/images/routes_viewer_002.png
+.. image:: /_static/images/routes_viewer_002.png
 
 
 Background map configuration
@@ -142,7 +142,7 @@ Example of the basis Leaflet maps configuration, using a public Open Street Maps
 	]
 
 
-.. image:: /docs/_static/images/map_providers_001.png
+.. image:: /_static/images/map_providers_001.png
 
 .. note::
 
