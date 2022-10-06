@@ -31,7 +31,7 @@ clicking the *Save* button. If some mandatory field is not filed in or
 it have a no valid value, the page shows you information about what is
 wrong:
 
-.. image:: /_static/images/catalog_and_maps/new_provider.png
+.. image:: /docs/_static/images/catalog_and_maps/new_provider.png
 
 Otherwise, the resource will be registered into the Catalog and you will
 be redirect to the list page (at the top right corner you will see a
