@@ -82,7 +82,7 @@ on Sentilo, such like a large json object. For these cases, Sentilo will
 detect that the text is a json object and then it will be shown to you
 as a prettify json value:
 
-.. image:: /docs/_static/images/complex_data.png
+.. image:: /docs/_static/images/complex_data_001.png
 
 You can expand or compress the prettified json with the bottom buttons
 under the status field,
@@ -96,14 +96,14 @@ As the name suggest, the route viewer is a specific map that shows the
 routes followed by the mobile components (keep in mind that only the
 last 20 points are displayed for each route):
 
-|route_viewer_170_001.jpg|
+.. image:: /docs/_static/images/outes_viewer_001.png
 
 The same features described previously apply on this map and its markers
 (popup window, … ), but with the particularity that if you click over a
 *route point* then the popup window displays sensor activity related to
 the time instant in which component was at that location.
 
-|route_viewer_170_002.jpg|
+.. image:: /docs/_static/images/outes_viewer_001.png
 
 
 Background map configuration
@@ -119,31 +119,30 @@ Please refer to corresponding part in the Administration Console section:
 Map Providers
 ^^^^^^^^^^^^^
 
-For all background maps, you can use either Google or Leaflet map provider. Through the latter you can consume
-any OGC WMS/WMTS service that provides a EPSG 3857 SRID.
+For all background maps, you can use either Leaflet (by default) or other map provider. 
+Through the latter you can consume any OGC WMS/WMTS service that provides a EPSG 3857 SRID.
 
-The configuration of both is in in :literal:`/sentilo-catalog-web/src/main/resources/properties/catalog-config.properties`.
+The configuration is in :literal:`/sentilo-catalog-web/src/main/resources/properties/sentilo-catalog.conf`.
 
-Example of Google Maps configuration
+Example of using Google Maps provider (you must provide the Google Maps Key:
+
+::
+	# Google API key to use Google Maps
+	sentilo.catalog.map.provider=gmaps
+	sentilo.catalog.map.google.key=
+
+Example of the basis Leaflet maps configuration, using a public Open Street Maps WMS service:
 
 ::
 
-   catalog.map.provider=gmaps
-   catalog.map.google.key=AIza...
+	# Maps config
+	sentilo.catalog.map.provider=leaflet
+	sentilo.catalog.map.wms.layers=[\
+    	{"name":"Open Street Maps","url":"http://{s}.tile.osm.org/{z}/{x}/{y}.png","layer":"","version":"1.3.0","format":"image/png","attribution":"Open Street Maps (OSM)","styles":""}
+	]
 
-Example of Leaflet maps configuration, using a public Terrestris WMS service:
 
-::
-
-   catalog.map.provider=leaflet
-   catalog.map.wms.url=https://ows.terrestris.de/osm/service?
-   catalog.map.wms.layers=OSM-WMS
-   catalog.map.wms.version=1.3.0
-   catalog.map.wms.format=image/jpeg
-   catalog.map.wms.attribution=Terrestris
-   catalog.map.wms.styles=
-
-|map_provider_190_001.png|
+.. image:: /docs/_static/images/map_providers_001.png
 
 .. note::
 
