@@ -96,14 +96,14 @@ As the name suggest, the route viewer is a specific map that shows the
 routes followed by the mobile components (keep in mind that only the
 last 20 points are displayed for each route):
 
-.. image:: /docs/_static/images/outes_viewer_001.png
+.. image:: /docs/_static/images/routes_viewer_001.png
 
 The same features described previously apply on this map and its markers
 (popup window, … ), but with the particularity that if you click over a
 *route point* then the popup window displays sensor activity related to
 the time instant in which component was at that location.
 
-.. image:: /docs/_static/images/outes_viewer_001.png
+.. image:: /docs/_static/images/routes_viewer_001.png
 
 
 Background map configuration
