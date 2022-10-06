@@ -78,7 +78,9 @@ Config params
 In addition, we can edit the visualization formats and public map
 settings, using the **Config params** tab:
 
-.. image:: _static/images/catalog_and_maps/Organitzation_config_params.png
+
+|Organitzation_config_params.png|
+
 
 There we can configure the Visual configuration and the Map
 configuration.
