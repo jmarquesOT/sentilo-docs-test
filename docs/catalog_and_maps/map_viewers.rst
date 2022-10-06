@@ -103,7 +103,7 @@ The same features described previously apply on this map and its markers
 *route point* then the popup window displays sensor activity related to
 the time instant in which component was at that location.
 
-.. image:: /docs/_static/images/routes_viewer_001.png
+.. image:: /docs/_static/images/routes_viewer_002.png
 
 
 Background map configuration
