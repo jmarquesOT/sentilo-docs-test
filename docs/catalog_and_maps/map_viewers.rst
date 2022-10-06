@@ -127,6 +127,7 @@ The configuration is in :literal:`/sentilo-catalog-web/src/main/resources/proper
 Example of using Google Maps provider (you must provide the Google Maps Key:
 
 ::
+
 	# Google API key to use Google Maps
 	sentilo.catalog.map.provider=gmaps
 	sentilo.catalog.map.google.key=
