@@ -124,7 +124,7 @@ Through the latter you can consume any OGC WMS/WMTS service that provides a EPSG
 
 The configuration is in :literal:`/sentilo-catalog-web/src/main/resources/properties/sentilo-catalog.conf`.
 
-Example of using Google Maps provider (you must provide the Google Maps Key:
+Example of using Google Maps provider (you must provide the Google Maps Key):
 
 ::
 
@@ -132,7 +132,7 @@ Example of using Google Maps provider (you must provide the Google Maps Key:
 	sentilo.catalog.map.provider=gmaps
 	sentilo.catalog.map.google.key=
 
-Example of the basis Leaflet maps configuration, using a public Open Street Maps WMS service:
+Example of the default Leaflet maps configuration, using a public Open Street Maps WMS service:
 
 ::
 
