@@ -19,7 +19,7 @@ all the public components registered at the platform. If the user is
 logged as administrator, all the private components will be displayed as
 well.
 
-.. image:: /_static/images/universal_viewer_001.png
+.. image:: /docs/_static/images/universal_viewer_001.png
 
 On this page, you can filter the components to show by selecting a
 *component type* from the top left select.
