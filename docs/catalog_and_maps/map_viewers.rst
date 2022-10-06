@@ -24,13 +24,13 @@ well.
 On this page, you can filter the components to show by selecting a
 *component type* from the top left select.
 
-.. image:: images/universal_viewer_002.png
+.. image:: /docs/_static/images/universal_viewer_002.png
 
 Depending on the zoom level, the map will display the elements as
 individuals POIs or grouped in clusters, showing the number of
 components in each group.
 
-.. image:: images/universal_viewer_003.png
+.. image:: /docs/_static/images/universal_viewer_003.png
 
 Component details
 ^^^^^^^^^^^^^^^^^
@@ -43,7 +43,7 @@ displays the list of sensors related to it with the last activity for
 each one of them (as noted above, the private sensors will be displayed
 only for logged users):
 
-.. image:: images/component_popup_001.png
+.. image:: /docs/_static/images/component_popup_001.png
 
 Sensors last activity view
 ''''''''''''''''''''''''''
@@ -52,12 +52,12 @@ If you click into the content area of the popup window, a new page is
 open displaying some basic details about the component, and a
 time-series graph with the last activity of each of its sensors:
 
-.. image:: images/component_map_extended_details_001.png
+.. image:: /docs/_static/images/component_map_extended_details_001.png
 
 You may also click the bottom-right corner icon |universal_viewer_190_006.png|
 and get a page with bigger detail. The URL of this page is shareable, i.e. it is possible to send it by email.
 
-.. image:: images/component_map_extended_details_002.png
+.. image:: /docs/_static/images/component_map_extended_details_002.png
 
 .. _navigate-the-last-data-chart-1:
 
@@ -66,7 +66,7 @@ Navigate the last data chart
 You can navigate along the dates of the graph by using the buttons
 located in the lower right corner of it:
 
-.. image:: images/chart_controls.png
+.. image:: /docs/_static/images/chart_controls.png
 
 -  **left arrow**: navigate to the past (only if there are older data)
 -  **reload data (center button)**: reload last data / reset chart data
@@ -82,7 +82,7 @@ on Sentilo, such like a large json object. For these cases, Sentilo will
 detect that the text is a json object and then it will be shown to you
 as a prettify json value:
 
-.. image:: images/complex_data.png
+.. image:: /docs/_static/images/complex_data.png
 
 You can expand or compress the prettified json with the bottom buttons
 under the status field,
