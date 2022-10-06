@@ -23,7 +23,7 @@ existing resource selecting the corresponding checkbox and clicking the
 corresponding button and you could edit anyone clicking over the
 corresponding row.
 
-|ComponentsTypes.png|
+.. image:: /_static/images/components_typology_list.png
 
 When you select to add a new resource, a traditional form page is
 displayed. Here, you must have filled in the mandatory fields before
@@ -31,24 +31,24 @@ clicking the *Save* button. If some mandatory field is not filed in or
 it have a no valid value, the page shows you information about what is
 wrong:
 
-|new_provider_2.png|
+.. image:: /_static/images/provider_create.png
 
 Otherwise, the resource will be registered into the Catalog and you will
 be redirect to the list page (at the top right corner you will see a
 confirmation message that the resource have been successfully created):
 
-|ComponentsTypes_create.png|
+.. image:: /_static/images/component_typology_created.png
 
 The same applies when you try to delete a resource, but with the
 peculiarity that the browser will always ask for your confirmation
 before deleting it:
 
-|ComponentsTypes_delete.png|
+.. image:: /_static/images/component_typology_delete_confirmation.png
 
 If the resource has been successfully removed, the list is reloaded and a
 confirmation message is displayed at the top right corner:
 
-|ComponentsTypes_deleted.png|
+.. image:: /_static/images/component_typology_deleted.png
 
 Otherwise, you will see an error page with a description about what is
 wrong. For example, if you try to delete a component type that is
