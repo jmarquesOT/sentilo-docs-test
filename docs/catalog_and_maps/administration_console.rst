@@ -31,19 +31,19 @@ clicking the *Save* button. If some mandatory field is not filed in or
 it have a no valid value, the page shows you information about what is
 wrong:
 
-|new_provider_2.png|
+|new_provider.png|
 
 Otherwise, the resource will be registered into the Catalog and you will
 be redirect to the list page (at the top right corner you will see a
 confirmation message that the resource have been successfully created):
 
-|ComponentsTypes_create.png|
+|ComponentsTypes_created.png|
 
 The same applies when you try to delete a resource, but with the
 peculiarity that the browser will always ask for your confirmation
 before deleting it:
 
-|ComponentsTypes_delete.png|
+|ComponentsTypes_confirm_delete.png|
 
 If the resource has been successfully removed, the list is reloaded and a
 confirmation message is displayed at the top right corner:
@@ -78,7 +78,7 @@ Config params
 In addition, we can edit the visualization formats and public map
 settings, using the **Config params** tab:
 
-|organization_170_001.jpg|
+|Organitzation_config_params.png|
 
 There we can configure the Visual configuration and the Map
 configuration.
@@ -154,11 +154,11 @@ These params configure the universal map visualization.
 
 For example, set the map background color to #ffc900:
 
-|organization_170_002.jpg|
+|Organitzation_config_params_change_map_color.jpg|
 
 will result in:
 
-|Changing_map_color.png|
+|UniversalMap_main.png|
 
 
 Users
