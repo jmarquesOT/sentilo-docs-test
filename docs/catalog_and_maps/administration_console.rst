@@ -154,7 +154,7 @@ These params configure the universal map visualization.
 
 For example, set the map background color to #ffc900:
 
-.. image:: /_static/images/organization_details_config_params_map_color
+.. image:: /_static/images/organization_details_config_params_map_color.png
 
 will result in:
 
@@ -355,7 +355,7 @@ The main properties of the *Details* tab are the following:
 
 How users that has not ADMIN role see the detail section:
 
-|applications_170_002.jpg|
+.. image:: /_static/images/application_details_as_user.png
 
 .. _applications-permissions-tab:
 
