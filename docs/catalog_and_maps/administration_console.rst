@@ -383,7 +383,7 @@ and, as you would expect, an application has full control over itself .
 For example, at the following case where the permissions of the
 application *testApp* are displayed:
 
-|applications_170_003.jpg|
+.. image:: /_static/images/app_testApp_permissions_001.png
 
 We will see the following:
 
@@ -403,7 +403,7 @@ with the API
 REST](./api_docs/services/subscription/subscription.html)),
 as shown in the following picture:
 
-|application_subscriptionsl.png|
+.. image:: /_static/images/application_active_subscriptions_tab.png
 
 Providers
 ~~~~~~~~~
@@ -422,7 +422,7 @@ backend, but also all its related resources** such as components,
 sensors, alerts … and any data published by its sensors, **so be very
 careful with this command**.
 
-|providers_170_000.jpg|
+.. image:: /_static/images/provider_delete.png
 
 .. _providers-list:
 
@@ -433,7 +433,7 @@ Access the Providers list. This is the main Provider page. From here
 you’ll can access to the desired provider to show its details by click
 on it.
 
-|providers_170_0000.jpg|
+.. image:: /_static/images/providers_list.png
 
 
 You’ll be able to list, filter, show provider details, create (*New
