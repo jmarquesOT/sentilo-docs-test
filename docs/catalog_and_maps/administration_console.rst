@@ -23,7 +23,7 @@ existing resource selecting the corresponding checkbox and clicking the
 corresponding button and you could edit anyone clicking over the
 corresponding row.
 
-.. image:: /_static/images/components_typology_list.png
+.. image:: /_static/images/component_typologies_list.png
 
 When you select to add a new resource, a traditional form page is
 displayed. Here, you must have filled in the mandatory fields before
@@ -1066,6 +1066,22 @@ to a provider.
 
 It’s also possible to delete the items massively from the alerts list.
 
+.. _alerts-create:
+
+Create alerts
+^^^^^^^^^^^^^
+
+Thare are two types of alerts, and them has its own properties.
+
+
+**External alert**
+
+.. image:: ../_static/images/alert_external_create.png
+
+**Internal alert**
+
+.. image:: ../_static/images/alert_internal_create.png
+
 **Properties**
 
 +-----------------------+-----------------------+-----------------------+
@@ -1129,7 +1145,7 @@ List
 Access the Alerts list. This is the main Alert page. From here you’ll
 can access to the desired alert to show its details by click on it.
 
-|alerts_170_000.jpg|
+.. image:: ../_static/images/alerts_list.png
 
 You’ll be able to list, filter, show alerts details, create (*New alert*
 button) and delete selected alerts (select from left checkbox, and apply
@@ -1153,9 +1169,8 @@ If you want to search for certain trigger type, currently only searching
 by trigger type’s code is possible (e.g. a search for “GT” would return
 results in the above screen, whereas a search for “GT(40)” wouldn't).
 
-|alert_list.png|
+.. image:: ../_static/images/alerts_list_filtered.png
 
-|alert_edit2.png|
 
 Alerts creation rules
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1172,7 +1187,7 @@ List
 Accessing “Alert creation rules” menu option opens a list of existing
 Alert Rules.
 
-|alertsrules_170_000.jpg|
+.. image:: ../_static/images/alerts_creation_rules_list.png
 
 You’ll be able to list, filter, show alert rules details, create (*New
 rules* button) and delete selected rules group (select from left
@@ -1191,13 +1206,13 @@ Create rules
 
 To create new alerts, use the “New Rules” button.
 
-|alerts_massive_creation.png|
+.. image:: ../_static/images/alerts_massive_creation.png
 
 After pressing the “Confirm” button, a modal window will inform on how
 many alerts will be created for given combination of provider, component
 type and sensor type.
 
-|alerts_massive_creation_confirm.png|
+.. image:: ../_static/images/alerts_massive_creation_confirm.png
 
 Subsequently, alerts are created, all having the same rule. At the
 moment it is not possible to bulk-create alerts without specifying the
@@ -1215,7 +1230,7 @@ Active Subscriptions is a handy section that gives a view of situation of the su
 The some system subscribes to Sentilo and then is inaccessible for a long time, this creates a unnecessary queue in the system.
 
 
-|active_subs_190_001.png|
+.. image:: ../_static/images/active_subscriptions_list.png
 
 
 Sensor types
@@ -1251,7 +1266,7 @@ List
 Access the main Type of Sensors / Actuators list page, will show you a
 complete list of type of sensors.
 
-|sensorstypes_170_001.jpg|
+.. image:: ../_static/images/sensor_types_list.png
 
 You’ll be able to list, filter, show typologies details, create (*New
 typology* button) and delete selected typology (select from left
@@ -1272,7 +1287,7 @@ Access to create new typology pressing *New typology* button. You must
 inform an identifier, name and description (optional) for the new
 typology.
 
-|sensorstypes_170_002.jpg|
+.. image:: ../_static/images/sensor_type_create.png
 
 
 Component types
@@ -1324,7 +1339,7 @@ List
 Access the main Component’s typology list page, will show you a complete
 list of available type of components.
 
-|componenttypes_170_001.jpg|
+.. image:: ../_static/images/component_typologies_list.png
 
 You’ll be able to list, filter, show typology details, create (*New
 application* button) and delete selected typologies (select from left
@@ -1347,7 +1362,7 @@ Access to create new typology pressing *New typology* button. You must
 inform an identifier, name, description (optional), photo (optional) and
 icon for the new typology.
 
-|componenttypes_170_002.jpg|
+.. image:: ../_static/images/component_typology_create.png
 
 Metrics
 ~~~~~~~
