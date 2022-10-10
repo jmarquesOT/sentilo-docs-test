@@ -413,6 +413,8 @@ the data (in contrast to applications, which consume the data). If you
 have loaded the default data, you will see one default provider
 registered into the Catalog:
 
+.. image:: /_static/images/providers_list_base.png
+
 -  **testApp_provider**: as the name suggests, this provider is used for
    checking platform status.
 
@@ -433,7 +435,7 @@ Access the Providers list. This is the main Provider page. From here
 you’ll can access to the desired provider to show its details by click
 on it.
 
-.. image:: /_static/images/providers_list.png
+.. image:: /_static/images/providers_list_more.png
 
 
 You’ll be able to list, filter, show provider details, create (*New
@@ -455,7 +457,7 @@ Details tab
 
 The detail page of a provider is structured into five tabs:
 
-|providers_170_001.jpg|
+.. image:: /_static/images/provider_detail.png
 
 where
 
