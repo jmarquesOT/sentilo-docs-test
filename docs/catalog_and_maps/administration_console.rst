@@ -415,8 +415,10 @@ registered into the Catalog:
 
 .. image:: /_static/images/providers_list_base.png
 
+-  **testApi_provider**: as the name suggests, this provider is used for
+   checking platform api status.
 -  **testApp_provider**: as the name suggests, this provider is used for
-   checking platform status.
+   checking catalog application status.   
 
 One singularity of the providers list is the *Delete* action: **if you
 remove a provider, not only the provider will be deleted from the
@@ -551,7 +553,7 @@ The main properties of the *Details* tab are the following:
 
 How users that has not ADMIN role see the detail section:
 
-|providers_170_002.jpg|
+.. image:: /_static/images/provider_detail_as_user.png
 
 .. _providers-sensors-actuators-tab:
 
@@ -562,7 +564,7 @@ As mentioned before, this tab displays a list with all sensors
 associated with the current provider, as shown in the picture below
 where the sensors of the provider CINERGIA are listed:
 
-|providers_170_003.jpg|
+.. image:: /_static/images/providers_sensors_list.png
 
 You could filter, page and order the list but you cannot access to the
 sensor detail: it must be done from the sensor list administration.
@@ -616,7 +618,7 @@ In short: in Sentilo, a sensor always need to be related to a
 component and providers have its sensors grouped by components, as shown
 in the following picture:
 
-|provider-component-sensor.png|
+.. image:: /_static/images/provider-component-sensor.png
 
 .. _components-list:
 
@@ -627,7 +629,7 @@ One singularity of the components list page are the two buttons that
 allows us to change the visibility of a set of components from *public*
 to *private* and vice versa. These buttons apply on the selected rows.
 
-|components_170_001.jpg|
+.. image:: /_static/images/components_list.png
 
 
 You’ll be able to list, filter, show components details and create (*New
@@ -653,7 +655,7 @@ Details tab
 
 The detail page of a component is structured into five tabs:
 
-|components_170_002.jpg|
+.. image:: /_static/images/component_details_tab.png
 
 where:
 
