@@ -750,7 +750,7 @@ As noted above, this tab displays a set of properties related to the
 technical details of the component such as manufacturer, serial number,
 ….
 
-|comp_tech_details.png|
+.. image:: /_static/images/component_technical_details_tab.png
 
 where:
 
@@ -791,7 +791,7 @@ For each property, it will be displayed as a *label-value* entry where
 the property’s key will be the label and the property’s value will be
 the value, as shown in the following picture:
 
-|comp_add_info.png|
+.. image:: /_static/images/component_additional_info_tab.png
 
 where the following map, stored on the backend, has been rendered
 *{“Comarca”:“Alt Empordà”,“Terme municipal”:“COLERA”,“Provincia”:“Girona”}*
@@ -825,7 +825,7 @@ filter works for all filter attributes except the creation date. The
 Filter field is case-sensitive. Only search by the substate’s code is
 possible at the moment.
 
-|sensors_170_000.jpg|
+.. image:: /_static/images/sensors_list.png
 
 You’ll be able to list, filter, show sensors details, and create (*New
 application* button) and delete selected sensors (select from left
@@ -846,7 +846,7 @@ Details Tab
 
 The detail page of a sensor is structured into four tabs:
 
-|sensor_detail.png|
+.. image:: /_static/images/sensor_detail.png
 
 where
 
@@ -963,7 +963,7 @@ technical details of the sensor ( such as the *manufacturer*, the
 *model*, the *serial number* and the *power type* , all of which are
 described in the component section) as shown in the following picture:
 
-|sensors_170_001.jpg|
+.. image:: /_static/images/sensor_tech_details_tab.png
 
 .. _sensors-visual-configuration-tab:
 
@@ -998,7 +998,7 @@ Latest data tab
 
 This tab, as shown in the following picture:
 
-|sensors_170_002.jpg|
+.. image:: /_static/images/sensor_last_data_tab.png
 
 displays both the latest observation published by the sensor and a graph
 with its last activity.
@@ -1010,7 +1010,7 @@ Navigate the last data chart
 You can navigate along the dates of the graph by using the buttons
 located in the lower right corner of it:
 
-|chart_controls.png|
+.. image:: ../_static/images/catalog_and_maps/chart_controls.png
 
 -  **left arrow**: navigate to the past (only if there are older data)
 -  **reload data (center button)**: reload last data / reset chart data
@@ -1024,7 +1024,7 @@ You can change the number of values shown in the graph. To do this,
 within the sensor editing tabs, go to **“Visual configuration”**, and
 there edit the value of the **“Chart values number”** field
 
-|sensors_170_003.jpg|
+.. image:: ../_static/images/sensor_edit_visual_config.png
 
 You must inform a positive value number. If blank, then default value
 shall be applied as that has been configured in the organization visual
@@ -1036,24 +1036,24 @@ Showing complex data
 If your sensor data type is text, and it contains a complex data in json
 format, Sentilo will show it as a prettified value:
 
-|sensors_170_004.jpg|
+.. image:: ../_static/images/sensor_complex_data_001.png
 
 in this case you will have the possibility to inspect, expand or
 contract the json map shown as a value using the navigation buttons:
 
 **Collapse data:** the json map will be collapsed at all
 
-|sensors_170_005.jpg|
+.. image:: ../_static/images/sensor_complex_data_002.png
 
 **Expand data:** the json map will be expanded at all (default view)
 
-|sensors_170_006.jpg|
+.. image:: ../_static/images/sensor_complex_data_003.png
 
 **Collapse to level X:** insert a correct value for the X, and click the
 button to collapse to the specified level (default level is 0, first
 level)
 
-|sensors_170_007.jpg|
+.. image:: ../_static/images/sensor_complex_data_004.png
 
 Alerts
 ~~~~~~
