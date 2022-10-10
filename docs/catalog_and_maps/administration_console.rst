@@ -23,7 +23,7 @@ existing resource selecting the corresponding checkbox and clicking the
 corresponding button and you could edit anyone clicking over the
 corresponding row.
 
-.. image:: /_static/images/catalog_and_maps/component_typologies_list.png
+.. image:: ../_static/images/catalog_and_maps/component_typologies_list.png
 
 When you select to add a new resource, a traditional form page is
 displayed. Here, you must have filled in the mandatory fields before
@@ -31,24 +31,24 @@ clicking the *Save* button. If some mandatory field is not filed in or
 it have a no valid value, the page shows you information about what is
 wrong:
 
-.. image:: /_static/images/catalog_and_maps/provider_create.png
+.. image:: ../_static/images/catalog_and_maps/provider_create.png
 
 Otherwise, the resource will be registered into the Catalog and you will
 be redirect to the list page (at the top right corner you will see a
 confirmation message that the resource have been successfully created):
 
-.. image:: /_static/images/catalog_and_maps/component_typology_created.png
+.. image:: ../_static/images/catalog_and_maps/component_typology_created.png
 
 The same applies when you try to delete a resource, but with the
 peculiarity that the browser will always ask for your confirmation
 before deleting it:
 
-.. image:: /_static/images/catalog_and_maps/component_typology_delete_confirmation.png
+.. image:: ../_static/images/catalog_and_maps/component_typology_delete_confirmation.png
 
 If the resource has been successfully removed, the list is reloaded and a
 confirmation message is displayed at the top right corner:
 
-.. image:: /_static/images/catalog_and_maps/component_typology_deleted.png
+.. image:: ../_static/images/catalog_and_maps/component_typology_deleted.png
 
 Otherwise, you will see an error page with a description about what is
 wrong. For example, if you try to delete a component type that is
@@ -68,7 +68,7 @@ Detail
 By default, this organization is created and its identifier is
 **sentilo**.
 
-.. image:: /_static/images/catalog_and_maps/organization_details.png
+.. image:: ../_static/images/catalog_and_maps/organization_details.png
 
 We can also edit the organization's name other contact details, except the.
 
@@ -78,7 +78,7 @@ Config params
 In addition, we can edit the visualization formats and public map
 settings, using the **Config params** tab:
 
-.. image:: /_static/images/catalog_and_maps/organization_details_config_params.png
+.. image:: ../_static/images/catalog_and_maps/organization_details_config_params.png
 
 There we can configure the Visual configuration and the Map
 configuration.
@@ -154,11 +154,11 @@ These params configure the universal map visualization.
 
 For example, set the map background color to #ffc900:
 
-.. image:: /_static/images/catalog_and_maps/organization_details_config_params_map_color.png
+.. image:: ../_static/images/catalog_and_maps/organization_details_config_params_map_color.png
 
 will result in:
 
-.. image:: /_static/images/catalog_and_maps/main_map.png
+.. image:: ../_static/images/catalog_and_maps/main_map.png
 
 
 Users
@@ -173,7 +173,7 @@ A catalog user can be one of these three roles:
    console and read all the data, but they haven’t permission for
    changing anything, except own contact details and password.
 
-.. image:: /_static/images/catalog_and_maps/users_list.png
+.. image:: ../_static/images/catalog_and_maps/users_list.png
 
 .. note::
 
@@ -217,7 +217,7 @@ A catalog user can be one of these three roles:
 Edit a User
 ^^^^^^^^^^^
 
-.. image:: /_static/images/catalog_and_maps/user_edition.png
+.. image:: ../_static/images/catalog_and_maps/user_edition.png
 
 
 .. note::
@@ -249,7 +249,7 @@ Access the Application list. This is the main Application page. From
 here you’ll can access to the desired application to show its details by
 click on it.
 
-.. image:: /_static/images/catalog_and_maps/applications_list.png
+.. image:: ../_static/images/catalog_and_maps/applications_list.png
 
 You’ll be able to list, filter, show application details, create (*New
 application* button) and delete selected applications (select from left
@@ -270,7 +270,7 @@ Details tab
 
 The detail page is structured into three tabs:
 
-.. image:: /_static/images/catalog_and_maps/application_details.png
+.. image:: ../_static/images/catalog_and_maps/application_details.png
 
 where:
 
@@ -355,7 +355,7 @@ The main properties of the *Details* tab are the following:
 
 How users that has not ADMIN role see the detail section:
 
-.. image:: /_static/images/catalog_and_maps/application_details_as_user.png
+.. image:: ../_static/images/catalog_and_maps/application_details_as_user.png
 
 .. _applications-permissions-tab:
 
@@ -383,7 +383,7 @@ and, as you would expect, an application has full control over itself .
 For example, at the following case where the permissions of the
 application *testApp* are displayed:
 
-.. image:: /_static/images/catalog_and_maps/app_testApp_permissions_001.png
+.. image:: ../_static/images/catalog_and_maps/app_testApp_permissions_001.png
 
 We will see the following:
 
@@ -403,7 +403,7 @@ with the API
 REST](./api_docs/services/subscription/subscription.html)),
 as shown in the following picture:
 
-.. image:: /_static/images/catalog_and_maps/application_active_subscriptions_tab.png
+.. image:: ../_static/images/catalog_and_maps/application_active_subscriptions_tab.png
 
 Providers
 ~~~~~~~~~
@@ -413,7 +413,7 @@ the data (in contrast to applications, which consume the data). If you
 have loaded the default data, you will see one default provider
 registered into the Catalog:
 
-.. image:: /_static/images/catalog_and_maps/providers_list_base.png
+.. image:: ../_static/images/catalog_and_maps/providers_list_base.png
 
 -  **testApi_provider**: as the name suggests, this provider is used for
    checking platform api status.
@@ -426,7 +426,7 @@ backend, but also all its related resources** such as components,
 sensors, alerts … and any data published by its sensors, **so be very
 careful with this command**.
 
-.. image:: /_static/images/catalog_and_maps/provider_delete.png
+.. image:: ../_static/images/catalog_and_maps/provider_delete.png
 
 .. _providers-list:
 
@@ -437,7 +437,7 @@ Access the Providers list. This is the main Provider page. From here
 you’ll can access to the desired provider to show its details by click
 on it.
 
-.. image:: /_static/images/catalog_and_maps/providers_list_more.png
+.. image:: ../_static/images/catalog_and_maps/providers_list_more.png
 
 
 You’ll be able to list, filter, show provider details, create (*New
@@ -459,7 +459,7 @@ Details tab
 
 The detail page of a provider is structured into five tabs:
 
-.. image:: /_static/images/catalog_and_maps/provider_detail.png
+.. image:: ../_static/images/catalog_and_maps/provider_detail.png
 
 where
 
@@ -553,7 +553,7 @@ The main properties of the *Details* tab are the following:
 
 How users that has not ADMIN role see the detail section:
 
-.. image:: /_static/images/catalog_and_maps/provider_detail_as_user.png
+.. image:: ../_static/images/catalog_and_maps/provider_detail_as_user.png
 
 .. _providers-sensors-actuators-tab:
 
@@ -564,7 +564,7 @@ As mentioned before, this tab displays a list with all sensors
 associated with the current provider, as shown in the picture below
 where the sensors of the provider CINERGIA are listed:
 
-.. image:: /_static/images/catalog_and_maps/providers_sensors_list.png
+.. image:: ../_static/images/catalog_and_maps/providers_sensors_list.png
 
 You could filter, page and order the list but you cannot access to the
 sensor detail: it must be done from the sensor list administration.
@@ -618,7 +618,7 @@ In short: in Sentilo, a sensor always need to be related to a
 component and providers have its sensors grouped by components, as shown
 in the following picture:
 
-.. image:: /_static/images/catalog_and_maps/provider-component-sensor.png
+.. image:: ../_static/images/catalog_and_maps/provider-component-sensor.png
 
 .. _components-list:
 
@@ -629,7 +629,7 @@ One singularity of the components list page are the two buttons that
 allows us to change the visibility of a set of components from *public*
 to *private* and vice versa. These buttons apply on the selected rows.
 
-.. image:: /_static/images/catalog_and_maps/components_list.png
+.. image:: ../_static/images/catalog_and_maps/components_list.png
 
 
 You’ll be able to list, filter, show components details and create (*New
@@ -655,7 +655,7 @@ Details tab
 
 The detail page of a component is structured into five tabs:
 
-.. image:: /_static/images/catalog_and_maps/component_details_tab.png
+.. image:: ../_static/images/catalog_and_maps/component_details_tab.png
 
 where:
 
@@ -750,7 +750,7 @@ As noted above, this tab displays a set of properties related to the
 technical details of the component such as manufacturer, serial number,
 ….
 
-.. image:: /_static/images/catalog_and_maps/component_technical_details_tab.png
+.. image:: ../_static/images/catalog_and_maps/component_technical_details_tab.png
 
 where:
 
@@ -791,7 +791,7 @@ For each property, it will be displayed as a *label-value* entry where
 the property’s key will be the label and the property’s value will be
 the value, as shown in the following picture:
 
-.. image:: /_static/images/catalog_and_maps/component_additional_info_tab.png
+.. image:: ../_static/images/catalog_and_maps/component_additional_info_tab.png
 
 where the following map, stored on the backend, has been rendered
 *{“Comarca”:“Alt Empordà”,“Terme municipal”:“COLERA”,“Provincia”:“Girona”}*
@@ -825,7 +825,7 @@ filter works for all filter attributes except the creation date. The
 Filter field is case-sensitive. Only search by the substate’s code is
 possible at the moment.
 
-.. image:: /_static/images/catalog_and_maps/sensors_list.png
+.. image:: ../_static/images/catalog_and_maps/sensors_list.png
 
 You’ll be able to list, filter, show sensors details, and create (*New
 application* button) and delete selected sensors (select from left
@@ -846,7 +846,7 @@ Details Tab
 
 The detail page of a sensor is structured into four tabs:
 
-.. image:: /_static/images/catalog_and_maps/sensor_detail.png
+.. image:: ../_static/images/catalog_and_maps/sensor_detail.png
 
 where
 
@@ -963,7 +963,7 @@ technical details of the sensor ( such as the *manufacturer*, the
 *model*, the *serial number* and the *power type* , all of which are
 described in the component section) as shown in the following picture:
 
-.. image:: /_static/images/catalog_and_maps/sensor_tech_details_tab.png
+.. image:: ../_static/images/catalog_and_maps/sensor_tech_details_tab.png
 
 .. _sensors-visual-configuration-tab:
 
@@ -998,7 +998,7 @@ Latest data tab
 
 This tab, as shown in the following picture:
 
-.. image:: /_static/images/catalog_and_maps/sensor_last_data_tab.png
+.. image:: ../_static/images/catalog_and_maps/sensor_last_data_tab.png
 
 displays both the latest observation published by the sensor and a graph
 with its last activity.
