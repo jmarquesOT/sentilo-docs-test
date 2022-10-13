@@ -17,7 +17,7 @@ PubSub), you can access to the following catalog page\ **:**
 
    http://ip:port/sentilo-catalog-web/status/
 
-.. image:: /_static/images/platform_testing/status_001.jpg
+.. image:: /_static/images/platform_testing/status_001.png
 
 In this screen you can check the status independently for each Sentilo
 main service. In each case it will be indicated, through a green status
@@ -27,7 +27,7 @@ message will be displayed .
 
 Next screenshot shows to you an error connecting to the API:
 
-.. image:: /_static/images/platform_testing/status_002.jpg
+.. image:: /_static/images/platform_testing/status_002.png
 
 Deactivating the status page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +42,7 @@ To disable it, you must provide a JVM Tomcat parameter:
 
 Then, the status page will be inaccessible:
 
-.. image:: /_static/images/platform_testing/status_003.jpg
+.. image:: /_static/images/platform_testing/status_003.png
 
 Postman tests
 -------------
