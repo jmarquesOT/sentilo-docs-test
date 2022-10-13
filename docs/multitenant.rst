@@ -74,7 +74,7 @@ and according to them, be managed in different ways:
 Below you can see an organization list from a multi tenant Sentilo
 instance, when connecting as super admin user:
 
-.. image:: _static/images/multitenant/organizations_list.jpg
+.. image:: /_static/images/multitenant/organizations_list.jpg
 
 Sentilo contexts
 ----------------
@@ -167,14 +167,14 @@ organizations*. After the organization is created, an **Admin** user can
 edit its own configuration settings. **User** role don’t have access to
 this information.
 
-.. image:: _static/images/multitenant/organizations_list.jpg
+.. image:: /_static/images/multitenant/organizations_list.jpg
 
 Details
 ^^^^^^^
 
 Below, the organization creation form, as a Super Admin:
 
-.. image:: _static/images/multitenant/organization_create.jpg
+.. image:: /_static/images/multitenant/organization_create.jpg
 
 In order to create an organization, we must inform, at least, these
 parameters:
@@ -194,7 +194,7 @@ Config params
 There are some additional parameters for customizing the public &
 private behavior.
 
-.. image:: _static/images/multitenant/organization_create_config_params.jpg
+.. image:: /_static/images/multitenant/organization_create_config_params.jpg
 
 Visual configuration
 ''''''''''''''''''''
@@ -280,7 +280,7 @@ users, it’s mandatory to specify the related organization.
 List
 ^^^^
 
-.. image:: _static/images/multitenant/users_list.jpg
+.. image:: /_static/images/multitenant/users_list.jpg
 
 New user
 ^^^^^^^^
@@ -292,12 +292,12 @@ Details
 
 The next image shows how the new user’s form is:
 
-.. image:: _static/images/multitenant/user_create.jpg
+.. image:: /_static/images/multitenant/user_create.jpg
 
 Alternatively, we can inform some configuration params that will modify
 the catalog visualization for this user:
 
-.. image:: _static/images/multitenant/user_create_config_paramsjpg
+.. image:: /_static/images/multitenant/user_create_config_paramsjpg
 
 These params will apply to the entire catalog application visual
 customization, and how the user will see the data. Note that time zone &
