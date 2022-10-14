@@ -31,7 +31,7 @@ clicking the *Save* button. If some mandatory field is not filed in or
 it have a no valid value, the page shows you information about what is
 wrong:
 
-.. image:: ../_static/images/catalog_and_maps/provider_create.png
+.. image:: ../_static/images/catalog_and_maps/provider_create_error_fields.png
 
 Otherwise, the resource will be registered into the Catalog and you will
 be redirect to the list page (at the top right corner you will see a
@@ -54,7 +54,7 @@ Otherwise, you will see an error page with a description about what is
 wrong. For example, if you try to delete a component type that is
 associated with an existing component the response will be :
 
-|delete_error.png|
+.. image:: ../_static/images/catalog_and_maps/component_typology_delete_error.png
 
 
 Organization
@@ -167,11 +167,12 @@ Users
 The "Users" section is for managing users of the catalog application. It’s possible to
 A catalog user can be one of these three roles:
 
+-  **Super Admin**: role for super-administration purposes (for *multitenant* version only).
 -  **Admin**: role for administration purposes.
--  **Platform**: platform role for internal use.
 -  **User**: visualisation role, they could access to the administration
    console and read all the data, but they haven’t permission for
    changing anything, except own contact details and password.
+-  **Platform**: platform role for internal use (hidden, non selectable).
 
 .. image:: ../_static/images/catalog_and_maps/users_list.png
 
@@ -318,7 +319,7 @@ The main properties of the *Details* tab are the following:
 |                       |                       | application           |
 |                       |                       | description text.     |
 +-----------------------+-----------------------+-----------------------+
-| HTTPS API REST        | Application accepts   | The Sentilo Server    |
+| Force HTTPs           | Application accepts   | The Sentilo Server    |
 |                       | data over HTTPS       | itself does not       |
 |                       |                       | support SSL at the    |
 |                       |                       | moment, however you   |
@@ -347,6 +348,34 @@ The main properties of the *Details* tab are the following:
 |                       |                       | forward sentilo       |
 |                       |                       | headers to the        |
 |                       |                       | Sentilo Server.       |
++-----------------------+-----------------------+-----------------------+
+| Active                | Indicates if the      |                       |
+|                       | resource is active or |                       |
+|                       | not (if it is not, it |                       |
+|                       | will not accept any   |                       |
+|                       | type of interaction   |                       |
+|                       | nor will it be shown  |                       |
+|                       | in other sections)    |                       |
+|                       | person responsible    |                       |
+|                       | for the application   |                       |
++-----------------------+-----------------------+-----------------------+
+| Input quota           | Max number of inputs  | Optional, 0 indicate  |
+|                       | per hour (set to 0 to | unlimited quota (see  |
+|                       | don't limit it)       | :ref:`Rate Limiting`) |
++-----------------------+-----------------------+-----------------------+
+| Output quota          | Max number of outputs | Optional, 0 indicate  |
+|                       | per hour (set to 0 to | unlimited quota (see  |
+|                       | don't limit it)       | :ref:`Rate Limiting`) |
++-----------------------+-----------------------+-----------------------+
+| Creation date         | Creation date         | Automatically         |
+|                       |                       | generated             |
++-----------------------+-----------------------+-----------------------+
+| Updates date          | Last update date      | Automatically         |
+|                       |                       | generated             |
++-----------------------+-----------------------+-----------------------+
+| Contact name          | Email address of the  | Mandatory.            |
+|                       | person responsible    |                       |
+|                       | for the application   |                       |
 +-----------------------+-----------------------+-----------------------+
 | Contact email         | Email address of the  | Mandatory.            |
 |                       | person responsible    |                       |
