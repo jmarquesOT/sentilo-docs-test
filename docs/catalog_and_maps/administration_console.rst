@@ -361,11 +361,11 @@ The main properties of the *Details* tab are the following:
 +-----------------------+-----------------------+-----------------------+
 | Input quota           | Max number of inputs  | Optional, 0 indicate  |
 |                       | per hour (set to 0 to | unlimited quota (see  |
-|                       | don't limit it)       | :ref:`Rate Limiting`) |
+|                       | don't limit it)       | *Rate Limiting*)      |
 +-----------------------+-----------------------+-----------------------+
 | Output quota          | Max number of outputs | Optional, 0 indicate  |
 |                       | per hour (set to 0 to | unlimited quota (see  |
-|                       | don't limit it)       | :ref:`Rate Limiting`) |
+|                       | don't limit it)       | *Rate Limiting*)      |
 +-----------------------+-----------------------+-----------------------+
 | Creation date         | Creation date         | Automatically         |
 |                       |                       | generated             |
@@ -373,7 +373,7 @@ The main properties of the *Details* tab are the following:
 | Updates date          | Last update date      | Automatically         |
 |                       |                       | generated             |
 +-----------------------+-----------------------+-----------------------+
-| Contact name          | Email address of the  | Mandatory.            |
+| Contact name          | The name of the       | Mandatory.            |
 |                       | person responsible    |                       |
 |                       | for the application   |                       |
 +-----------------------+-----------------------+-----------------------+
@@ -412,7 +412,7 @@ and, as you would expect, an application has full control over itself .
 For example, at the following case where the permissions of the
 application *testApp* are displayed:
 
-.. image:: ../_static/images/catalog_and_maps/app_testApp_permissions_001.png
+.. image:: ../_static/images/catalog_and_maps/application_permissions_tab.png
 
 We will see the following:
 
