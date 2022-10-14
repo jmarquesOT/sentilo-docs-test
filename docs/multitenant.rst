@@ -369,7 +369,7 @@ Organization administration
 
 Admin users can only manage its own organization information.
 
-.. image:: _static/images/multitenant/admin_organization_170_001.jpg
+.. image:: /_static/images/multitenant/organization_admin.png
 
 Alternatively, Admin user can manage their config params and third party
 from/to permissions for sharing information purposes. You’ll find them
@@ -398,18 +398,18 @@ Permission administration
 Permissions list
 ''''''''''''''''
 
-.. image:: _static/images/multitenant/admin_permissions_170_001.jpg
+.. image:: /_static/images/multitenant/organization_permissions_to_others.png
 
 Adding permissions
 ''''''''''''''''''
 
 Adding to third party read & write permission:
 
-.. image:: _static/images/multitenant/admin_permissions_170_002.jpg
+.. image:: /_static/images/multitenant/organization_permissions_add.png
 
 Response upon permission has been created:
 
-.. image:: _static/images/multitenant/admin_permissions_170_003.jpg
+.. image:: /_static/images/multitenant/organization_permission_added.png
 
 In this case we had granted **read&write** permissions from our
 organization and our provider **sample_provider** to third party
@@ -419,7 +419,7 @@ access to the sample_provider data and manage ii (publish data).
 In the other side, the Sentilo organization can see these permissions in
 the second tab, *Permissions from others*:
 
-.. image:: _static/images/multitenant/admin_permissions_170_004.jpg
+.. image:: /_static/images/multitenant/organization_permissions_from_others.png
 
 And now, from this tab, we can
 change the permission visibility on the map. Simply select the checkbox
@@ -452,7 +452,7 @@ Applications
 
 For application creation form you’ll see this in the Identifier field:
 
-.. image:: _static/images/multitenant/applications_170_001.jpg
+.. image:: /_static/images/multitenant/application_create.png
 
 In this case, we’re creating a application
 named **My Application** with identifier **myapp_identifier**.
@@ -464,7 +464,7 @@ For the providers, we would be facing the same case as for the
 Applications. Therefore, you can choose the desired identifier,
 regardless of the tenant you are managing.
 
-.. image:: _static/images/multitenant/providers_170_001.jpg
+.. image:: /_static/images/multitenant/provider_create.png
 
 In this case, we’re creating a provider named **My Provider**, with
 identifier **myprovider_identifier**.
