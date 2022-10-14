@@ -297,7 +297,7 @@ The next image shows how the new user’s form is:
 Alternatively, we can inform some configuration params that will modify
 the catalog visualization for this user:
 
-.. image:: /_static/images/multitenant/user_create_config_paramsjpg
+.. image:: /_static/images/multitenant/user_create_config_params.png
 
 These params will apply to the entire catalog application visual
 customization, and how the user will see the data. Note that time zone &
