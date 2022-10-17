@@ -161,6 +161,78 @@ will result in:
 .. image:: ../_static/images/catalog_and_maps/main_map.png
 
 
+Sctors
+~~~~~~
+
+In Sentilo it is possible to manage resources in a more controlled way, thanks to the concept of **"Sector"**.
+
+A "sector" is a grouping of catalog resources, applications, and providers, which can be managed by 
+specific users. In this way, we can divide all the resources of the same organization, or of a 
+"non-multitenant" installation into different sectors or groups of resources.
+
+
+.. image:: ../_static/images/catalog_and_maps/sectors_list.png
+
+.. note::
+
+	Only an administrator user can create and edit sectors.
+
+A sector is defined by its id, name and description:
+
+.. image:: ../_static/images/catalog_and_maps/sector_detail.png
+
++-----------------------+-----------------------+-----------------------+
+| Id                    | Name                  | Description           |
++=======================+=======================+=======================+
+| Id                    | Sector identifier     | After its creation    |
+|                       |                       | can't be modified     |
++-----------------------+-----------------------+-----------------------+
+| Name                  | Sector name           |                       |
+|                       |                       |                       |
++-----------------------+-----------------------+-----------------------+
+| Description           | Sector description    |                       |
++-----------------------+-----------------------+-----------------------+
+
+
+Adding users to a sector
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the sector has been created, we will be able to configure both the users that will be able to manage 
+it, as well as the applications and providers that it encompasses.
+
+Users and administrator users will be able to manage a sector if it is associated with it from the "Users" 
+tab. 
+
+To achieve this, click on **Users** tab, and the on **Add** button. A modal popup will appear from where we'll 
+can add several users to the sector (notice that only admin users can edit sectors):
+
+.. image:: ../_static/images/catalog_and_maps/sector_add_user.png
+
+And then, the user is added:
+
+.. image:: ../_static/images/catalog_and_maps/sector_user_added.png
+
+After that, the *sector_user* user can now administrate the *building_sector*.
+
+For applications and providers we can manage them from its own tabs such like users adds.
+
+**Providers tab popup**
+
+.. image:: ../_static/images/catalog_and_maps/sector_add_providers_popup.png
+
+**Applications tab popup**
+
+.. image:: ../_static/images/catalog_and_maps/sector_add_applications_popup.png
+
+For the applications adds, we can set the read / write mode by switching over the application row.
+
+In the above image, we have that:
+
+	* **testApp** has read permission over the building sector
+	* **building_application** has read/write permissions over the building sector
+
+
+
 Users
 ~~~~~
 
