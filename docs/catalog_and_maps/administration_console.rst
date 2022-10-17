@@ -161,78 +161,6 @@ will result in:
 .. image:: ../_static/images/catalog_and_maps/main_map.png
 
 
-Sctors
-~~~~~~
-
-In Sentilo it is possible to manage resources in a more controlled way, thanks to the concept of **"Sector"**.
-
-A "sector" is a grouping of catalog resources, applications, and providers, which can be managed by 
-specific users. In this way, we can divide all the resources of the same organization, or of a 
-"non-multitenant" installation into different sectors or groups of resources.
-
-
-.. image:: ../_static/images/catalog_and_maps/sectors_list.png
-
-.. note::
-
-	Only an administrator user can create and edit sectors.
-
-A sector is defined by its id, name and description:
-
-.. image:: ../_static/images/catalog_and_maps/sector_detail.png
-
-+-----------------------+-----------------------+-----------------------+
-| Id                    | Name                  | Description           |
-+=======================+=======================+=======================+
-| Id                    | Sector identifier     | After its creation    |
-|                       |                       | can't be modified     |
-+-----------------------+-----------------------+-----------------------+
-| Name                  | Sector name           |                       |
-|                       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| Description           | Sector description    |                       |
-+-----------------------+-----------------------+-----------------------+
-
-
-Adding users to a sector
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Once the sector has been created, we will be able to configure both the users that will be able to manage 
-it, as well as the applications and providers that it encompasses.
-
-Users and administrator users will be able to manage a sector if it is associated with it from the "Users" 
-tab. 
-
-To achieve this, click on **Users** tab, and the on **Add** button. A modal popup will appear from where we'll 
-can add several users to the sector (notice that only admin users can edit sectors):
-
-.. image:: ../_static/images/catalog_and_maps/sector_add_user.png
-
-And then, the user is added:
-
-.. image:: ../_static/images/catalog_and_maps/sector_user_added.png
-
-After that, the *sector_user* user can now administrate the *building_sector*.
-
-For applications and providers we can manage them from its own tabs such like users adds.
-
-**Providers tab popup**
-
-.. image:: ../_static/images/catalog_and_maps/sector_add_providers_popup.png
-
-**Applications tab popup**
-
-.. image:: ../_static/images/catalog_and_maps/sector_add_applications_popup.png
-
-For the applications adds, we can set the read / write mode by switching over the application row.
-
-In the above image, we have that:
-
-	* **testApp** has read permission over the building sector
-	* **building_application** has read/write permissions over the building sector
-
-
-
 Users
 ~~~~~
 
@@ -693,6 +621,147 @@ Documentation tab
 In this tab you can upload any files relevant to provider (up to 4MB
 each). The documents in total should not surpass ~16MB, which the `limit
 of MongoDb <https://docs.mongodb.com/manual/reference/limits>`__.
+
+
+Sectors
+~~~~~~
+
+In Sentilo, resources are managed through applications and providers, globally, 
+through an administrator user. In the case of a multi-tenant instance, in the same way, 
+it will be the entity's administrator user who will be able to manage said resources, 
+but only within his own entity.
+
+But you can also do this using resource groups. It is the management called "by sectors" 
+or "delegated administration". In this type of administration, one or more users are 
+given the ability to manage a group of resources, called a **“sector”**, so that the 
+responsibility does not always fall on a single administrator. In this way, a user 
+becomes a **sector administrator** when they are associated with a *resource group* or *sector*.
+
+.. _sectors-list:
+
+List
+^^^^
+
+.. image:: ../_static/images/catalog_and_maps/sectors_list.png
+
+For example, we can divide all the resources and devices, of a Sentilo entity or instance, 
+into several groups that unify their purpose. In the example above we can see three groupings: 
+buildings, citizens and traffic. This type of partitioning could describe a small pool 
+of resources in a smart city that Sentilo has access to:
+
+	* *buildings:* smart building data processing
+	* *citizens:* treatment of the use of roads, detection of passage and occupation of streets and avenues
+	* *traffic:* treatment of the occupation and use of public roads on which vehicles circulate, 
+	detection of passage, capacity of vehicles, etc...
+
+In short, we will call a *“sector”* to a group of applications, providers and all the 
+resources that they encompass, and that can be managed by one or more users.
+
+A sector is defined by its identifier, its name and its description:
+
+.. image:: ../_static/images/catalog_and_maps/building_sector.png
+
++-----------------------+-----------------------+-----------------------+
+| Id                    | Name                  | Description           |
++=======================+=======================+=======================+
+| Id                    | Sector identifier     | After its creation    |
+|                       |                       | can't be modified     |
++-----------------------+-----------------------+-----------------------+
+| Name                  | Sector name           |                       |
+|                       |                       |                       |
++-----------------------+-----------------------+-----------------------+
+| Description           | Sector description    |                       |
++-----------------------+-----------------------+-----------------------+
+
+The date and time of creation and modification are generated automatically.
+
+Sectors can only be created and managed by admin users:
+
+.. image:: ../_static/images/catalog_and_maps/sector_create.png
+
+then:
+
+.. image:: ../_static/images/catalog_and_maps/sector_created.png
+
+
+Sector users
+^^^^^^^^^^^^
+
+The users of a sector are added from the *“Users”* tab.
+
+Click on "Add" and then a modal popup will appear:
+
+.. image:: ../_static/images/catalog_and_maps/sector_users_add.png
+
+From this window we can add one or several users, registered globally in the instance, 
+as administrators of the sector. In the case of multi-tenant, we can only add users from our own entity.
+
+
+Sector providers
+^^^^^^^^^^^^^^^^
+
+They are found in the *"Providers"* tab, and they are the providers that a sector can manage.
+
+.. image:: ../_static/images/catalog_and_maps/sector_providers_list.png
+
+To add or remove providers to the sector, we must access the tab and click on the add or remove buttons, 
+as needed.
+
+To add a provider to the sector, we will click on the "Add" button, and a modal popup window will appear 
+from which we can select the provider and the level of access we wish to grant (read only, or administration):
+
+.. image:: ../_static/images/catalog_and_maps/sector_providers_add.png
+
+From now on, the sector will be able to manage these providers with the level of permissions selected.
+
+
+Sector applications
+^^^^^^^^^^^^^^^^^^^
+
+They are found in the *"Applications"* tab, and they are the applications that a sector can manage.
+
+.. image:: ../_static/images/catalog_and_maps/sector_applications_list.png
+
+To add or remove applictions to the sector, we must access the tab and click on the add or remove buttons, 
+as needed.
+
+To add an application to the sector, we will click on the "Add" button, and a modal popup window will appear 
+from which we can select the applications and the level of access we wish to grant (read only, or administration):
+
+.. image:: ../_static/images/catalog_and_maps/sector_applications_add.png
+
+From now on, the sector will be able to manage these applications with the level of permissions selected.
+
+
+Access as sector user
+^^^^^^^^^^^^^^^^^^^^^
+
+Since a user is added to a sector, this user will only be able to see the resources that were added to that sector.
+
+Let's remember the user *"building_user"*.
+
+This is how we would see the detail of the user:
+
+.. image:: ../_static/images/catalog_and_maps/sector_user_details.png
+
+Notice the last parameter, named *"Associated sectors"* which indicates to which sectors it belongs.
+
+Therefore, if we access the lists of providers and applications, we can only see those resources that have been 
+assigned to us to be managed within our sector, and their granted permissions:
+
+**Applications list**
+
+.. image:: ../_static/images/catalog_and_maps/sector_user_applications_list.png
+
+
+**Providers list**
+
+.. image:: ../_static/images/catalog_and_maps/sector_user_providers_list.png
+
+
+From this moment on, the user of the sector will be able to manage the resources of the sector with the previously 
+granted permissions.
+
 
 Components
 ~~~~~~~~~~
