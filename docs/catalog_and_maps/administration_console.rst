@@ -1486,12 +1486,18 @@ It’s possible to delete elements massively through the component list.
 | Update date           | Last update date      | Automatically         |
 |                       |                       | generated             |
 +-----------------------+-----------------------+-----------------------+
-| Photo                 | Related photo         | Generic picture for   |
+| Photo URL             | Related photo         | Generic picture for   |
 |                       |                       | the component type,   |
 |                       |                       | will be used if there |
 |                       |                       | isn't any specified   |
 |                       |                       | for the component     |
 |                       |                       | itself                |
++-----------------------+-----------------------+-----------------------+
+| Extended URL          | Define an external    | Here you can inform   |
+|                       | details page for the  | an external url that  |
+|                       | component type        | will replace the      |
+|                       |                       | default details       |
+|                       |                       | component type page   |
 +-----------------------+-----------------------+-----------------------+
 | Icon                  | Related icon          | Value list from the   |
 |                       |                       | deployed icon list.   |
@@ -1499,6 +1505,16 @@ It’s possible to delete elements massively through the component list.
 |                       |                       | representing the      |
 |                       |                       | component             |
 +-----------------------+-----------------------+-----------------------+
+
+.. note::
+
+   The extended URL allows to replace the component details, integrating an external 
+   page within the general framework of the application. It must be an absolute URL 
+   and accessible without authentication (only http or https protocols are accepted). 
+   It will be used for all the typology components, except for the ones configuring 
+   their own URL. It can include the following wildcards ${component_id} and/or ${provider_id}, 
+   which will be replaced at execution time.
+
 
 .. _component-types-list:
 
@@ -1542,11 +1558,11 @@ production monitoring, we recommend to also setup some process watcher and alert
 
 Example of the timeline:
 
-|metrics_190_001.png|
+.. image:: /_static/images/catalog_and_maps/metrics_190_001.png
 
 Example of dashboard:
 
-|metrics_190_002.png|
+.. image:: /_static/images/catalog_and_maps/metrics_190_002.png
 
 .. note::
 
