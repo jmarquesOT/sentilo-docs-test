@@ -23,7 +23,7 @@ existing resource selecting the corresponding checkbox and clicking the
 corresponding button and you could edit anyone clicking over the
 corresponding row.
 
-.. image:: ../_static/images/catalog_and_maps/component_typologies_list.png
+.. image:: /_static/images/catalog_and_maps/component_typologies_list.png
 
 When you select to add a new resource, a traditional form page is
 displayed. Here, you must have filled in the mandatory fields before
@@ -31,30 +31,30 @@ clicking the *Save* button. If some mandatory field is not filed in or
 it have a no valid value, the page shows you information about what is
 wrong:
 
-.. image:: ../_static/images/catalog_and_maps/provider_create_error_fields.png
+.. image:: /_static/images/catalog_and_maps/provider_create_error_fields.png
 
 Otherwise, the resource will be registered into the Catalog and you will
 be redirect to the list page (at the top right corner you will see a
 confirmation message that the resource have been successfully created):
 
-.. image:: ../_static/images/catalog_and_maps/component_typology_created.png
+.. image:: /_static/images/catalog_and_maps/component_typology_created.png
 
 The same applies when you try to delete a resource, but with the
 peculiarity that the browser will always ask for your confirmation
 before deleting it:
 
-.. image:: ../_static/images/catalog_and_maps/component_typology_delete_confirmation.png
+.. image:: /_static/images/catalog_and_maps/component_typology_delete_confirmation.png
 
 If the resource has been successfully removed, the list is reloaded and a
 confirmation message is displayed at the top right corner:
 
-.. image:: ../_static/images/catalog_and_maps/component_typology_deleted.png
+.. image:: /_static/images/catalog_and_maps/component_typology_deleted.png
 
 Otherwise, you will see an error page with a description about what is
 wrong. For example, if you try to delete a component type that is
 associated with an existing component the response will be :
 
-.. image:: ../_static/images/catalog_and_maps/component_typology_delete_error.png
+.. image:: /_static/images/catalog_and_maps/component_typology_delete_error.png
 
 
 Organization
@@ -68,7 +68,7 @@ Detail
 By default, this organization is created and its identifier is
 **sentilo**.
 
-.. image:: ../_static/images/catalog_and_maps/organization_details.png
+.. image:: /_static/images/catalog_and_maps/organization_details.png
 
 We can also edit the organization's name other contact details, except the.
 
@@ -78,7 +78,7 @@ Config params
 In addition, we can edit the visualization formats and public map
 settings, using the **Config params** tab:
 
-.. image:: ../_static/images/catalog_and_maps/organization_details_config_params.png
+.. image:: /_static/images/catalog_and_maps/organization_details_config_params.png
 
 There we can configure the Visual configuration and the Map
 configuration.
@@ -154,11 +154,11 @@ These params configure the universal map visualization.
 
 For example, set the map background color to #ffc900:
 
-.. image:: ../_static/images/catalog_and_maps/organization_details_config_params_map_color.png
+.. image:: /_static/images/catalog_and_maps/organization_details_config_params_map_color.png
 
 will result in:
 
-.. image:: ../_static/images/catalog_and_maps/main_map.png
+.. image:: /_static/images/catalog_and_maps/main_map.png
 
 
 Users
@@ -174,7 +174,7 @@ A catalog user can be one of these three roles:
    changing anything, except own contact details and password.
 -  **Platform**: platform role for internal use (hidden, non selectable).
 
-.. image:: ../_static/images/catalog_and_maps/users_list.png
+.. image:: /_static/images/catalog_and_maps/users_list.png
 
 .. note::
 
@@ -218,7 +218,7 @@ A catalog user can be one of these three roles:
 Edit a User
 ^^^^^^^^^^^
 
-.. image:: ../_static/images/catalog_and_maps/user_edition.png
+.. image:: /_static/images/catalog_and_maps/user_edition.png
 
 
 .. note::
@@ -250,7 +250,7 @@ Access the Application list. This is the main Application page. From
 here you’ll can access to the desired application to show its details by
 click on it.
 
-.. image:: ../_static/images/catalog_and_maps/applications_list.png
+.. image:: /_static/images/catalog_and_maps/applications_list.png
 
 You’ll be able to list, filter, show application details, create (*New
 application* button) and delete selected applications (select from left
@@ -271,7 +271,7 @@ Details tab
 
 The detail page is structured into three tabs:
 
-.. image:: ../_static/images/catalog_and_maps/application_details.png
+.. image:: /_static/images/catalog_and_maps/application_details.png
 
 where:
 
@@ -384,7 +384,7 @@ The main properties of the *Details* tab are the following:
 
 How users that has not ADMIN role see the detail section:
 
-.. image:: ../_static/images/catalog_and_maps/application_details_as_user.png
+.. image:: /_static/images/catalog_and_maps/application_details_as_user.png
 
 .. _applications-permissions-tab:
 
@@ -412,7 +412,7 @@ and, as you would expect, an application has full control over itself .
 For example, at the following case where the permissions of the
 application *testApp* are displayed:
 
-.. image:: ../_static/images/catalog_and_maps/application_permissions_tab.png
+.. image:: /_static/images/catalog_and_maps/application_permissions_tab.png
 
 We will see the following:
 
@@ -432,7 +432,7 @@ with the API
 REST](./api_docs/services/subscription/subscription.html)),
 as shown in the following picture:
 
-.. image:: ../_static/images/catalog_and_maps/application_active_subscriptions_tab.png
+.. image:: /_static/images/catalog_and_maps/application_active_subscriptions_tab.png
 
 Providers
 ~~~~~~~~~
@@ -442,7 +442,7 @@ the data (in contrast to applications, which consume the data). If you
 have loaded the default data, you will see one default provider
 registered into the Catalog:
 
-.. image:: ../_static/images/catalog_and_maps/providers_list_base.png
+.. image:: /_static/images/catalog_and_maps/providers_list_base.png
 
 -  **testApi_provider**: as the name suggests, this provider is used for
    checking platform api status.
@@ -455,7 +455,7 @@ backend, but also all its related resources** such as components,
 sensors, alerts … and any data published by its sensors, **so be very
 careful with this command**.
 
-.. image:: ../_static/images/catalog_and_maps/provider_delete.png
+.. image:: /_static/images/catalog_and_maps/provider_delete.png
 
 .. _providers-list:
 
@@ -466,7 +466,7 @@ Access the Providers list. This is the main Provider page. From here
 you’ll can access to the desired provider to show its details by click
 on it.
 
-.. image:: ../_static/images/catalog_and_maps/providers_list_more.png
+.. image:: /_static/images/catalog_and_maps/providers_list_more.png
 
 
 You’ll be able to list, filter, show provider details, create (*New
@@ -488,7 +488,7 @@ Details tab
 
 The detail page of a provider is structured into five tabs:
 
-.. image:: ../_static/images/catalog_and_maps/provider_detail.png
+.. image:: /_static/images/catalog_and_maps/provider_detail.png
 
 where
 
@@ -582,7 +582,7 @@ The main properties of the *Details* tab are the following:
 
 How users that has not ADMIN role see the detail section:
 
-.. image:: ../_static/images/catalog_and_maps/provider_detail_as_user.png
+.. image:: /_static/images/catalog_and_maps/provider_detail_as_user.png
 
 .. _providers-sensors-actuators-tab:
 
@@ -593,7 +593,7 @@ As mentioned before, this tab displays a list with all sensors
 associated with the current provider, as shown in the picture below
 where the sensors of the provider CINERGIA are listed:
 
-.. image:: ../_static/images/catalog_and_maps/providers_sensors_list.png
+.. image:: /_static/images/catalog_and_maps/providers_sensors_list.png
 
 You could filter, page and order the list but you cannot access to the
 sensor detail: it must be done from the sensor list administration.
@@ -642,7 +642,7 @@ becomes a **sector administrator** when they are associated with a *resource gro
 List
 ^^^^
 
-.. image:: ../_static/images/catalog_and_maps/sectors_list.png
+.. image:: /_static/images/catalog_and_maps/sectors_list.png
 
 For example, we can divide all the resources and devices, of a Sentilo entity or instance, 
 into several groups that unify their purpose. In the example above we can see three groupings: 
@@ -651,15 +651,14 @@ of resources in a smart city that Sentilo has access to:
 
 	* *buildings:* smart building data processing
 	* *citizens:* treatment of the use of roads, detection of passage and occupation of streets and avenues
-	* *traffic:* treatment of the occupation and use of public roads on which vehicles circulate, 
-	detection of passage, capacity of vehicles, etc...
+	* *traffic:* treatment of the occupation and use of public roads on which vehicles circulate, detection of passage, capacity of vehicles, etc...
 
 In short, we will call a *“sector”* to a group of applications, providers and all the 
 resources that they encompass, and that can be managed by one or more users.
 
 A sector is defined by its identifier, its name and its description:
 
-.. image:: ../_static/images/catalog_and_maps/building_sector.png
+.. image:: /_static/images/catalog_and_maps/sector_details.png
 
 +-----------------------+-----------------------+-----------------------+
 | Id                    | Name                  | Description           |
@@ -677,11 +676,11 @@ The date and time of creation and modification are generated automatically.
 
 Sectors can only be created and managed by admin users:
 
-.. image:: ../_static/images/catalog_and_maps/sector_create.png
+.. image:: /_static/images/catalog_and_maps/sector_create.png
 
 then:
 
-.. image:: ../_static/images/catalog_and_maps/sector_created.png
+.. image:: /_static/images/catalog_and_maps/sector_created.png
 
 
 Sector users
@@ -691,7 +690,7 @@ The users of a sector are added from the *“Users”* tab.
 
 Click on "Add" and then a modal popup will appear:
 
-.. image:: ../_static/images/catalog_and_maps/sector_users_add.png
+.. image:: /_static/images/catalog_and_maps/sector_users_add.png
 
 From this window we can add one or several users, registered globally in the instance, 
 as administrators of the sector. In the case of multi-tenant, we can only add users from our own entity.
@@ -702,7 +701,7 @@ Sector providers
 
 They are found in the *"Providers"* tab, and they are the providers that a sector can manage.
 
-.. image:: ../_static/images/catalog_and_maps/sector_providers_list.png
+.. image:: /_static/images/catalog_and_maps/sector_providers_list.png
 
 To add or remove providers to the sector, we must access the tab and click on the add or remove buttons, 
 as needed.
@@ -710,7 +709,7 @@ as needed.
 To add a provider to the sector, we will click on the "Add" button, and a modal popup window will appear 
 from which we can select the provider and the level of access we wish to grant (read only, or administration):
 
-.. image:: ../_static/images/catalog_and_maps/sector_providers_add.png
+.. image:: /_static/images/catalog_and_maps/sector_providers_add.png
 
 From now on, the sector will be able to manage these providers with the level of permissions selected.
 
@@ -720,7 +719,7 @@ Sector applications
 
 They are found in the *"Applications"* tab, and they are the applications that a sector can manage.
 
-.. image:: ../_static/images/catalog_and_maps/sector_applications_list.png
+.. image:: /_static/images/catalog_and_maps/sector_applications_list.png
 
 To add or remove applictions to the sector, we must access the tab and click on the add or remove buttons, 
 as needed.
@@ -728,7 +727,7 @@ as needed.
 To add an application to the sector, we will click on the "Add" button, and a modal popup window will appear 
 from which we can select the applications and the level of access we wish to grant (read only, or administration):
 
-.. image:: ../_static/images/catalog_and_maps/sector_applications_add.png
+.. image:: /_static/images/catalog_and_maps/sector_applications_add.png
 
 From now on, the sector will be able to manage these applications with the level of permissions selected.
 
@@ -742,7 +741,7 @@ Let's remember the user *"building_user"*.
 
 This is how we would see the detail of the user:
 
-.. image:: ../_static/images/catalog_and_maps/sector_user_details.png
+.. image:: /_static/images/catalog_and_maps/sector_user_details.png
 
 Notice the last parameter, named *"Associated sectors"* which indicates to which sectors it belongs.
 
@@ -751,12 +750,12 @@ assigned to us to be managed within our sector, and their granted permissions:
 
 **Applications list**
 
-.. image:: ../_static/images/catalog_and_maps/sector_user_applications_list.png
+.. image:: /_static/images/catalog_and_maps/sector_user_applications_list.png
 
 
 **Providers list**
 
-.. image:: ../_static/images/catalog_and_maps/sector_user_providers_list.png
+.. image:: /_static/images/catalog_and_maps/sector_user_providers_list.png
 
 
 From this moment on, the user of the sector will be able to manage the resources of the sector with the previously 
@@ -788,7 +787,7 @@ In short: in Sentilo, a sensor always need to be related to a
 component and providers have its sensors grouped by components, as shown
 in the following picture:
 
-.. image:: ../_static/images/catalog_and_maps/provider-component-sensor.png
+.. image:: /_static/images/catalog_and_maps/provider-component-sensor.png
 
 .. _components-list:
 
@@ -799,7 +798,7 @@ One singularity of the components list page are the two buttons that
 allows us to change the visibility of a set of components from *public*
 to *private* and vice versa. These buttons apply on the selected rows.
 
-.. image:: ../_static/images/catalog_and_maps/components_list.png
+.. image:: /_static/images/catalog_and_maps/components_list.png
 
 
 You’ll be able to list, filter, show components details and create (*New
@@ -825,7 +824,7 @@ Details tab
 
 The detail page of a component is structured into five tabs:
 
-.. image:: ../_static/images/catalog_and_maps/component_details_tab.png
+.. image:: /_static/images/catalog_and_maps/component_details_tab.png
 
 where:
 
@@ -920,7 +919,7 @@ As noted above, this tab displays a set of properties related to the
 technical details of the component such as manufacturer, serial number,
 ….
 
-.. image:: ../_static/images/catalog_and_maps/component_technical_details_tab.png
+.. image:: /_static/images/catalog_and_maps/component_technical_details_tab.png
 
 where:
 
@@ -961,7 +960,7 @@ For each property, it will be displayed as a *label-value* entry where
 the property’s key will be the label and the property’s value will be
 the value, as shown in the following picture:
 
-.. image:: ../_static/images/catalog_and_maps/component_additional_info_tab.png
+.. image:: /_static/images/catalog_and_maps/component_additional_info_tab.png
 
 where the following map, stored on the backend, has been rendered
 *{“Comarca”:“Alt Empordà”,“Terme municipal”:“COLERA”,“Provincia”:“Girona”}*
@@ -995,7 +994,7 @@ filter works for all filter attributes except the creation date. The
 Filter field is case-sensitive. Only search by the substate’s code is
 possible at the moment.
 
-.. image:: ../_static/images/catalog_and_maps/sensors_list.png
+.. image:: /_static/images/catalog_and_maps/sensors_list.png
 
 You’ll be able to list, filter, show sensors details, and create (*New
 application* button) and delete selected sensors (select from left
@@ -1016,7 +1015,7 @@ Details Tab
 
 The detail page of a sensor is structured into four tabs:
 
-.. image:: ../_static/images/catalog_and_maps/sensor_detail.png
+.. image:: /_static/images/catalog_and_maps/sensor_detail.png
 
 where
 
@@ -1133,7 +1132,7 @@ technical details of the sensor ( such as the *manufacturer*, the
 *model*, the *serial number* and the *power type* , all of which are
 described in the component section) as shown in the following picture:
 
-.. image:: ../_static/images/catalog_and_maps/sensor_tech_details_tab.png
+.. image:: /_static/images/catalog_and_maps/sensor_tech_details_tab.png
 
 .. _sensors-visual-configuration-tab:
 
@@ -1168,7 +1167,7 @@ Latest data tab
 
 This tab, as shown in the following picture:
 
-.. image:: ../_static/images/catalog_and_maps/sensor_last_data_tab.png
+.. image:: /_static/images/catalog_and_maps/sensor_last_data_tab.png
 
 displays both the latest observation published by the sensor and a graph
 with its last activity.
@@ -1180,7 +1179,7 @@ Navigate the last data chart
 You can navigate along the dates of the graph by using the buttons
 located in the lower right corner of it:
 
-.. image:: ../_static/images/catalog_and_maps/catalog_and_maps/chart_controls.png
+.. image:: /_static/images/catalog_and_maps/catalog_and_maps/chart_controls.png
 
 -  **left arrow**: navigate to the past (only if there are older data)
 -  **reload data (center button)**: reload last data / reset chart data
@@ -1194,7 +1193,7 @@ You can change the number of values shown in the graph. To do this,
 within the sensor editing tabs, go to **“Visual configuration”**, and
 there edit the value of the **“Chart values number”** field
 
-.. image:: ../_static/images/catalog_and_maps/sensor_edit_visual_config.png
+.. image:: /_static/images/catalog_and_maps/sensor_edit_visual_config.png
 
 You must inform a positive value number. If blank, then default value
 shall be applied as that has been configured in the organization visual
@@ -1206,24 +1205,24 @@ Showing complex data
 If your sensor data type is text, and it contains a complex data in json
 format, Sentilo will show it as a prettified value:
 
-.. image:: ../_static/images/catalog_and_maps/sensor_complex_data_001.png
+.. image:: /_static/images/catalog_and_maps/sensor_complex_data_001.png
 
 in this case you will have the possibility to inspect, expand or
 contract the json map shown as a value using the navigation buttons:
 
 **Collapse data:** the json map will be collapsed at all
 
-.. image:: ../_static/images/catalog_and_maps/sensor_complex_data_002.png
+.. image:: /_static/images/catalog_and_maps/sensor_complex_data_002.png
 
 **Expand data:** the json map will be expanded at all (default view)
 
-.. image:: ../_static/images/catalog_and_maps/sensor_complex_data_003.png
+.. image:: /_static/images/catalog_and_maps/sensor_complex_data_003.png
 
 **Collapse to level X:** insert a correct value for the X, and click the
 button to collapse to the specified level (default level is 0, first
 level)
 
-.. image:: ../_static/images/catalog_and_maps/sensor_complex_data_004.png
+.. image:: /_static/images/catalog_and_maps/sensor_complex_data_004.png
 
 Alerts
 ~~~~~~
@@ -1246,11 +1245,11 @@ Thare are two types of alerts, and them has its own properties.
 
 **External alert**
 
-.. image:: ../_static/images/catalog_and_maps/alert_external_create.png
+.. image:: /_static/images/catalog_and_maps/alert_external_create.png
 
 **Internal alert**
 
-.. image:: ../_static/images/catalog_and_maps/alert_internal_create.png
+.. image:: /_static/images/catalog_and_maps/alert_internal_create.png
 
 **Properties**
 
@@ -1315,7 +1314,7 @@ List
 Access the Alerts list. This is the main Alert page. From here you’ll
 can access to the desired alert to show its details by click on it.
 
-.. image:: ../_static/images/catalog_and_maps/alerts_list.png
+.. image:: /_static/images/catalog_and_maps/alerts_list.png
 
 You’ll be able to list, filter, show alerts details, create (*New alert*
 button) and delete selected alerts (select from left checkbox, and apply
@@ -1339,7 +1338,7 @@ If you want to search for certain trigger type, currently only searching
 by trigger type’s code is possible (e.g. a search for “GT” would return
 results in the above screen, whereas a search for “GT(40)” wouldn't).
 
-.. image:: ../_static/images/catalog_and_maps/alerts_list_filtered.png
+.. image:: /_static/images/catalog_and_maps/alerts_list_filtered.png
 
 
 Alerts creation rules
@@ -1357,7 +1356,7 @@ List
 Accessing “Alert creation rules” menu option opens a list of existing
 Alert Rules.
 
-.. image:: ../_static/images/catalog_and_maps/alerts_creation_rules_list.png
+.. image:: /_static/images/catalog_and_maps/alerts_creation_rules_list.png
 
 You’ll be able to list, filter, show alert rules details, create (*New
 rules* button) and delete selected rules group (select from left
@@ -1376,13 +1375,13 @@ Create rules
 
 To create new alerts, use the “New Rules” button.
 
-.. image:: ../_static/images/catalog_and_maps/alerts_massive_creation.png
+.. image:: /_static/images/catalog_and_maps/alerts_massive_creation.png
 
 After pressing the “Confirm” button, a modal window will inform on how
 many alerts will be created for given combination of provider, component
 type and sensor type.
 
-.. image:: ../_static/images/catalog_and_maps/alerts_massive_creation_confirm.png
+.. image:: /_static/images/catalog_and_maps/alerts_massive_creation_confirm.png
 
 Subsequently, alerts are created, all having the same rule. At the
 moment it is not possible to bulk-create alerts without specifying the
@@ -1400,7 +1399,7 @@ Active Subscriptions is a handy section that gives a view of situation of the su
 The some system subscribes to Sentilo and then is inaccessible for a long time, this creates a unnecessary queue in the system.
 
 
-.. image:: ../_static/images/catalog_and_maps/active_subscriptions_list.png
+.. image:: /_static/images/catalog_and_maps/active_subscriptions_list.png
 
 
 Sensor types
@@ -1436,7 +1435,7 @@ List
 Access the main Type of Sensors / Actuators list page, will show you a
 complete list of type of sensors.
 
-.. image:: ../_static/images/catalog_and_maps/sensor_types_list.png
+.. image:: /_static/images/catalog_and_maps/sensor_types_list.png
 
 You’ll be able to list, filter, show typologies details, create (*New
 typology* button) and delete selected typology (select from left
@@ -1457,7 +1456,7 @@ Access to create new typology pressing *New typology* button. You must
 inform an identifier, name and description (optional) for the new
 typology.
 
-.. image:: ../_static/images/catalog_and_maps/sensor_type_create.png
+.. image:: /_static/images/catalog_and_maps/sensor_type_create.png
 
 
 Component types
@@ -1509,7 +1508,7 @@ List
 Access the main Component’s typology list page, will show you a complete
 list of available type of components.
 
-.. image:: ../_static/images/catalog_and_maps/component_typologies_list.png
+.. image:: /_static/images/catalog_and_maps/component_typologies_list.png
 
 You’ll be able to list, filter, show typology details, create (*New
 application* button) and delete selected typologies (select from left
@@ -1532,7 +1531,7 @@ Access to create new typology pressing *New typology* button. You must
 inform an identifier, name, description (optional), photo (optional) and
 icon for the new typology.
 
-.. image:: ../_static/images/catalog_and_maps/component_typology_create.png
+.. image:: /_static/images/catalog_and_maps/component_typology_create.png
 
 Metrics
 ~~~~~~~
