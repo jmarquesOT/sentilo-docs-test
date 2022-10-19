@@ -109,8 +109,8 @@ into two categories):
 
 -  Mandatory
 
-   -  Redis 4.0.11
-   -  MongoDB 4.0.1
+   -  Redis 6.2.2
+   -  MongoDB 4.4.2
    -  Tomcat 8.5.32 +
 
 -  Optional
@@ -118,10 +118,12 @@ into two categories):
    -  MySQL 5.5.x (Sentilo has been tested on MySQL 5.5.34 but you could
       use your favourite RDBMS) **It is only necessary if you want to
       install the relational agent**
-   -  Elasticsearch 5+ **It is only necessary if you want to install
+   -  Elasticsearch 6+ **It is only necessary if you want to install
       the activity-monitor agent**.
    -  openTSDB 2.2.0 + **It is only necessary if you want to install the
       historian agent**
+   -  TimeScaleDB 1.5.7 **It is only necessary if you want to install the
+      timescaledb agent**
 
 You must ensure that you have all these elements installed properly (you
 can find information on how to install them in each provider site).
@@ -143,9 +145,134 @@ machine and listening in the following ports:
 -  MySQL: 3306
 -  Elasticsearch: 9200
 -  openTSDB: 4242
+-  TimeScaleDB: 5432
 
-All these settings can be found in the subdirectory
+The default configuration for the entire platform is located in the file: 
+:literal:`/sentilo-common/src/main/resources/properties/sentilo.conf`.
+
+All other specific settings can be found in the subdirectory
 :literal:`/src/main/resources/properties` of each platform’s module.
+
+In general, Sentilo's configuration is described in the :literal:`sentilo.conf` 
+file, while the rest of the components are described in their own .conf file.
+
+The :literal:`sentilo.conf` file must be deployed in the default directory 
+:literal:`/etc/sentilo`, in which the necessary parameters according to our 
+installation must be overwritten later.
+
+The other configuration files for agents, for example, can be overwritten in 
+the same way, deploying them in the same directory specified above, and with 
+the specific name set by each of the agents.
+
+For example, here we can see a default configuration (first lines) and the 
+overridden values for different execution environments for Redis host:
+
+.. code:: properties
+
+   --  classpath:sentilo.conf
+   sentilo.version=2.1.0
+   sentilo.redis.host=127.0.0.1
+
+   -- /etc/sentilo/sentilo.conf for DSV environment
+   sentilo.redis.host=192.168.2.106
+
+   -- /etc/sentilo/sentilo.conf for PRE environment
+   sentilo.redis.host=10.65.124.22
+
+Each module will define the location of its configuration file within the 
+:literal:`xxx-properties-context.xml` file.
+
+For example, this is the case of the relational agent:
+
+.. code:: xml
+
+   <context:property-placeholder ignore-unresolvable="true" properties-ref="sentiloConfigProperties"/>
+
+   <util:properties id="sentiloConfigProperties"  location="classpath*:properties/sentilo.conf,
+       classpath*:properties/sentilo-agent-relational.conf, file:${sentilo.conf.dir}/sentilo.conf,
+       file:${sentilo.conf.dir}/sentilo-agent-relational.conf" ignore-resource-not-found="true"/>
+
+
+**Note:** The variable :literal:`${sentilo.conf.dir}` is resolved in compilation time 
+and its default value is :literal:`/etc/sentilo`
+
+These are the default params for the **sentilo.conf** file:
+
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|              Paràmetre               |             Valor per defecte              |                                                                                                       Descripció                                                                                                        |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.master.application.id        | sentilo-catalog                            | Identificació de l'aplicació maestra del catàleg, aplicació que té drets d'administració sobre tota la resta                                                                                                            |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.version                      |  2.0.0-HA                                  |  Indica la versió desplegada de Sentilo, y es pot consultar tant  al codi font d'una pàgina del catàleg com a les capçaleres de resposta a  una crida a l'API                                                           |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.password               | sentilo                                    | Contrasenya d'accès a Redis (mateix valor del paràmetre requirepass de la configuració de Redis                                                                                                                         |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.expire.key.seconds     | 0                                          | Temps de vida de les dades a Redis: passat aquest temps les dades  expiren i ja no es poden recuperar via l'API. El valor 0 indica que no  expiren                                                                      |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.connTimeout            | 5000(ms)                                   | Timeout de espera en l'execució de qualsevol petició a Redis                                                                                                                                                            |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.maxTotal        | 10                                         | Nombre màxim de connexions en el pool                                                                                                                                                                                   |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.maxIdle         | 10                                         | Nombre màxim de connexions sense fer-se servir al pool                                                                                                                                                                  |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.maxWaitMillis   | -1                                         |  Temps màxim d'expera (ms) per a una nova conenxió. -1 indica no màxim                                                                                                                                                  |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testOnBorrow    | true                                       | Indica si s'ha de validar una connexió del pool abans de reutilitzar-la                                                                                                                                                 |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testOnCreate    | true                                       | Idem que l'anterior, però en el moment de crear-la                                                                                                                                                                      |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testOnReturn    | false                                      | Idem que l'anterior però al retornar la connexió al pool                                                                                                                                                                |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testWhileIdle   | true                                       | Idem que l'anterior però la validació es realitza mentre la  connexió roman sense fer-se servir al pool (internament la validació  s'executa cada 30s, no configurable)                                                 |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.host                   | 127.0.0.1                                  | IP de la màquina a on està el servidor Redis (en mode standalone)                                                                                                                                                       |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.port                   | 6379                                       | Port pel qual està escoltant peticions el servidor Redis (en mode standalone)                                                                                                                                           |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.cluster.nodes          | 127.0.0.1:6379                             | Llista amb les adreces (ip:port) dels diferents nodes del cluster de Redis                                                                                                                                              |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.cluster.maxRedirects   | 3                                          | Nombre màxim de redireccions a seguir entre els nodes en una peticióal clúster                                                                                                                                          |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.host                 | 127.0.0.1                                  | IP de la màquina a on està aixecat el node amb rol PRIMARY, en cas de clúster, o simplement el servidor                                                                                                                 |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.port                 | 27017                                      | Port pel qual està escoltant peticions el servidor MongoDB                                                                                                                                                              |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.database             | sentilo                                    | Nom de la db a la qual connectar-se                                                                                                                                                                                     |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.user                 | sentilo                                    | Usuari a fer servir en l'autenticació al servidor MongoDB                                                                                                                                                               |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.password             | sentilo                                    | Contrasenya fer servir en l'autenticació al servidor MongoDB                                                                                                                                                            |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.cluster-type         | STANDALONE                                 | Mode de la instància. Canviar a REPLICA_SET en cas de clúster                                                                                                                                                           |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.rs                   | rs_sentilo                                 | Nom del replica set en cas de clúster                                                                                                                                                                                   |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.pool.max-connections | 100                                        | Nombre màxim de connexions que es poder establir a MongoDB des d'un mòdul                                                                                                                                               |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.application-name     | sentilo                                    | Nom del mòdul que estableix la connexió a MongoDB (per temes d'auditoria. Es visualitza al log de MongoDB)                                                                                                              |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.catalog.rest.endpoint        | http://127.0.0.1:8080/sentilo-catalog-web/ | URL de l'API Rest del catàleg (utilitzada internament per la resta de mòduls)                                                                                                                                           |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.catalog.rest.credentials     | platform_user:sentilo                      | Credencials (usuari:password) a fer servir en l'autenticació de  l'API Rest del cataleg (han de ser les credencials d'un usuari del  catàleg amb rol PLATFORM_USER)                                                     |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.api.rest.endpoint            | 127.0.0.1:8081                             | URL de l'API Rest de Sentilo (utilitzada internament per la resta de mòduls)                                                                                                                                            |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.api.rest.identity.key        | **                                         | Token a fer servir internament en les crides a l'API Rest de  Sentilo. Ha de coincidir amb el token de l'entitat indicada al paràmetre  sentilo.api.rest.identity.key                                                   |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.pending_events_job.batch     | 50                                         | Mida màxima (N) del lot de missatges pendents a recuperar i processar de la PEL (pending event list) de cada agent en cada crida. El procés s'executa de manera iterativa en lots de mida N fins que la llista es buida |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.pending_events_job.delay     | 30000 (ms)                                 |  Teps d'espera entre execucións del job que s'encarrega de processar els missatges pendents en la PEL d'un agent                                                                                                        |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.size             | 10                                         | Mida del lot en el qual processa un agent els missatges que li arriben i manté en memòria                                                                                                                               |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.workers.size.min | 0                                          | Nombre de workers mínim a fer servir per un agent a processar els missatges entrants enqueuats en memòria                                                                                                               |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.workers.size.max | 3                                          | Nombre de workers màxim a fer servir per un agent a processar els missatges entrants enqueuats en memòria                                                                                                               |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.max.retries      | 1                                          | Nombre de reintents que porta a terme un agent abans de rebutjar  un lot de missatges i guardar-los a la PEL de Redis per al seu posterior  tractament                                                                  |
++--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 
 Redis settings
 ~~~~~~~~~~~~~~
