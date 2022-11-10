@@ -199,11 +199,11 @@ and its default value is :literal:`/etc/sentilo`
 These are the default params for the **sentilo.conf** file:
 
 +--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|              Paràmetre               |             Valor per defecte              |                                                                                                       Descripció                                                                                                        |
-+--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                Param                 |                Default value               |                                                                                                      Description                                                                                                        |
++======================================+============================================+=========================================================================================================================================================================================================================+
 | sentilo.master.application.id        | sentilo-catalog                            | Identification of the master application of the catalog, application that has administrative rights over all the rest                                                                                                   |
 +--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| sentilo.version                      |  2.0.0-HA                                  | Indicates the deployed version of Sentilo, and can be found both in the source code of a catalog page and in the response headers to an API call                                                                        |
+| sentilo.version                      | 2.0.0-HA                                   | Indicates the deployed version of Sentilo, and can be found both in the source code of a catalog page and in the response headers to an API call                                                                        |
 +--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | sentilo.redis.password               | sentilo                                    | Redis access password (same value as the requirepass parameter in the Redis configuration)                                                                                                                              |
 +--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -273,7 +273,6 @@ These are the default params for the **sentilo.conf** file:
 +--------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-
 Redis settings
 ~~~~~~~~~~~~~~
 
@@ -282,23 +281,17 @@ host 127.0.0.1, and with the parameter
 `requirepass <http://redis.io/commands/AUTH>`__ enabled and with value
 **sentilo**.
 
-If you change this behaviour, you need to modify the following
-properties:
+If you change this behaviour, you need to modify the *sentilo.conf* file, 
+by editing following properties:
 
 .. code:: properties
 
-   jedis.pool.host=127.0.0.1
-   jedis.pool.port=6379
-   jedis.pool.password=sentilo
+   sentilo.redis.host=127.0.0.1
+   sentilo.redis.port=6379
+   sentilo.redis.password=sentilo
+   
+See other available Redis settings in above table, under *sentilo.redis.* base path.
 
-which are configured in the following files:
-
-::
-
-   sentilo-platform/sentilo-platform-service/src/main/resources/properties/jedis-config.properties
-   sentilo-agent-alert/src/main/resources/properties/jedis-config.properties
-   sentilo-agent-relational/src/main/resources/properties/jedis-config.properties
-   sentilo-agent-location-updater/src/main/resources/properties/jedis-config.properties
 
 MongoDB settings
 ~~~~~~~~~~~~~~~~
@@ -310,21 +303,9 @@ enabled <http://docs.mongodb.org/v4.0/core/access-control/>`__ and with
 login credentials preconfigured as sentilo/sentilo (username~:*sentilo*,
 password~:\ *sentilo*).
 
-If you change this behaviour, you need to modify following properties:
+If you change this behaviour, you need to modify the *sentilo.conf* file.
 
-.. code:: properties
 
-   catalog.mongodb.host=127.0.0.1
-   catalog.mongodb.port=27017
-   catalog.mongodb.user=sentilo
-   catalog.mongodb.password=sentilo
-
-configured in the following files:
-
-::
-
-   sentilo-agent-alert/src/main/resources/properties/catalog-config.properties
-   sentilo-catalog-web/src/main/resources/properties/catalog-config.properties
 
 Data load
 ^^^^^^^^^
