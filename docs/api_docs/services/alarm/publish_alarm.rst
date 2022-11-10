@@ -65,6 +65,4 @@ and like body message:
 
 .. note::
 
-	**Please note the following:**
-	-  If the alert is in offline state, the server rejects the
-   	publication.
+	If the alert is in offline state, the server rejects the publication.
