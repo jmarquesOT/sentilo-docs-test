@@ -13,7 +13,7 @@ You can set global incoming quota :literal:`sentilo.server.api.global_rate_limit
 :literal:`sentilo-platform/sentilo-platform-service/src/main/resources/properties/sentilo-platform.conf`.
 If left unset or set to 0, Sentilo won't apply any global limit.
 
-The maximum body length can also be set globally with :literal:`api.body.max_length` property.
+The maximum body length can also be set globally with :literal:`sentilo.server.api.payload.max_length` property.
 
 ::
 

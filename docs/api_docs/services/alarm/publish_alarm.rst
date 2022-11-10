@@ -63,8 +63,8 @@ and like body message:
 
    {"message":"Threshold limit exceeded: 32"} 
 
-**Please note the following:**\\
+.. note::
 
--  (% style=“font-size: 16px; background-color: rgb(245, 245, 245);”
-   %)If the alert is in offline state, the server rejects the
-   publication.
+	**Please note the following:**
+	-  If the alert is in offline state, the server rejects the
+   	publication.

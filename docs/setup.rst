@@ -676,10 +676,8 @@ sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.pr
 .. code:: properties
 
    # Properties to configure the anonymous access to Sentilo
-   ## determines if anonymous access to API is enabled
    sentilo.server.api.anonymous.enable=false
-   ## Entity identifier that should be used for unauthenticated requests 
-   # sentilo.server.api.anonymous.entity-id=
+   sentilo.server.api.anonymous.entity-id=
 
 If anonymous access is enabled (*sentilo.server.api.anonymous.enable=true*),
 then all anonymous requests to REST API are internally considered as is they have
