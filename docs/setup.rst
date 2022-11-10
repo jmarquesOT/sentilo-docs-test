@@ -290,7 +290,7 @@ by editing following properties:
    sentilo.redis.port=6379
    sentilo.redis.password=sentilo
    
-See other available Redis settings in above table, under *sentilo.redis.* base path.
+See other available Redis settings in above table, under *sentilo.redis.** base path.
 
 
 MongoDB settings
@@ -303,8 +303,17 @@ enabled <http://docs.mongodb.org/v4.0/core/access-control/>`__ and with
 login credentials preconfigured as sentilo/sentilo (username~:*sentilo*,
 password~:\ *sentilo*).
 
-If you change this behaviour, you need to modify the *sentilo.conf* file.
+If you change this behaviour, you need to modify the *sentilo.conf* file, 
+by editing following properties:
 
+.. code:: properties
+
+   sentilo.mongodb.host=127.0.0.1
+   sentilo.mongodb.port=27017
+   sentilo.mongodb.user=sentilo
+   sentilo.mongodb.password=sentilo
+
+See other available MongoDB settings in above table, under *sentilo.mongodb.** base path.
 
 
 Data load
