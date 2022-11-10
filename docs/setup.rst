@@ -326,10 +326,6 @@ needed to run the platform. The data include, among other things:
    administrator.
 -  An user **sadmin**: user for log in into the catalog webapp with role
    super-admin.
--  A default **sentilo** tenant: used to configure the default viewer
-   parameters (center, zoom, … ) from the catalog web app.
--  An entity **sentilo-catalog**: internal app used by the platform to
-   synchronize information between its components.
 -  An user **platform_user**: internal user used by the platform to
    synchronize information between its components.
 
@@ -359,26 +355,20 @@ MongoDB, you will have to modify the following properties before compiling and b
 JS code from *init_data.js* :
 
 .. code:: javascript
-   db.application.insert({ "_id" : "sentilo-catalog", "_class" : "org.sentilo.web.catalog.domain.Application", "name" : "sentilo-catalog", "token" : "c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066", "description" : "Catalog application", "email" : "sentilo@sentilo.org", "createdAt" : new ISODate(), "authorizedProviders" : [ ] });
+   db.application.insert({ "_id" : "sentilo-catalog", "_class" : "org.sentilo.web.catalog.domain.Application", "name" : "sentilo-catalog", "token" : "c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066", "description" : "Catalog application", "email" : "sentilo@sentilo.org", "createdAt" : new ISODate(), "authorizedProviders" : [ ] , "active":true });
    db.user.insert({ "_id" : "platform_user", "_class" : "org.sentilo.web.catalog.domain.User", "password" : "sentilo", "name" : "Platform user", "description" : "PubSub platform user. Do not remove  it!.", "email" : "sentilo@sentilo.org", "createdAt" : new ISODate(), "active" : true, "roles" : [ "PLATFORM" ] });
 
 Corresponds with:
 
 .. code:: properties
 
-   rest.client.identity.key=c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066
-   catalog.rest.credentials=platform_user:sentilo
+   sentilo.api.rest.identity.key=c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066
+   sentilo.catalog.rest.credentials=platform_user:sentilo
 
-, being *rest.client.identity.key* the token of a *sentilo-catalog* application, and *catalog.rest.credentials* value
+, being *sentilo.api.rest.identity.key* the token of a *sentilo-catalog* application, and *sentilo.catalog.rest.credentials* value
 is a combination of user *platform_user* and it's password.
 
-These properties are in following files:
-
-::
-
-   sentilo-agent-alert/src/main/resources/properties/platform-client-config.properties
-   sentilo-catalog-web/src/main/resources/properties/catalog-config.properties
-   sentilo-platform/sentilo-platform-service/src/main/resources/properties/integration.properties
+These properties are in **sentilo.conf** file.
 
 Test data load
 ^^^^^^^^^^^^^^
@@ -420,16 +410,16 @@ properties:
 
 .. code:: properties
 
-   sentiloDs.jdbc.driverClassName=com.mysql.jdbc.Driver
-   sentiloDs.url=jdbc:mysql://127.0.0.1:3306/sentilo
-   sentiloDs.username=sentilo_user
-   sentiloDs.password=sentilo_pwd
+   sentilo.agent.relational.ds.jdbc.driverClassName=com.mysql.jdbc.Driver
+   sentilo.agent.relational.ds.url=jdbc:mysql://127.0.0.1:3306/sentilo
+   sentilo.agent.relational.ds.username=sentilo_user
+   sentilo.agent.relational.ds.password=sentilo_pwd
 
 configured in the file:
 
 ::
 
-   sentilo-agent-relational/src/main/resources/properties/relational-config.properties
+   sentilo-agent-relational/src/main/resources/properties/sentilo-agent-relational.conf
 
 Creating the tables
 ^^^^^^^^^^^^^^^^^^^
@@ -456,14 +446,9 @@ If you change this behaviour, you need to modify the following property:
 
 .. code:: properties
 
-   catalog.rest.endpoint=http://127.0.0.1:8080/sentilo-catalog-web/
+   sentilo.catalog.rest.endpoint=http://127.0.0.1:8080/sentilo-catalog-web/
 
-configured in the following files:
-
-::
-
-   sentilo-platform/sentilo-platform-service/src/main/resources/properties/integration.properties
-   sentilo-agent-location-updater/src/main/resources/properties/integration.properties
+configured in the *sentilo.conf* file.
 
 Your Tomcat should also be started with the user timezone environment
 variable set as UTC. To set Timezone in Tomcat, the startup script (e.g.
@@ -486,15 +471,9 @@ properties:
 
 .. code:: properties
 
-   port=8081
-   rest.client.host=http://127.0.0.1:8081
+  sentilo.api.rest.endpoint=127.0.0.1:8081
 
-configured in the following files:
-
-::
-
-   sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.properties
-   sentilo-catalog-web/src/main/resources/properties/catalog-config.properties
+configured in the *sentilo.conf* file.
 
 Configuring logs
 ~~~~~~~~~~~~~~~~
@@ -558,7 +537,7 @@ c. Once copied, for starting the process you just need to run the
 
 ::
 
-     $sentilo-server/bin/sentilo-server
+     $ <path_to_sentilo-server>/bin/sentilo-server
 
 Installing agents
 ~~~~~~~~~~~~~~~~~
@@ -592,7 +571,7 @@ c. Once copied, for starting the process you just need to run the
 
 ::
 
-     <path-to-agent-alert>/bin/sentilo-agent-alert-server
+     $ <path-to-agent-alert>/bin/sentilo-agent-alert-server
 
 All other agents follow the exact same directory structure.
 
@@ -694,17 +673,17 @@ Access to authorized data is described below.
 In order to enable anonymous access you should modify the file
 sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.properties:
 
-
 .. code:: properties
 
    # Properties to configure the anonymous access to Sentilo
-   enableAnonymousAccess=false
-   anonymousAppClientId=
+   ## determines if anonymous access to API is enabled
+   sentilo.server.api.anonymous.enable=false
+   ## Entity identifier that should be used for unauthenticated requests 
+   # sentilo.server.api.anonymous.entity-id=
 
-
-If anonymous access is enabled (*enableAnonymousAccess=true*),
+If anonymous access is enabled (*sentilo.server.api.anonymous.enable=true*),
 then all anonymous requests to REST API are internally considered as is they have
-been performed by the application client identified by the *anonymousAppClientId* property
+been performed by the application client identified by the *sentilo.server.api.anonymous.entity-id* property
 value (this application client should exist into your Sentilo Catalog),
 and therefore these requests will have the same data restrictions as the
 requests performed by this client application.
