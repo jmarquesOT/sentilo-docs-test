@@ -9,8 +9,8 @@ Rate limiting prevents the Sentilo instance from request flooding. Also, protect
 Setting global limits
 ---------------------
 
-You can set global incoming quota :literal:`api.global_rate_limit.quota` in file
-:literal:`sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.properties`.
+You can set global incoming quota :literal:`sentilo.server.api.global_rate_limit.quota` in file
+:literal:`sentilo-platform/sentilo-platform-service/src/main/resources/properties/sentilo-platform.conf`.
 If left unset or set to 0, Sentilo won't apply any global limit.
 
 The maximum body length can also be set globally with :literal:`api.body.max_length` property.
@@ -18,26 +18,26 @@ The maximum body length can also be set globally with :literal:`api.body.max_len
 ::
 
    # number of requests per hour
-   api.global_rate_limit.quota=100
+   sentilo.server.api.global_rate_limit.quota=100
 
    # Maximum body length in bytes
-   api.body.max_length=4096
+   sentilo.server.api.payload.max_length=4096
 
 
 If global rate limiting is set, every response of the API contains following headers:
 
-+--------------------------------------+-----------------------------------------------------+
-|                Header                |                     Description                     |
-+======================================+=====================================================+
-| X-RateLimit-Global-Inbound-Limit     | Value of the api.global_rate_limit.quota property   |
-+--------------------------------------+-----------------------------------------------------+
-| X-RateLimit-Global-Inbound-Remaining | Number of remaining requests until the current      |
-|                                      | limit per hour is exceed                            |
-+--------------------------------------+-----------------------------------------------------+
-| X-RateLimit-Global-Inbound-Reset     | If the API limit is exceeded, this value indicates  |
-|                                      | the number of minutes until the server will accept  |
-|                                      | requests again. Otherwise is 0.                     |
-+--------------------------------------+-----------------------------------------------------+
++--------------------------------------+-------------------------------------------------------------------+
+|                Header                |                     Description                                   |
++======================================+===================================================================+
+| X-RateLimit-Global-Inbound-Limit     | Value of the sentilo.server.api.global_rate_limit.quota property  |
++--------------------------------------+-------------------------------------------------------------------+
+| X-RateLimit-Global-Inbound-Remaining | Number of remaining requests until the current                    |
+|                                      | limit per hour is exceed                                          |
++--------------------------------------+-------------------------------------------------------------------+
+| X-RateLimit-Global-Inbound-Reset     | If the API limit is exceeded, this value indicates                |
+|                                      | the number of minutes until the server will accept                |
+|                                      | requests again. Otherwise is 0.                                   |
++--------------------------------------+-------------------------------------------------------------------+
 
 In case the global rate limit is exceed, the server will reject the request and return a HTTP error code 429.
 
