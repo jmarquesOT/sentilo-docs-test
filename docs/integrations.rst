@@ -39,7 +39,7 @@ Sentilo currently provides 7 agents:
 .. note::
 
    Agents use a base setting described under the **sentilo.agent** path, which 
-   is defined in the **`sentilo.conf <./setup.html#default-settings>`__** file, 
+   is defined in the `sentilo.conf <./setup.html#default-settings>`__ file, 
    and which can be overwritten by them in their own *agent-xxx.conf* file.
 
 
