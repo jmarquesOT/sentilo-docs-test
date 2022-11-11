@@ -418,7 +418,9 @@ Node-red
 
 `Node-RED <https://nodered.org>`__ is a visual programming platform ideal for non-complex integrations and prototyping.
 
-Sentilo plugin is available in Node-RED's marketplace. Simply search for "sentilo" in Palette configuration:
+Sentilo plugin is available in Node-RED's marketplace. 
+
+Simply search for "sentilo" in Palette configuration:
 
 .. image:: _static/images/integrations/sentilo-nodered-installation.png
 
