@@ -156,8 +156,6 @@ All other specific settings can be found in the subdirectory
 In general, Sentilo's configuration is described in the :literal:`sentilo.conf` 
 file, while the rest of the components are described in their own .conf file.
 
-.. image:: /_static/images/setup/conf_files_diagram.png
-
 The :literal:`sentilo.conf` file must be deployed in the default directory 
 :literal:`/etc/sentilo`, in which the necessary parameters according to our 
 installation must be overwritten later.
@@ -165,6 +163,14 @@ installation must be overwritten later.
 The other configuration files for agents, for example, can be overwritten in 
 the same way, deploying them in the same directory specified above, and with 
 the specific name set by each of the agents.
+
+Therefore, we will have the files with the base configuration inside the package 
+of each one of the modules (classpath) and the configuration files with the 
+specific values ​​displayed in the /etc/sentilo directory, which will overwrite 
+the original ones. In this way, we can change any Sentilo parameterization just 
+by modifying the deployed file and restarting the instance:
+
+.. image:: /_static/images/setup/conf_files_diagram.png
 
 For example, here we can see a default configuration (first lines) and the 
 overridden values for different execution environments for Redis host:
