@@ -401,7 +401,7 @@ The template name is *sentilo-metrics* and the index pattern created by the agen
 The configuration :literal:`/sentilo/sentilo-agent-metrics-monitor/src/main/resources/properties/sentilo-agent-metrics.conf`
 and it's same as for the `Activity Monitor Agent`_. Example configuration:
 
-..
+.. code:: properties
 
     # Endpoint for elasticsearch
     elasticsearch.url=http://localhost:9200
