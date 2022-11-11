@@ -583,9 +583,8 @@ All other agents follow the exact same directory structure.
 
 .. note::
 
-   Agent configuration can be done at any time by modifying the agent-xxx.conf 
-   file and restarting it and is documented in their 
-   `respective page <./integrations.html#agents>`__
+   Agent configuration can be done at any time by modifying it own **agent-xxx.conf** 
+   file and restarting it. It is documented in their `respective page <./integrations.html#agents>`__
 
 
 
