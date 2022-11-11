@@ -403,11 +403,11 @@ and it's same as for the `Activity Monitor Agent`_. Example configuration:
 
 .. code:: properties
 
-    # Endpoint for elasticsearch
-    elasticsearch.url=http://localhost:9200
+   # Endpoint for elasticsearch
+   elasticsearch.url=http://localhost:9200
 
-    # Properties to configure the index process
-    sentilo.agent.batch.size=1
+   # Properties to configure the index process
+   sentilo.agent.batch.size=1
 
 
 Clients
