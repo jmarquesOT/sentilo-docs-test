@@ -92,7 +92,8 @@ You should access to the administration console through the
 corresponding url address, adding the organization id as a last
 parameter, as follows.
 
--  http://sentilo_instance_host[:port]/sentilo-catalog-web/organizationId
+.. code
+	-  http://sentilo_instance_host[:port]/sentilo-catalog-web/organizationId
 
 In the parameter **organizationId** you should inform the organization
 identifier where you want access to. For example, we could access to an
@@ -100,7 +101,8 @@ organization named **Sample Organization**, with a
 **sample_organization** as organization identifier in a Senilo instance
 deployed in a host with name **example.com**:
 
--  http://example.com/sentilo-catalog-web/sample_organization
+.. code
+	-  http://example.com/sentilo-catalog-web/sample_organization
 
 Platform console
 ~~~~~~~~~~~~~~~~
@@ -110,7 +112,8 @@ informing any organization identifier in the url. In this case, no data
 is filtered by organization, and all the public information is visible
 in the public map and statistics:
 
--  http://your_sentilo_server_ip/sentilo-catalog-web
+.. code
+	-  http://your_sentilo_server_ip/sentilo-catalog-web
 
 Super Admin users are responsible of configuring the platform
 organizations and its users, and also to define the component and sensor
@@ -124,7 +127,8 @@ without informing organization in the url. In this case, no data is
 filtered by organization, and all public information is displayed in the
 public maps and statistics, using the platform common look & feel.
 
--  http://sentilo_instance_host[:port]/sentilo-catalog-web
+.. code
+	-  http://sentilo_instance_host[:port]/sentilo-catalog-web
 
 In this case, the user will see all the public information provided for
 the instance organizations.
@@ -132,21 +136,22 @@ the instance organizations.
 Alternatively, the users can access to a specific organization public
 information, specifying a different URL context:
 
--  http://sentilo_instance_host[:port]/sentilo-catalog-web/organizationId
+.. code
+	-  http://sentilo_instance_host[:port]/sentilo-catalog-web/organizationId
 
 For example, we could access to an organization named **Sample
 Organization**, with a **sample_organization** as organization
 identifier in a Sentilo instance deployed in a host with name
 **example.com**:
 
--  http://example.com/sentilo-catalog-web/sample_organization
+.. code
+	-  http://example.com/sentilo-catalog-web/sample_organization
 
 Then the user will see all the public data offered by the Sample
 Organization, displayed using the organization custom look & feel.
 
 For the rest of it, the features and behaviour of the public area is the
-same as described in `Catalog and Maps
-section <./catalog_and_maps.html>`__.
+same as described in `Catalog and Maps section <./catalog_and_maps.html>`__.
 
 Platform administration
 -----------------------
@@ -338,8 +343,7 @@ Only the Super Admin user can administer the components and sensor
 types. In this case, the behaviour is the same like for a normal Sentilo
 instance.
 
-See more information about it in the [[*Catalog and Maps
-section*>>doc:Catalog & Maps]].
+See more information about it in the [[Catalog and Maps section>>doc:Catalog & Maps]].
 
 Tenant administration
 ---------------------
@@ -360,7 +364,7 @@ organization hierarchy.
 
 Below, we review the specific behaviour of tenant administration,
 remarking is specificities. For more information, you can read the
-[[**Catalog and Maps**>>doc:Catalog & Maps]] section.
+[[Catalog and Maps>>doc:Catalog & Maps]] section.
 
 .. _organization-administration-1:
 

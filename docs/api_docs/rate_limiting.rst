@@ -3,8 +3,8 @@ Rate Limiting
 
 Since v1.9, Sentilo offers rate limiting features for the REST API.
 
-Rate limiting prevents the Sentilo instance from request flooding. Also, protects
- external systems that are subscribed to Sentilo by limiting outcoming requests.
+Rate limiting prevents the Sentilo instance from request flooding. Also, protects 
+external systems that are subscribed to Sentilo by limiting outcoming requests.
 
 Setting global limits
 ---------------------

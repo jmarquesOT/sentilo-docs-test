@@ -96,7 +96,7 @@ how to do it by using the M2E plugin.
 your Eclipse environment.
 
 After modifying the code, to compile and build the artifacts, our
-recommendation is to use the above mentioned\* buildSentilo\* script.
+recommendation is to use the above mentioned *buildSentilo.sh* script.
 
 Platform infrastructure
 -----------------------
@@ -122,8 +122,6 @@ into two categories):
       the activity-monitor agent**.
    -  openTSDB 2.2.0 + **It is only necessary if you want to install the
       historian agent**
-   -  TimeScaleDB 1.5.7 **It is only necessary if you want to install the
-      timescaledb agent**
 
 You must ensure that you have all these elements installed properly (you
 can find information on how to install them in each provider site).
@@ -145,7 +143,6 @@ machine and listening in the following ports:
 -  MySQL: 3306
 -  Elasticsearch: 9200
 -  openTSDB: 4242
--  TimeScaleDB: 5432
 
 The default configuration for the entire platform is located in the file: 
 :literal:`/sentilo-common/src/main/resources/properties/sentilo.conf`.
