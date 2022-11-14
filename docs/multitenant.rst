@@ -424,7 +424,7 @@ Response upon permission has been created:
 In this case we had granted **read&write** permissions from our
 organization and our provider **sample_provider** to third party
 organization named **Sentilo**. So, now the Sentilo organization can
-access to the sample_provider data and manage ii (publish data).
+access to the sample_provider data and manage it (publish data).
 
 In the other side, the Sentilo organization can see these permissions in
 the second tab, *Permissions from others*:
@@ -465,7 +465,7 @@ For application creation form you’ll see this in the Identifier field:
 .. image:: /_static/images/multitenant/application_create.png
 
 In this case, we’re creating a application
-named **My Application** with identifier **myapp_identifier**.
+named **My Application** with identifier **sentilo@myapp_identifier**.
 
 Providers
 ~~~~~~~~~
@@ -477,4 +477,4 @@ regardless of the tenant you are managing.
 .. image:: /_static/images/multitenant/provider_create.png
 
 In this case, we’re creating a provider named **My Provider**, with
-identifier **myprovider_identifier**.
+identifier **sentilo@myprovider_identifier**.
