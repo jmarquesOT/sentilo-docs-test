@@ -11,10 +11,14 @@ at the top menu bar (*Universal viewer* and *Route viewer*).
 Universal viewer
 ~~~~~~~~~~~~~~~~
 
+The map system is prepared to be displayed through various managers and cartography rendering servers. 
+The default system is *MapBox* powered by *Leaflet*. You can find more information in the section  
+`Map Providers <./#map-providers>`
+
 Components map
 ^^^^^^^^^^^^^^
 
-The catalog provides a default map, based on Google Maps, which shows
+The catalog provides a default map, which shows
 all the public components registered at the platform. If the user is
 logged as administrator, all the private components will be displayed as
 well.
@@ -89,7 +93,6 @@ as a prettify json value:
 
 You can expand or compress the prettified json with the bottom buttons
 under the status field,
-
 
 
 Route viewer
