@@ -46,16 +46,16 @@ Recently Google changed it policy regarding Maps key. Please go to
 https://developers.google.com/maps/documentation/javascript/get-api-key
 and create one.
 
-You can define the API key inside the :literal:`sentilo/sentilo-catalog-web/src/main/resources/properties/catalog-config.properties` configuration file:
+You can define the API key inside the :literal:`/etc/sentilo/sentilo-catalog.conf` configuration file:
 
 .. code:: properties
 
    # Google API key to use Google Maps
-   google.api.key=<your key> 
+   sentilo.catalog.map.google.key=<your key> 
 
 --------------
 
-Remember you'll have to recompile sentilo-catalog-web redeploy the sentilo-catalog-web.war after that.
+Remember you'll have to restart tomcat in order to let sentilo-catalog-web.war reload these changes.
 
 
 I created a provider and immediately after that, an observation using the new provider’s token is rejected with 401 “Invalid credential”

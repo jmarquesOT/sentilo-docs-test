@@ -96,7 +96,7 @@ how to do it by using the M2E plugin.
 your Eclipse environment.
 
 After modifying the code, to compile and build the artifacts, our
-recommendation is to use the above mentioned\* buildSentilo\* script.
+recommendation is to use the above mentioned *buildSentilo.sh* script.
 
 Platform infrastructure
 -----------------------
@@ -109,8 +109,8 @@ into two categories):
 
 -  Mandatory
 
-   -  Redis 4.0.11
-   -  MongoDB 4.0.1
+   -  Redis 6.2.2
+   -  MongoDB 4.4.2
    -  Tomcat 8.5.32 +
 
 -  Optional
@@ -118,7 +118,7 @@ into two categories):
    -  MySQL 5.5.x (Sentilo has been tested on MySQL 5.5.34 but you could
       use your favourite RDBMS) **It is only necessary if you want to
       install the relational agent**
-   -  Elasticsearch 5+ **It is only necessary if you want to install
+   -  Elasticsearch 6+ **It is only necessary if you want to install
       the activity-monitor agent**.
    -  openTSDB 2.2.0 + **It is only necessary if you want to install the
       historian agent**
@@ -144,8 +144,139 @@ machine and listening in the following ports:
 -  Elasticsearch: 9200
 -  openTSDB: 4242
 
-All these settings can be found in the subdirectory
+The default configuration for the entire platform is located in the file: 
+:literal:`/sentilo-common/src/main/resources/properties/sentilo.conf`.
+
+All other specific settings can be found in the subdirectory
 :literal:`/src/main/resources/properties` of each platform’s module.
+
+In general, Sentilo's configuration is described in the :literal:`sentilo.conf` 
+file, while the rest of the components are described in their own .conf file.
+
+The :literal:`sentilo.conf` file must be deployed in the default directory 
+:literal:`/etc/sentilo`, in which the necessary parameters according to our 
+installation must be overwritten later.
+
+The other configuration files for agents, for example, can be overwritten in 
+the same way, deploying them in the same directory specified above, and with 
+the specific name set by each of the agents.
+
+Therefore, we will have the files with the base configuration inside the package 
+of each one of the modules (classpath) and the configuration files with the 
+specific values ​​displayed in the /etc/sentilo directory, which will overwrite 
+the original ones. In this way, we can change any Sentilo parameterization just 
+by modifying the deployed file and restarting the instance:
+
+.. image:: /_static/images/setup/conf_files_diagram.png
+
+For example, here we can see a default configuration (first lines) and the 
+overridden values for different execution environments for Redis host:
+
+.. code:: properties
+
+   --  classpath:sentilo.conf
+   sentilo.version=2.1.0
+   sentilo.redis.host=127.0.0.1
+
+   -- /etc/sentilo/sentilo.conf for DSV environment
+   sentilo.redis.host=192.168.2.106
+
+   -- /etc/sentilo/sentilo.conf for PRE environment
+   sentilo.redis.host=10.65.124.22
+
+Each module will define the location of its configuration file within the 
+:literal:`xxx-properties-context.xml` file.
+
+For example, this is the case of the relational agent:
+
+.. code:: xml
+
+   <context:property-placeholder ignore-unresolvable="true" properties-ref="sentiloConfigProperties"/>
+
+   <util:properties id="sentiloConfigProperties"  location="classpath*:properties/sentilo.conf,
+       classpath*:properties/sentilo-agent-relational.conf, file:${sentilo.conf.dir}/sentilo.conf,
+       file:${sentilo.conf.dir}/sentilo-agent-relational.conf" ignore-resource-not-found="true"/>
+
+
+**Note:** The variable :literal:`${sentilo.conf.dir}` is resolved in compilation time 
+and its default value is :literal:`/etc/sentilo`
+
+These are the default params for the **sentilo.conf** file:
+
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                Param                   |                Default value               |                                                                                                      Description                                                                                                        |
++========================================+============================================+=========================================================================================================================================================================================================================+
+| sentilo.master.application.id          | sentilo-catalog                            | Identification of the master application of the catalog, application that has administrative rights over all the rest                                                                                                   |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.version                        | 2.0.0-HA                                   | Indicates the deployed version of Sentilo, and can be found both in the source code of a catalog page and in the response headers to an API call                                                                        |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.password                 | sentilo                                    | Redis access password (same value as the requirepass parameter in the Redis configuration)                                                                                                                              |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.expire.key.seconds       | 0                                          | Lifetime of data in Redis: after this time the data expires and can no longer be retrieved via the API. A value of 0 indicates that they do not expire                                                                  |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.connTimeout              | 5000(ms)                                   | Timeout waiting in the execution of any request to Redis                                                                                                                                                                |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.maxTotal          | 10                                         | Maximum number of connections in the pool                                                                                                                                                                               |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.maxIdle           | 10                                         | Maximum number of idle connections in the pool                                                                                                                                                                          |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.maxWaitMillis     | -1                                         | Maximum timeout (ms) for a new connection. -1 indicates no maximum                                                                                                                                                      |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testOnBorrow      | true                                       | Indicates whether to validate a connection from the pool before reusing it                                                                                                                                              |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testOnCreate      | true                                       | Same as the previous one, but at the time of creation                                                                                                                                                                   |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testOnReturn      | false                                      | Same as the previous one but when returning the connection to the pool                                                                                                                                                  |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.client.testWhileIdle     | true                                       | Same as above but the validation is performed while the connection remains unused in the pool (internally the validation is executed every 30s, not configurable)                                                       |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.host                     | 127.0.0.1                                  | IP of the machine where the Redis server is (in standalone mode)                                                                                                                                                        |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.port                     | 6379                                       | Port on which the Redis server is listening for requests (in standalone mode)                                                                                                                                           |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.cluster.nodes            | 127.0.0.1:6379                             | List with the addresses (ip:port) of the different nodes of the Redis cluster                                                                                                                                           |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.redis.cluster.maxRedirects     | 3                                          | Maximum number of redirects to follow between nodes in a request to the cluster                                                                                                                                         |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.host                   | 127.0.0.1                                  | IP of the machine on which the node with PRIMARY role is installed, in the case of a cluster, or simply the server                                                                                                      |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.port                   | 27017                                      | Port on which the MongoDB server is listening for requests                                                                                                                                                              |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.database               | sentilo                                    | Name of the db to connect to                                                                                                                                                                                            |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.user                   | sentilo                                    | User to use when authenticating to the MongoDB server                                                                                                                                                                   |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.password               | sentilo                                    | Password to use when authenticating to the MongoDB server                                                                                                                                                               |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.cluster-type           | STANDALONE                                 | Instance mode. Switch to REPLICA_SET in case of cluster                                                                                                                                                                 |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.rs                     | rs_sentilo                                 | Name of replica set in case of cluster                                                                                                                                                                                  |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.pool.max-connections   | 100                                        | Maximum number of connections that can be established to MongoDB from a module                                                                                                                                          |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.mongodb.application-name       | sentilo                                    | Name of the module that establishes the connection to MongoDB (for auditing purposes. Viewed in the MongoDB log)                                                                                                        |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.catalog.rest.endpoint          | http://127.0.0.1:8080/sentilo-catalog-web/ | API URL Rest of the catalog (used internally by the rest of the modules)                                                                                                                                                |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.catalog.rest.credentials       | platform_user:sentilo                      | Credentials (user:password) to use in the authentication of the rest of the catalog API (must be the credentials of a catalog user with the PLATFORM_USER role)                                                         |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.api.rest.endpoint              | 127.0.0.1:8081                             | Sentilo Rest API URL (used internally by the rest of the modules)                                                                                                                                                       |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.api.rest.identity.key          | *******                                    | Token to be used internally in calls to Sentilo's Rest API. Must match the entity token given in the sentilo.api.rest.identity.key parameter                                                                            |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.pending_events_job.batch | 50                                         | Maximum size (N) of the batch of pending messages to be retrieved and processed from the PEL (pending event list) of each agent in each call. The process runs iteratively in batches of size N until the list is empty |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.pending_events_job.delay | 30000 (ms)                                 | Waiting time between executions of the job that is responsible for processing pending messages in the PEL of an agent                                                                                                   |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.size               | 10                                         | Batch size in which an agent processes incoming messages and keeps them in memory                                                                                                                                       |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.workers.size.min   | 0                                          | Minimum number of workers to be used by an agent to process incoming messages queued in memory                                                                                                                          |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.workers.size.max   | 3                                          | Maximum number of workers to be used by an agent to process incoming messages queued in memory                                                                                                                          |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| sentilo.agent.batch.max.retries        | 1                                          | Number of retries an agent performs before rejecting a batch of messages and saving them to the Redis PEL for further processing                                                                                        |
++----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Redis settings
 ~~~~~~~~~~~~~~
@@ -155,23 +286,17 @@ host 127.0.0.1, and with the parameter
 `requirepass <http://redis.io/commands/AUTH>`__ enabled and with value
 **sentilo**.
 
-If you change this behaviour, you need to modify the following
-properties:
+If you change this behaviour, you need to modify the *sentilo.conf* file, 
+by editing following properties:
 
 .. code:: properties
 
-   jedis.pool.host=127.0.0.1
-   jedis.pool.port=6379
-   jedis.pool.password=sentilo
+   sentilo.redis.host=127.0.0.1
+   sentilo.redis.port=6379
+   sentilo.redis.password=sentilo
+   
+See other available Redis settings in above table, under *sentilo.redis.** base path.
 
-which are configured in the following files:
-
-::
-
-   sentilo-platform/sentilo-platform-service/src/main/resources/properties/jedis-config.properties
-   sentilo-agent-alert/src/main/resources/properties/jedis-config.properties
-   sentilo-agent-relational/src/main/resources/properties/jedis-config.properties
-   sentilo-agent-location-updater/src/main/resources/properties/jedis-config.properties
 
 MongoDB settings
 ~~~~~~~~~~~~~~~~
@@ -183,21 +308,18 @@ enabled <http://docs.mongodb.org/v4.0/core/access-control/>`__ and with
 login credentials preconfigured as sentilo/sentilo (username~:*sentilo*,
 password~:\ *sentilo*).
 
-If you change this behaviour, you need to modify following properties:
+If you change this behaviour, you need to modify the *sentilo.conf* file, 
+by editing following properties:
 
 .. code:: properties
 
-   catalog.mongodb.host=127.0.0.1
-   catalog.mongodb.port=27017
-   catalog.mongodb.user=sentilo
-   catalog.mongodb.password=sentilo
+   sentilo.mongodb.host=127.0.0.1
+   sentilo.mongodb.port=27017
+   sentilo.mongodb.user=sentilo
+   sentilo.mongodb.password=sentilo
 
-configured in the following files:
+See other available MongoDB settings in above table, under *sentilo.mongodb.** base path.
 
-::
-
-   sentilo-agent-alert/src/main/resources/properties/catalog-config.properties
-   sentilo-catalog-web/src/main/resources/properties/catalog-config.properties
 
 Data load
 ^^^^^^^^^
@@ -209,10 +331,6 @@ needed to run the platform. The data include, among other things:
    administrator.
 -  An user **sadmin**: user for log in into the catalog webapp with role
    super-admin.
--  A default **sentilo** tenant: used to configure the default viewer
-   parameters (center, zoom, … ) from the catalog web app.
--  An entity **sentilo-catalog**: internal app used by the platform to
-   synchronize information between its components.
 -  An user **platform_user**: internal user used by the platform to
    synchronize information between its components.
 
@@ -238,30 +356,22 @@ command from the directory where the file is located:
    environment.
 
 If you change default values in the :literal:`/sentilo/scripts/mongodb/init_data.js` file and load them to
-MongoDB, you will have to modify the following properties before compiling and building Sentilo. So, following
+MongoDB, you will have to modify the following properties, located in **sentilo.conf** file, and restart Sentilo. So, following
 JS code from *init_data.js* :
 
 .. code:: javascript
-   db.application.insert({ "_id" : "sentilo-catalog", "_class" : "org.sentilo.web.catalog.domain.Application", "name" : "sentilo-catalog", "token" : "c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066", "description" : "Catalog application", "email" : "sentilo@sentilo.org", "createdAt" : new ISODate(), "authorizedProviders" : [ ] });
+   db.application.insert({ "_id" : "sentilo-catalog", "_class" : "org.sentilo.web.catalog.domain.Application", "name" : "sentilo-catalog", "token" : "c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066", "description" : "Catalog application", "email" : "sentilo@sentilo.org", "createdAt" : new ISODate(), "authorizedProviders" : [ ] , "active":true });
    db.user.insert({ "_id" : "platform_user", "_class" : "org.sentilo.web.catalog.domain.User", "password" : "sentilo", "name" : "Platform user", "description" : "PubSub platform user. Do not remove  it!.", "email" : "sentilo@sentilo.org", "createdAt" : new ISODate(), "active" : true, "roles" : [ "PLATFORM" ] });
 
 Corresponds with:
 
 .. code:: properties
 
-   rest.client.identity.key=c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066
-   catalog.rest.credentials=platform_user:sentilo
+   sentilo.api.rest.identity.key=c956c302086a042dd0426b4e62652273e05a6ce74d0b77f8b5602e0811025066
+   sentilo.catalog.rest.credentials=platform_user:sentilo
 
-, being *rest.client.identity.key* the token of a *sentilo-catalog* application, and *catalog.rest.credentials* value
+, being *sentilo.api.rest.identity.key* the token of a *sentilo-catalog* application, and *sentilo.catalog.rest.credentials* value
 is a combination of user *platform_user* and it's password.
-
-These properties are in following files:
-
-::
-
-   sentilo-agent-alert/src/main/resources/properties/platform-client-config.properties
-   sentilo-catalog-web/src/main/resources/properties/catalog-config.properties
-   sentilo-platform/sentilo-platform-service/src/main/resources/properties/integration.properties
 
 Test data load
 ^^^^^^^^^^^^^^
@@ -303,16 +413,16 @@ properties:
 
 .. code:: properties
 
-   sentiloDs.jdbc.driverClassName=com.mysql.jdbc.Driver
-   sentiloDs.url=jdbc:mysql://127.0.0.1:3306/sentilo
-   sentiloDs.username=sentilo_user
-   sentiloDs.password=sentilo_pwd
+   sentilo.agent.relational.ds.jdbc.driverClassName=com.mysql.jdbc.Driver
+   sentilo.agent.relational.ds.url=jdbc:mysql://127.0.0.1:3306/sentilo
+   sentilo.agent.relational.ds.username=sentilo_user
+   sentilo.agent.relational.ds.password=sentilo_pwd
 
 configured in the file:
 
 ::
 
-   sentilo-agent-relational/src/main/resources/properties/relational-config.properties
+   sentilo-agent-relational/src/main/resources/properties/sentilo-agent-relational.conf
 
 Creating the tables
 ^^^^^^^^^^^^^^^^^^^
@@ -339,14 +449,9 @@ If you change this behaviour, you need to modify the following property:
 
 .. code:: properties
 
-   catalog.rest.endpoint=http://127.0.0.1:8080/sentilo-catalog-web/
+   sentilo.catalog.rest.endpoint=http://127.0.0.1:8080/sentilo-catalog-web/
 
-configured in the following files:
-
-::
-
-   sentilo-platform/sentilo-platform-service/src/main/resources/properties/integration.properties
-   sentilo-agent-location-updater/src/main/resources/properties/integration.properties
+configured in the *sentilo.conf* file.
 
 Your Tomcat should also be started with the user timezone environment
 variable set as UTC. To set Timezone in Tomcat, the startup script (e.g.
@@ -369,15 +474,9 @@ properties:
 
 .. code:: properties
 
-   port=8081
-   rest.client.host=http://127.0.0.1:8081
+  sentilo.api.rest.endpoint=127.0.0.1:8081
 
-configured in the following files:
-
-::
-
-   sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.properties
-   sentilo-catalog-web/src/main/resources/properties/catalog-config.properties
+configured in the *sentilo.conf* file.
 
 Configuring logs
 ~~~~~~~~~~~~~~~~
@@ -441,7 +540,7 @@ c. Once copied, for starting the process you just need to run the
 
 ::
 
-     $sentilo-server/bin/sentilo-server
+     $ <path_to_sentilo-server>/bin/sentilo-server
 
 Installing agents
 ~~~~~~~~~~~~~~~~~
@@ -475,14 +574,14 @@ c. Once copied, for starting the process you just need to run the
 
 ::
 
-     <path-to-agent-alert>/bin/sentilo-agent-alert-server
+     $ <path-to-agent-alert>/bin/sentilo-agent-alert-server
 
 All other agents follow the exact same directory structure.
 
 .. note::
 
-   The configuration of the agents has to be done before compilation
-   and is documented in their `respective page <./integrations.html#agents>`__
+   Agent configuration can be done at any time by modifying it own **agent-xxx.conf** 
+   file and restarting it. It is documented in their `respective page <./integrations.html#agents>`__
 
 
 
@@ -577,17 +676,15 @@ Access to authorized data is described below.
 In order to enable anonymous access you should modify the file
 sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.properties:
 
-
 .. code:: properties
 
    # Properties to configure the anonymous access to Sentilo
-   enableAnonymousAccess=false
-   anonymousAppClientId=
+   sentilo.server.api.anonymous.enable=false
+   sentilo.server.api.anonymous.entity-id=
 
-
-If anonymous access is enabled (*enableAnonymousAccess=true*),
+If anonymous access is enabled (*sentilo.server.api.anonymous.enable=true*),
 then all anonymous requests to REST API are internally considered as is they have
-been performed by the application client identified by the *anonymousAppClientId* property
+been performed by the application client identified by the *sentilo.server.api.anonymous.entity-id* property
 value (this application client should exist into your Sentilo Catalog),
 and therefore these requests will have the same data restrictions as the
 requests performed by this client application.
