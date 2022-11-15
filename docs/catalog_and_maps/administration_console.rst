@@ -1468,6 +1468,39 @@ elements to the catalog.
 
 It’s possible to delete elements massively through the component list.
 
+.. _component-types-list:
+
+List
+^^^^
+
+Access the main Component’s typology list page, will show you a complete
+list of available type of components.
+
+.. image:: /_static/images/catalog_and_maps/component_typologies_list.png
+
+You’ll be able to list, filter, show typology details, create (*New
+application* button) and delete selected typologies (select from left
+checkbox, and apply by *Delete selected* button).
+
+Further, you’ll be able to export the list to Excel, by clicking on
+*Export to Excel* button. The result file will contain the list columns
+and a number of extra ones from internal database use.
+
+Use the button panel at the bottom right to navigate through the list
+(first page, previous page, page number, next page and last page,
+respectively).
+
+.. _new-1:
+
+New
+^^^
+
+Access to create new typology pressing *New typology* button. You must
+inform an identifier, name, description (optional), photo (optional) and
+icon for the new typology.
+
+.. image:: /_static/images/catalog_and_maps/component_typology_create.png
+
 **Properties**
 
 +-----------------------+-----------------------+-------------------------+
@@ -1531,39 +1564,6 @@ It’s possible to delete elements massively through the component list.
 	by typology categories in the universal map viewer. If a typology does not contain any tags, 
 	this typology will appear in the *"Other"* category in the filter tree by typology categories 
 	of the universal map viewer.
-
-.. _component-types-list:
-
-List
-^^^^
-
-Access the main Component’s typology list page, will show you a complete
-list of available type of components.
-
-.. image:: /_static/images/catalog_and_maps/component_typologies_list.png
-
-You’ll be able to list, filter, show typology details, create (*New
-application* button) and delete selected typologies (select from left
-checkbox, and apply by *Delete selected* button).
-
-Further, you’ll be able to export the list to Excel, by clicking on
-*Export to Excel* button. The result file will contain the list columns
-and a number of extra ones from internal database use.
-
-Use the button panel at the bottom right to navigate through the list
-(first page, previous page, page number, next page and last page,
-respectively).
-
-.. _new-1:
-
-New
-^^^
-
-Access to create new typology pressing *New typology* button. You must
-inform an identifier, name, description (optional), photo (optional) and
-icon for the new typology.
-
-.. image:: /_static/images/catalog_and_maps/component_typology_create.png
 
 Metrics
 ~~~~~~~
