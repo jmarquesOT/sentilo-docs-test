@@ -1470,41 +1470,50 @@ It’s possible to delete elements massively through the component list.
 
 **Properties**
 
-+-----------------------+-----------------------+-----------------------+
-| Id                    | Name                  | Description           |
-+=======================+=======================+=======================+
-| Id                    | Type identifier       | After its creation    |
-|                       |                       | can't be modified     |
-+-----------------------+-----------------------+-----------------------+
-| Name                  | Display name          |                       |
-+-----------------------+-----------------------+-----------------------+
-| Description           | Description           |                       |
-+-----------------------+-----------------------+-----------------------+
-| Creation date         | Creation date         | Automatically         |
-|                       |                       | generated             |
-+-----------------------+-----------------------+-----------------------+
-| Update date           | Last update date      | Automatically         |
-|                       |                       | generated             |
-+-----------------------+-----------------------+-----------------------+
-| Photo URL             | Related photo         | Generic picture for   |
-|                       |                       | the component type,   |
-|                       |                       | will be used if there |
-|                       |                       | isn't any specified   |
-|                       |                       | for the component     |
-|                       |                       | itself                |
-+-----------------------+-----------------------+-----------------------+
-| Extended URL          | Define an external    | Here you can inform   |
-|                       | details page for the  | an external url that  |
-|                       | component type        | will replace the      |
-|                       |                       | default details       |
-|                       |                       | component type page   |
-+-----------------------+-----------------------+-----------------------+
-| Icon                  | Related icon          | Value list from the   |
-|                       |                       | deployed icon list.   |
-|                       |                       | Used in the maps for  |
-|                       |                       | representing the      |
-|                       |                       | component             |
-+-----------------------+-----------------------+-----------------------+
++-----------------------+-----------------------+-------------------------+
+| Id                    | Name                  | Description             |
++=======================+=======================+=========================+
+| Id                    | Type identifier       | After its creation      |
+|                       |                       | can't be modified       |
++-----------------------+-----------------------+-------------------------+
+| Name                  | Display name          |                         |
++-----------------------+-----------------------+-------------------------+
+| Description           | Description           |                         |
++-----------------------+-----------------------+-------------------------+
+| Creation date         | Creation date         | Automatically           |
+|                       |                       | generated               |
++-----------------------+-----------------------+-------------------------+
+| Update date           | Last update date      | Automatically           |
+|                       |                       | generated               |
++-----------------------+-----------------------+-------------------------+
+| Photo URL             | Related photo         | Generic picture for     |
+|                       |                       | the component type,     |
+|                       |                       | will be used if there   |
+|                       |                       | isn't any specified     |
+|                       |                       | for the component       |
+|                       |                       | itself                  |
++-----------------------+-----------------------+-------------------------+
+| Extended URL          | Define an external    | Here you can inform     |
+|                       | details page for the  | an external url that    |
+|                       | component type        | will replace the        |
+|                       |                       | default details         |
+|                       |                       | component type page     |
++-----------------------+-----------------------+-------------------------+
+| Icon                  | Related icon          | Value list from the     |
+|                       |                       | deployed icon list.     |
+|                       |                       | Used in the maps for    |
+|                       |                       | representing the        |
+|                       |                       | component               |
++-----------------------+-----------------------+-------------------------+
+| Tags                  | organizational tag    | Typology categorization |
+|                       |                       | tags list separated by  |
+|                       |                       | comma / enter. It is    |
+|                       |                       | used to create          |     
+|                       |                       | organizational          |
+|                       |                       | categories in the       |
+|                       |                       | Universal Map Viewer    |
+|                       |                       | typology filter tree    |
++-----------------------+-----------------------+-------------------------+
 
 .. note::
 
@@ -1515,6 +1524,13 @@ It’s possible to delete elements massively through the component list.
    their own URL. It can include the following wildcards ${component_id} and/or ${provider_id}, 
    which will be replaced at execution time.
 
+.. note::
+
+	A component typology can contain one, several or no associated tags. For each one of them, 
+	the typology will be located within the branch that bears the same name in the filter tree 
+	by typology categories in the universal map viewer. If a typology does not contain any tags, 
+	this typology will appear in the *"Other"* category in the filter tree by typology categories 
+	of the universal map viewer.
 
 .. _component-types-list:
 
