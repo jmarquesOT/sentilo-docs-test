@@ -31,10 +31,15 @@ the left sidebar:
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_002.png
 
-From here, you can select or deselect component typologies and categories (grouping of typologies),
-and or select / unselect all the categories / typologies:
+From here, you can select or deselect **component typologies** and **categories** (a *category* 
+is a grouping of typologies), and or select / unselect all the categories / typologies (by checking / 
+unchecking the *All* checkbox):
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_003.png
+
+.. image:: /_static/images/catalog_and_maps/universal_viewer_004.png
+
+.. image:: /_static/images/catalog_and_maps/universal_viewer_005.png
 
 
 
