@@ -22,15 +22,12 @@ well.
 .. image:: /_static/images/catalog_and_maps/universal_viewer_001.png
 
 On this page, you can filter the components to show by selecting a
-*component type* from the top left select.
+*component type* by clicking on the left top menu button, that will expand 
+the left sidebar:
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_002.png
 
-Depending on the zoom level, the map will display the elements as
-individuals POIs or grouped in clusters, showing the number of
-components in each group.
 
-.. image:: /_static/images/catalog_and_maps/universal_viewer_003.png
 
 Component details
 ^^^^^^^^^^^^^^^^^
