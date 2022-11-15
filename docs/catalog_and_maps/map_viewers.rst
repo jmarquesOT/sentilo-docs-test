@@ -33,15 +33,20 @@ the left sidebar:
 
 From here, you can select or deselect **component typologies** and **categories** (a *category* 
 is a grouping of typologies), and or select / unselect all the categories / typologies (by checking / 
-unchecking the *All* checkbox):
+unchecking the *All* checkbox).
+
+Check *All*:
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_003.png
 
+Uncheck *All*:
+
 .. image:: /_static/images/catalog_and_maps/universal_viewer_004.png
 
+In addition, it is also possible to perform a search within the typology tree. Writing in the upper 
+text field we will obtain a list of only those typologies that match the searched text:
+
 .. image:: /_static/images/catalog_and_maps/universal_viewer_005.png
-
-
 
 
 Component details
