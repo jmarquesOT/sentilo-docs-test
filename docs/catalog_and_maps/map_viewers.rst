@@ -48,6 +48,12 @@ text field we will obtain a list of only those typologies that match the searche
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_005.png
 
+.. note::
+
+   The **organization by categories** is achieved through the *labels of the component type*. 
+   That is, a typology belongs to each of the categories added as labels to that typology. 
+   For more information, consult the section: `Component types </catalog_and_maps/administration_console.html#component-types>`
+
 
 Component details
 ^^^^^^^^^^^^^^^^^
