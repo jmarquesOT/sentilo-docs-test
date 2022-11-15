@@ -52,7 +52,7 @@ text field we will obtain a list of only those typologies that match the searche
 
    The **organization by categories** is achieved through the *labels of the component type*. 
    That is, a typology belongs to each of the categories added as labels to that typology. 
-   For more information, consult the section: `Component types </catalog_and_maps/administration_console.html#component-types>`
+   For more information, consult the section: `Component types <../catalog_and_maps/administration_console.html#component-types>`_
 
 
 Component details
