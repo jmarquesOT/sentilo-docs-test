@@ -13,7 +13,7 @@ Universal viewer
 
 The map system is prepared to be displayed through various managers and cartography rendering servers. 
 The default system is *MapBox* powered by *Leaflet*. You can find more information in the section  
-`Map Providers <#map-providers>`
+`Map Providers </catalog_and_maps/map_viewers.html#map-providers>`
 
 Components map
 ^^^^^^^^^^^^^^
