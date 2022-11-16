@@ -12,7 +12,7 @@ Universal viewer
 ~~~~~~~~~~~~~~~~
 
 The map system is prepared to be displayed through various managers and cartography rendering servers. 
-The default system is *MapBox* powered by *Leaflet*. You can find more information in the section  
+The default system is *Open Street Map* powered by *Leaflet*. You can find more information in the section  
 :ref:`Map Providers`
 
 Components map
@@ -25,9 +25,12 @@ well.
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_001.png
 
+Component types filter
+''''''''''''''''''''''
+
 On this page, you can filter the components to show by selecting a
-*component type* by clicking on the left top menu button, that will expand 
-the left sidebar:
+*component type* by clicking on the left top menu button |universal_viewer_menu_button.png|, 
+that will expand the left sidebar:
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_002.png
 
@@ -53,6 +56,20 @@ text field we will obtain a list of only those typologies that match the searche
    The **organization by categories** is achieved through the *tags of the component type*. 
    That is, a typology belongs to each of the categories added as tags to that typology. 
    For more information, consult the section: `Component types <../catalog_and_maps/administration_console.html#component-types>`_
+
+
+Map controls
+''''''''''''
+
+Apart from the button to open the left sidebar, on the universal map we have 6 more buttons, all located on the right side.
+
+In order from top to bottom:
+
+- *Search on map (magnifying glass icon)*: hover your mouse over this icon to display a text field with which you can search for an address or point of interest on the map, which will be centered after the correct result
+- *Locate me (arrow icon)*: locate your position on the map (requires location permissions on the browser)
+- *Maximize/Minimize map (axpand/unexpand icon)*: maximize or minimize the map in full screen (F11 effect)
+- *Zoom in / Zoom out (plus / minus icons)*: zoom in or out on the map
+- *Change map layers (layers icon)*: changes the layer represented on the map (it will show each of the layers configured in the catalog application, see :ref:`Map Providers`)
 
 
 Component details
@@ -179,3 +196,4 @@ Example of the default Leaflet maps configuration, using a public Open Street Ma
 
 
 .. |universal_viewer_190_006.png| image:: ../_static/images/catalog_and_maps/universal_viewer_190_006.png
+.. |universal_viewer_menu_button.png| image:: ../_static/images/catalog_and_maps/universal_viewer_menu_button.png
