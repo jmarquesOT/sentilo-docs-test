@@ -13,7 +13,7 @@ Universal viewer
 
 The map system is prepared to be displayed through various managers and cartography rendering servers. 
 The default system is *MapBox* powered by *Leaflet*. You can find more information in the section  
-`Map Providers <../catalog_and_maps/map_viewers.html#map-providers>`_
+:ref:`Map Providers`
 
 Components map
 ^^^^^^^^^^^^^^
@@ -138,7 +138,7 @@ Each Organization can have it's own map center and zoom level.
 Please refer to corresponding part in the Administration Console section:
 `Organization Map configuration <../administration_console.html#map-configuration>`_
 
-.. _map-providers:
+.. _Map Providers:
 
 Map Providers
 ^^^^^^^^^^^^^
