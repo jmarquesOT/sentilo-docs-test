@@ -539,11 +539,10 @@ You will find the WAR artifact at the following subdirectory:
 Installing API server (subscription/publication)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After build Sentilo, to install the API (pub/sub) server, you need to follow
-the following steps:
+After build Sentilo (see :ref:`Compiling and build artifacts`), to install the API 
+(pub/sub) server, you need to follow the following steps:
 
-a. Into the directory
-   *./sentilo-platform/sentilo-platform-server/target/appassembler*
+a. Into the directory *../sentilo-deploy-artifacts/sentilo-platform-server/*
    you’ll find two subdirectories named **repo** and **bin**:
 
 -  **repo** directory contains all libraries needed to run the process
@@ -571,13 +570,13 @@ platform functionality without having to alter its core. You will find
 more information about them in the `Integrations <./integrations.html#agents>`__
 section of our documentation.
 
-The *buildSentilo* script builds also all agents. If you decide to install some of them,
-you just have to copy the contents of the appassembler directory to the path you want the
-agent to be installed.
+The *buildSentilo.sh* script builds also all agents. If you decide to install some of them,
+you just have to copy the contents of the **sentilo-deploy-artifactts** agent's directory 
+to the path you want the agent to be installed (see :ref:`Compiling and build artifacts`).
 
-For example, Alert agent would be installed like this:
+For example, *Alert agent* would be installed like this:
 
-a. In the directory *./sentilo-agent-alert/target/appassembler* you’ll
+a. In the directory *../sentilo-deploy-artifacts/sentilo-agent-alert/* you’ll
    find two subdirectories named **repo** and **bin**:
 
 -  **repo** directory contains all libraries needed to run the process

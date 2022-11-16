@@ -101,7 +101,7 @@ How can I activate debug logs?
 ------------------------------
 
 You can pass the property :literal:`sentilo.log.level` to the JVM.
-For example, you might add the following code to the script in the target/appassembler/bin
+For example, you might add the following code to the script in the **bin** directory
 of the component you want to debug:
 
 ::
