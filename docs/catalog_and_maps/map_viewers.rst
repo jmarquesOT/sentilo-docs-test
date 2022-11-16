@@ -50,8 +50,8 @@ text field we will obtain a list of only those typologies that match the searche
 
 .. note::
 
-   The **organization by categories** is achieved through the *labels of the component type*. 
-   That is, a typology belongs to each of the categories added as labels to that typology. 
+   The **organization by categories** is achieved through the *tags of the component type*. 
+   That is, a typology belongs to each of the categories added as tags to that typology. 
    For more information, consult the section: `Component types <../catalog_and_maps/administration_console.html#component-types>`_
 
 
@@ -77,7 +77,7 @@ time-series graph with the last activity of each of its sensors:
 
 .. image:: /_static/images/catalog_and_maps/component_map_extended_details_001.png
 
-You may also click the bottom-right corner icon |universal_viewer_190_006.png|
+You may also click the bottom-right corner icon .. image:: /_static/images/catalog_and_maps/universal_viewer_190_006.png
 and get a page with bigger detail. The URL of this page is shareable, i.e. it is possible to send it by email.
 
 .. image:: /_static/images/catalog_and_maps/component_map_extended_details_002.png
@@ -108,7 +108,7 @@ as a prettify json value:
 .. image:: /_static/images/catalog_and_maps/complex_data_001.png
 
 You can expand or compress the prettified json with the bottom buttons
-under the status field,
+under the status field.
 
 
 Route viewer
