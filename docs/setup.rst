@@ -78,6 +78,25 @@ be done manually by different reasons, for example:
    In example, Tomcat server and Pub/Subscribe server.
 -  it’s not required to install all the components, like the relational
    database agent.
+   
+Once this script is executed, the result of the construction of the 
+artifacts will be located, by default, in the directory **../sentilo-deploy-artifacts** 
+(local from current directory).
+
+The content of the **sentilo-deply-artifacts** directory will be:
+
+* **conf:** contains all the Sentilo configuration files, both for the service, the catalog application and for all the agents 
+* **sentilo-agent-activity-monitor:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-activity-monitor* module 
+* **sentilo-agent-alert:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-alert* module
+* **sentilo-agent-federation:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-federation* module
+* **sentilo-agent-historian:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-historian* module
+* **sentilo-agent-kafka:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-kafka* module
+* **sentilo-agent-location-updater:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-location-updater* module
+* **sentilo-agent-metrics-monitor:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-metrics-monitor* module
+* **sentilo-agent-relational:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-relational* module
+* **sentilo-catalog-web:** contains the war of the web application once packaged
+* **sentilo-platform-server:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-platform-server* module
+   
 
 Changing default settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
