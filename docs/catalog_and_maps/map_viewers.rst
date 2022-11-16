@@ -65,11 +65,11 @@ Apart from the button to open the left sidebar, on the universal map we have 6 m
 
 In order from top to bottom:
 
-- *Search on map (magnifying glass icon)*: hover your mouse over this icon to display a text field with which you can search for an address or point of interest on the map, which will be centered after the correct result
-- *Locate me (arrow icon)*: locate your position on the map (requires location permissions on the browser)
-- *Maximize/Minimize map (axpand/unexpand icon)*: maximize or minimize the map in full screen (F11 effect)
-- *Zoom in / Zoom out (plus / minus icons)*: zoom in or out on the map
-- *Change map layers (layers icon)*: changes the layer represented on the map (it will show each of the layers configured in the catalog application, see :ref:`Map Providers`)
+- **Search on map (magnifying glass icon)**: hover your mouse over this icon to display a text field with which you can search for an address or point of interest on the map, which will be centered after the correct result
+- **Locate me (arrow icon)**: locate your position on the map (requires location permissions on the browser)
+- **Maximize/Minimize map (axpand/unexpand icon)**: maximize or minimize the map in full screen (F11 effect)
+- **Zoom in / Zoom out (plus / minus icons)**: zoom in or out on the map
+- **Change map layers (layers icon)**: changes the layer represented on the map (it will show each of the layers configured in the catalog application, see :ref:`Map Providers`)
 
 
 Component details
