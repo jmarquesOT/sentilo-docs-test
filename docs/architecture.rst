@@ -193,21 +193,15 @@ The values ​​of the job queue and the workers’ pool are fully
 configurable via properties file, for easily adjust to the load
 requirements of each environment:
 
-.. code:: xml
-
-   <bean id="ThreadPool" class="org.sentilo.platform.server.pool.ThreadPool"
-         p:initialCapacity="${thread.pool.capacity.initial}"
-         p:maxCapacity="${thread.pool.capacity.max}"
-         p:shutdownSecondsTimeout="${thread.pool.shutdown.timeout.seconds}"
-         p:QUEUESIZE="${thread.pool.queue.size}"
-         p:groupId="${thread.pool.group.id}"
-         p:groupName="${thread.pool.group.name}" />
-
 .. code:: properties
 
-   thread.pool.queue.size=100
-   thread.pool.capacity.initial=4
-   thread.pool.capacity.max=10
+   # Properties to configure the pool of workers which handle incoming API requests.
+   sentilo.server.api.thread.pool.group-id=ApiRequestHandler
+   sentilo.server.api.thread.pool.group-name=API-Server
+   sentilo.server.api.thread.pool.queue-size=100
+   sentilo.server.api.thread.pool.keep-alive-seconds=60
+   sentilo.server.api.thread.pool.size.core=4
+   sentilo.server.api.thread.pool.size.max=10
 
 Service Layer
 '''''''''''''
