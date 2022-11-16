@@ -13,7 +13,7 @@ Universal viewer
 
 The map system is prepared to be displayed through various managers and cartography rendering servers. 
 The default system is *MapBox* powered by *Leaflet*. You can find more information in the section  
-`Map Providers </catalog_and_maps/map_viewers.html#map-providers>`
+`Map Providers <../catalog_and_maps/map_viewers.html#map-providers>`
 
 Components map
 ^^^^^^^^^^^^^^
@@ -77,7 +77,7 @@ time-series graph with the last activity of each of its sensors:
 
 .. image:: /_static/images/catalog_and_maps/component_map_extended_details_001.png
 
-You may also click the bottom-right corner icon .. image:: /_static/images/catalog_and_maps/universal_viewer_190_006.png
+You may also click the bottom-right corner icon |universal_viewer_190_006.png| 
 and get a page with bigger detail. The URL of this page is shareable, i.e. it is possible to send it by email.
 
 .. image:: /_static/images/catalog_and_maps/component_map_extended_details_002.png
@@ -171,3 +171,9 @@ Example of the default Leaflet maps configuration, using a public Open Street Ma
 
    If you insert multiple layers in the *catalog.map.wms.layers* property, a layer selector
    in the bottom-right corner of the map will appear.
+
+
+
+
+
+.. |universal_viewer_190_006.png| image:: ../_static/images/catalog_and_maps/universal_viewer_190_006.png
