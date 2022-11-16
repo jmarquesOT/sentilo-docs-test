@@ -1586,7 +1586,7 @@ Example of dashboard:
    The page will show graphics for this time. If you reload the page, the history will be reset.
 
 New internal monitor API runs on different port that the Sentilo API. It's port number is configured in
-:literal:`/sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.properties`. The default value is 7081.
+:literal:`/sentilo-platform/sentilo-platform-service/src/main/resources/properties/sentilo-server.conf`. The default value is **7081**.
 
 ..
 

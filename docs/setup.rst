@@ -692,7 +692,7 @@ Enabling anonymous access to the REST API means that only
 Access to authorized data is described below.
 
 In order to enable anonymous access you should modify the file
-sentilo-platform/sentilo-platform-server/src/main/resources/properties/config.properties:
+**sentilo-platform/sentilo-platform-service/src/main/resources/properties/sentilo-platform.conf**:
 
 .. code:: properties
 
