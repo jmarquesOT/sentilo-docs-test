@@ -83,7 +83,7 @@ Once this script is executed, the result of the construction of the
 artifacts will be located, by default, in the directory **../sentilo-deploy-artifacts** 
 (local from current directory).
 
-The content of the **sentilo-deply-artifacts** directory will be:
+The content of the **sentilo-deploy-artifacts** directory will be:
 
 * **conf:** contains all the Sentilo configuration files, both for the service, the catalog application and for all the agents 
 * **sentilo-agent-activity-monitor:** contains the directory structure resulting from running ``mvn appassembler:assemble`` on the *sentilo-agent-activity-monitor* module 
