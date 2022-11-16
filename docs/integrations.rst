@@ -513,6 +513,3 @@ In the end, you will be able to visualize private links in S3, for example:
 
 .. image:: _static/images/integrations/catalog-s3-audio-preview.png
 
-
-`see more <./services/subscription/subscription.html>`__
-
