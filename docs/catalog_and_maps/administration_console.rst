@@ -1029,98 +1029,98 @@ where
 
 The main properties of the *Details* tab are the following:
 
-+-----------------------+-----------------------+-----------------------------+
-| Property              | Description           | Comments                    |
-+=======================+=======================+=============================+
-| Sensor / Actuator     | Name of the           | Mandatory. After its        |
-|                       | sensor/actuator.      | creation can't be           |
-|                       |                       | modified. It is the         |
-|                       |                       | identifier used in          |
-|                       |                       | the API calls.              |
-+-----------------------+-----------------------+-----------------------------+
-| Provider              | Sensor provider owner | Mandatory                   |
-+-----------------------+-----------------------+-----------------------------+
-| Description           | Description           |                             |
-+-----------------------+-----------------------+-----------------------------+
-| Component             | Component to which    | Mandatory                   |
-|                       | the sensor belongs    |                             |
-+-----------------------+-----------------------+-----------------------------+
-| Access type           | Checkbox to set the   |                             |
-|                       | sensor visibility to  |                             |
-|                       | public or private     |                             |
-+-----------------------+-----------------------+-----------------------------+
-| Creation date         | Creation date         | Automatically               |
-|                       |                       | generated                   |
-+-----------------------+-----------------------+-----------------------------+
-| Update date           | Last update date      | Automatically               |
-|                       |                       | generated                   |
-+-----------------------+-----------------------+-----------------------------+
-| Type                  | Sensor type           | Mandatory. Select           |
-|                       |                       | from a list of              |
-|                       |                       | available types             |
-+-----------------------+-----------------------+-----------------------------+
-| Data type             | Type of data          | Mandatory. Possible         |
-|                       | published by the      | values are:                 |
-|                       | sensor                |                             |
-|                       |                       | -  Audio Link               |
-|                       |                       | -  Boolean                  |
-|                       |                       | -  File link                |
-|                       |                       | -  Image link               |
-|                       |                       | -  JSON                     |
-|                       |                       | -  Link                     |
-|                       |                       | -  Numerical                |
-|                       |                       | -  Text                     |
-|                       |                       | -  Video Link               |
-+-----------------------+-----------------------+-----------------------------+
-| Unit                  | Measurement unit      |                             |
-+-----------------------+-----------------------+-----------------------------+
-| Time zone             | Time zone for the     |                             |
-|                       | data sent by the      |                             |
-|                       | sensor                |                             |
-+-----------------------+-----------------------+-----------------------------+
-| Tags                  | Related custom tags   |                             |
-|                       | of the sensor         |                             |
-+-----------------------+-----------------------+-----------------------------+
-| State                 | State of the sensor   | Possible values:            |
-|                       |                       | online \| offline. If       |
-|                       |                       | the sensor is               |
-|                       |                       | configured as offline       |
-|                       |                       | the API will reject         |
-|                       |                       | any data publication,       |
-|                       |                       | the alerts will be          |
-|                       |                       | disabled and the            |
-|                       |                       | sensor won't be             |
-|                       |                       | visible in the map.         |
-|                       |                       | Likewise, offline           |
-|                       |                       | sensors are excluded        |
-|                       |                       | from the /catalog GET       |
-|                       |                       | request. Default            |
-|                       |                       | value is online.            |
-+-----------------------+-----------------------+-----------------------------+
-| Substate              | Substate of the       | The list of possible        |
-|                       | sensor                | values that have            |
-|                       |                       | informational purpose       |
-|                       |                       | and are specific for        |
-|                       |                       | every deployment. You       |
-|                       |                       | can customize the           |
-|                       |                       | list of possible            |
-|                       |                       | substate values             |
-|                       |                       | editing the contents        |
-|                       |                       | of table                    |
-|                       |                       | sensorSubstate in           |
-|                       |                       | mongoDB. No default         |
-|                       |                       | value.                      |
-+-----------------------+-----------------------+-----------------------------+
-| TTL (min)             | Time of expiration of | This value can be           |
-|                       | sensor's data in      | configured only             |
-|                       | minutes               | from the catalog,           |
-|                       |                       | Only admin should           |
-|                       |                       | control this value.         |
-|                       |                       | The default value is        |
-|                       |                       | redis.expire.data.seconds   |
-|                       |                       | from the platform server    |
-|                       |                       | jedis-config.properties     |
-+-----------------------+-----------------------+-----------------------------+
++-----------------------+-----------------------+-----------------------------------+
+| Property              | Description           | Comments                          |
++=======================+=======================+===================================+
+| Sensor / Actuator     | Name of the           | Mandatory. After its              |
+|                       | sensor/actuator.      | creation can't be                 |
+|                       |                       | modified. It is the               |
+|                       |                       | identifier used in                |
+|                       |                       | the API calls.                    |
++-----------------------+-----------------------+-----------------------------------+
+| Provider              | Sensor provider owner | Mandatory                         |
++-----------------------+-----------------------+-----------------------------------+
+| Description           | Description           |                                   |
++-----------------------+-----------------------+-----------------------------------+
+| Component             | Component to which    | Mandatory                         |
+|                       | the sensor belongs    |                                   |
++-----------------------+-----------------------+-----------------------------------+
+| Access type           | Checkbox to set the   |                                   |
+|                       | sensor visibility to  |                                   |
+|                       | public or private     |                                   |
++-----------------------+-----------------------+-----------------------------------+
+| Creation date         | Creation date         | Automatically                     |
+|                       |                       | generated                         |
++-----------------------+-----------------------+-----------------------------------+
+| Update date           | Last update date      | Automatically                     |
+|                       |                       | generated                         |
++-----------------------+-----------------------+-----------------------------------+
+| Type                  | Sensor type           | Mandatory. Select                 |
+|                       |                       | from a list of                    |
+|                       |                       | available types                   |
++-----------------------+-----------------------+-----------------------------------+
+| Data type             | Type of data          | Mandatory. Possible               |
+|                       | published by the      | values are:                       |
+|                       | sensor                |                                   |
+|                       |                       | -  Audio Link                     |
+|                       |                       | -  Boolean                        |
+|                       |                       | -  File link                      |
+|                       |                       | -  Image link                     |
+|                       |                       | -  JSON                           |
+|                       |                       | -  Link                           |
+|                       |                       | -  Numerical                      |
+|                       |                       | -  Text                           |
+|                       |                       | -  Video Link                     |
++-----------------------+-----------------------+-----------------------------------+
+| Unit                  | Measurement unit      |                                   |
++-----------------------+-----------------------+-----------------------------------+
+| Time zone             | Time zone for the     |                                   |
+|                       | data sent by the      |                                   |
+|                       | sensor                |                                   |
++-----------------------+-----------------------+-----------------------------------+
+| Tags                  | Related custom tags   |                                   |
+|                       | of the sensor         |                                   |
++-----------------------+-----------------------+-----------------------------------+
+| State                 | State of the sensor   | Possible values:                  |
+|                       |                       | online \| offline. If             |
+|                       |                       | the sensor is                     |
+|                       |                       | configured as offline             |
+|                       |                       | the API will reject               |
+|                       |                       | any data publication,             |
+|                       |                       | the alerts will be                |
+|                       |                       | disabled and the                  |
+|                       |                       | sensor won't be                   |
+|                       |                       | visible in the map.               |
+|                       |                       | Likewise, offline                 |
+|                       |                       | sensors are excluded              |
+|                       |                       | from the /catalog GET             |
+|                       |                       | request. Default                  |
+|                       |                       | value is online.                  |
++-----------------------+-----------------------+-----------------------------------+
+| Substate              | Substate of the       | The list of possible              |
+|                       | sensor                | values that have                  |
+|                       |                       | informational purpose             |
+|                       |                       | and are specific for              |
+|                       |                       | every deployment. You             |
+|                       |                       | can customize the                 |
+|                       |                       | list of possible                  |
+|                       |                       | substate values                   |
+|                       |                       | editing the contents              |
+|                       |                       | of table                          |
+|                       |                       | sensorSubstate in                 |
+|                       |                       | mongoDB. No default               |
+|                       |                       | value.                            |
++-----------------------+-----------------------+-----------------------------------+
+| TTL (min)             | Time of expiration of | This value can be                 |
+|                       | sensor's data in      | configured only                   |
+|                       | minutes               | from the catalog,                 |
+|                       |                       | Only admin should                 |
+|                       |                       | control this value.               |
+|                       |                       | The default value is the          |
+|                       |                       | sentilo.redis.expire.key.seconds  |
+|                       |                       | parameter from the sentilo.conf   | 
+|                       |                       | file (expressed in secods)        |
++-----------------------+-----------------------+-----------------------------------+
 
 .. _sensors-technical-details-tab:
 

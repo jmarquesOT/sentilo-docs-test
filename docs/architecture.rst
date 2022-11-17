@@ -252,23 +252,15 @@ will maintain anytime an exact copy of these values ​​in memory and
 allows to check credentials and permissions instantly.
 
 Finally, access to Redis is done through a connection pool fully
-configurable through properties file, which allows you to adjust to the
-specifics of each environment.
-
-.. code:: xml
-
-   <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig"
-         p:maxActive="${jedis.config.maxactive}"  
-         p:maxIdle="${jedis.config.maxidle}" 
-         p:maxWait="${jedis.config.maxwait}"  
-         p:testOnBorrow="true"
-         p:whenExhaustedAction="1"/>
+configurable through the *sentilo.conf* properties file, which allows you 
+to adjust to the specifics of each environment.
 
 .. code:: properties
 
-   jedis.config.maxactive=50
-   jedis.config.maxidle=50
-   jedis.config.maxwait=50
+   # Pool properties
+   sentilo.redis.client.maxTotal=300
+   sentilo.redis.client.maxIdle=300
+   sentilo.redis.client.minIdle=10
 
 Comments
 ''''''''
