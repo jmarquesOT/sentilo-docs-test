@@ -77,11 +77,11 @@ Component concentration
 
 In case there is a high concentration of pois in the same point, the map will show a considerable agglomeration of them:
 
-.. image:: /_static/images/catalog_and_maps/universal_viewer_001.png
+.. image:: /_static/images/catalog_and_maps/universal_viewer_007.png
 
 There is the particularity that if you click on one of them, the whole set of pois in esperial will open, to be able to select them in a simple and clear way:
 
-.. image:: /_static/images/catalog_and_maps/universal_viewer_001.png
+.. image:: /_static/images/catalog_and_maps/universal_viewer_008.png
 
 
 
