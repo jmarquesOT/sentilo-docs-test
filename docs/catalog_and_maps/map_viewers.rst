@@ -25,6 +25,7 @@ well.
 
 .. image:: /_static/images/catalog_and_maps/universal_viewer_001.png
 
+
 Component types filter
 ''''''''''''''''''''''
 
@@ -71,6 +72,18 @@ In order from top to bottom:
 - **Zoom in / Zoom out (plus / minus icons)**: zoom in or out on the map
 - **Change map layers (layers icon)**: changes the layer represented on the map (it will show each of the layers configured in the catalog application, see :ref:`Map Providers`)
 
+Component concentration
+'''''''''''''''''''''''
+
+In case there is a high concentration of pois in the same point, the map will show a considerable agglomeration of them:
+
+.. image:: /_static/images/catalog_and_maps/universal_viewer_001.png
+
+There is the particularity that if you click on one of them, the whole set of pois in esperial will open, to be able to select them in a simple and clear way:
+
+.. image:: /_static/images/catalog_and_maps/universal_viewer_001.png
+
+
 
 Component details
 ^^^^^^^^^^^^^^^^^
@@ -94,7 +107,7 @@ time-series graph with the last activity of each of its sensors:
 
 .. image:: /_static/images/catalog_and_maps/component_map_extended_details_001.png
 
-You may also click the bottom-right corner icon |universal_viewer_190_006.png| 
+You may also click the bottom-right corner icon |universal_viewer_006.png| 
 and get a page with bigger detail. The URL of this page is shareable, i.e. it is possible to send it by email.
 
 .. image:: /_static/images/catalog_and_maps/component_map_extended_details_002.png
@@ -195,5 +208,5 @@ Example of the default Leaflet maps configuration, using a public Open Street Ma
 
 
 
-.. |universal_viewer_190_006.png| image:: ../_static/images/catalog_and_maps/universal_viewer_190_006.png
+.. |universal_viewer_006.png| image:: ../_static/images/catalog_and_maps/universal_viewer_006.png
 .. |universal_viewer_menu_button.png| image:: ../_static/images/catalog_and_maps/universal_viewer_menu_button.png
