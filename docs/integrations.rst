@@ -28,13 +28,13 @@ The following diagram shows the design that every agent should follow:
 
 Sentilo currently provides 7 agents:
 
-:ref:`Relational database agent`
-:ref:`Alarm agent`
-:ref:`Activity Monitor agent`
-:ref:`Historian agent`
-:ref:`Federation agent`
-:ref:`Kafka agent`
-:ref:`Metrics Monitor Agent`
+- :ref:`Relational database agent`
+- :ref:`Alarm agent`
+- :ref:`Activity Monitor agent`
+- :ref:`Historian agent`
+- :ref:`Federation agent`
+- :ref:`Kafka agent`
+- :ref:`Metrics Monitor Agent`
 
 .. note::
 
