@@ -101,6 +101,9 @@ The dataSource is defined in the persitence context file:
 
 and all its params can be configured in the .conf file.
 
+Several database initialization files are located into the 
+:literal:`sentilo-agent-relational/src/main/resources/db` directory that you can use for your own database.
+
 
 Alarm agent
 ~~~~~~~~~~~
