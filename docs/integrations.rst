@@ -47,53 +47,60 @@ Relational database agent
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This agent stores all information received from PubSub platform into a
-set of relational databases (the number of relational databases is fully
-configurable). It could be configured to filter the data to store
+relational database. It could be configured to filter the data to store
 according to a business rules through a configuration file.
 
-To do this, when the agent is started it makes a subscription to the
-desired information in Redis (observations, orders and/or alarms), that
-has previously been defined in the file:
+**Configuration**
 
-::
+Relational Database Agent is configured in the file:
+:literal:`sentilo-agent-relational/src/main/resources/properties/sentilo-agent-relational.conf`.
 
-   sentilo-agent-relational/src/main/resources/properties/sentilo-agent-relational.conf
-   
-For example:
++-----------------------+-----------------------+-----------------------------------------+
+| Property              | Description           | Comments                                |
++=======================+=======================+=========================================+
+| subscriptions         | Regexp pattern on     | Examples of configuration:              |
+|                       | event name that       | ::                                      |
+|                       | enables               |                                         |
+|                       | including/excluding   |                                         |
+|                       | events                |    /alarm/*,/data/*,/order/*            |
+|                       |                       |                                         |
+|                       |                       | Subscribes to all events                |
+|                       |                       | ::                                      |
+|                       |                       |                                         |
+|                       |                       |    /data/PROVIDER1/*, /data/PROVIDER2/* |
+|                       |                       |                                         |
+|                       |                       |                                         |
+|                       |                       | Subscribe only to data of 2 providers   |
+|                       |                       |                                         |
++-----------------------+-----------------------+-----------------------------------------+
 
-::
+**Datasource**
 
-   //In this example we indicate to persist any data using a DataSource with srDs identifier, 
-   //and also to store any data from provider with PARKING identifier, 
-   //on a different DataSource whose identifier is parkingDs.
-
-   //Finally, we can indicate more than one DataSource destination to persist the same data.
-
-   data\:PARKING*=parkingDs
-   data\:*=srDs
-   order\:*=srDs
-   alarm\:*=srDs,parkingDs
-
-It is imperative that the DataSources are defined in the context of the
-agent with the same identifier:
+The dataSource is defined in the persitence context file:
+:literal:`sentilo-agent-relational/src/main/resources/spring/relational-persistence-context.xml`.
 
 .. code:: xml
 
-   <bean id="srDs" class="org.apache.tomcat.jdbc.pool.DataSource" 
-      destroy-method="close"> 
-      ...
-   </bean> 
+	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
+		<property name="driverClassName" value="${sentilo.agent.relational.ds.jdbc.driverClassName}" />
+		<property name="url" value="${sentilo.agent.relational.ds.url}" />
+		<property name="username" value="${sentilo.agent.relational.ds.username}" />
+		<property name="password" value="${sentilo.agent.relational.ds.password}" />
+		<property name="initialSize" value="${sentilo.agent.relational.ds.initialSize:1}" />
+		<property name="minIdle" value="${sentilo.agent.relational.ds.minIdle:1}" />
+		<property name="maxIdle" value="${sentilo.agent.relational.ds.maxIdle:10}" />
+		<property name="maxActive" value="${sentilo.agent.relational.ds.maxActive:10}" />
+		<property name="maxWait" value="${sentilo.agent.relational.ds.maxWait:30000}" />
+		<property name="testOnConnect" value="${sentilo.agent.relational.ds.testOnConnect:true}" />
+		<property name="testOnBorrow" value="${sentilo.agent.relational.ds.testOnBorrow:true}" />
+		<property name="testWhileIdle" value="${sentilo.agent.relational.ds.testWhileIdle:true}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${sentilo.agent.relational.ds.timeBetweenEvictionRunsMillis:10000}" />
+		<property name="validationInterval" value="${sentilo.agent.relational.ds.validationInterval:30000}" />
+		<property name="validationQuery" value="${sentilo.agent.relational.ds.validationQuery}" />
+	</bean>
 
-   <bean id="parkingDs" class="org.apache.tomcat.jdbc.pool.DataSource" 
-      destroy-method="close"> 
-    ...
-   </bean>
+and all its params can be configured in the .conf file.
 
-This context is defined in the file:
-
-::
-
-   sentilo-agent-relational/src/main/resources/spring/relational-persistence-context.xml
 
 Alarm agent
 ~~~~~~~~~~~
