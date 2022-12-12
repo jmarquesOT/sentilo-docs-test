@@ -861,12 +861,18 @@ The main properties of the *Details* tab are the following:
 +-----------------------+-----------------------+-----------------------+
 | Provider              | Component owner       | Mandatory.            |
 +-----------------------+-----------------------+-----------------------+
-| Photo                 | URL of the component  | It could be defined   |
+| Photo URL             | URL of the component  | It could be defined   |
 |                       | photography           | for each component or |
 |                       |                       | it will be inherited  |
 |                       |                       | using the defined one |
 |                       |                       | for the component     |
 |                       |                       | type.                 |
++-----------------------+-----------------------+-----------------------+
+| Extended URL          | Define an external    | Here you can inform   |
+|                       | details page for the  | an external url that  |
+|                       | component type        | will replace the      |
+|                       |                       | default details       |
+|                       |                       | component page        |
 +-----------------------+-----------------------+-----------------------+
 | Access type           | Checkbox to set the   |                       |
 |                       | component visibility  |                       |
@@ -950,7 +956,7 @@ Additional information tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This tab displays the set of additional properties related to the
-component See the parameter `additionalInfo <./api_docs/services/catalog/create_sensors.html#parameters>`__
+component. See the parameter `componentAdditionalInfo <../api_docs/services/catalog/create_sensors.html#parameters>`__
 of the API docs.
 
 These fields are not categorized, i.e., here you could stored any device
@@ -964,6 +970,10 @@ the value, as shown in the following picture:
 
 where the following map, stored on the backend, has been rendered
 *{“Comarca”:“Alt Empordà”,“Terme municipal”:“COLERA”,“Provincia”:“Girona”}*
+
+It is also possible to edit these parameters from the catalog application, in editing mode:
+
+.. image:: /_static/images/catalog_and_maps/component_additional_info_.png
 
 .. _components-sensors-actuators-tab:
 
@@ -1147,10 +1157,10 @@ This integer indicates how many measures will be show in the observation chart o
 Additional information tab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The meaning of this tab is the same as for the `components <#additional-information>`__.
+The meaning of this tab is the same as for the `components <#components-additional-information-tab>`__.
 
 This tab displays the set of additional properties related to the
-component See the parameter `additionalInfo <./api_docs/services/catalog/create_sensors.html#parameters>`__
+component See the parameter `additionalInfo <../api_docs/services/catalog/create_sensors.html#parameters>`__
 of the API docs.
 
 These fields are not categorized, i.e., here you could stored any device
@@ -1159,6 +1169,8 @@ information which will be of interest.
 For each property, it will be displayed as a *label-value* entry where
 the property’s key will be the label and the property’s value will be
 the value.
+
+Once again, it is possible to edit them from the catalog as we have done with the component.
 
 .. _sensors-latest-data-tab:
 
