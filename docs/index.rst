@@ -19,7 +19,6 @@ Contents:
    monitorization
    catalog_and_maps
    multitenant
-   cluster_mode
    tutorials
    technical_faq
    platform_testing
