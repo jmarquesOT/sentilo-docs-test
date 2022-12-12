@@ -33,11 +33,11 @@ load of the servers
 Configuration
 -------------
 
-Once we have all the requirements ready (especially the Redis Cluster mode), 
+Once we have all the requirements ready (especially the *Redis Cluster mode*), 
 we must make the following modifications in the Sentilo configuration:
 
-- *sentilo.conf*: configure the parameters associated with the *Redis cluster* 
-  (:literal:`sentilo.redis.cluster.nodes`)
-- For every Sentilo artifact startup scripts: add the JVM param :literal:`-Dspring.profiles.active=cluster*`.
+- File **sentilo.conf**: configure the parameters associated with the *Redis cluster* 
+  (:literal:`sentilo.redis.cluster.nodes`, see it at `Default settings <./api_docs/setup.html#default-settings>`__)
+- For every Sentilo artifact *startup scripts*: add the *JVM param* :literal:`-Dspring.profiles.active=cluster*`.
 
-Once this is done, we can start our instance in high availability cluster mode normally
+Once this is done, we can start our instance in high availability cluster mode normally.
