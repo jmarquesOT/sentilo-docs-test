@@ -972,11 +972,15 @@ where the following map, stored on the backend, has been rendered
 
 ..  code-block:: json
 
-	*{“State”:“Spain”,“City”:“Barcelona”,“Location”:“Right next to the fire hose”}*
+	{
+		“State”: “Spain”, 
+		“City”: “Barcelona”, 
+		“Location”: “Right next to the fire hose”
+	}
 
 It is also possible to edit these parameters from the catalog application, in editing mode:
 
-.. image:: /_static/images/catalog_and_maps/component_additional_info_.png
+.. image:: /_static/images/catalog_and_maps/component_additional_info_edit.png
 
 .. _components-sensors-actuators-tab:
 
