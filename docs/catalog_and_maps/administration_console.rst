@@ -1548,8 +1548,11 @@ icon for the new typology.
 | Extended URL          | Define an external    | Here you can inform     |
 |                       | details page for the  | an external url that    |
 |                       | component type        | will replace the        |
-|                       |                       | default details         |
-|                       |                       | component type page     |
+|                       |                       | default component       |
+|                       |                       | details page for all    |
+|                       |                       | componenents of the     |
+|                       |                       | type, if them hasn't    |
+|                       |                       | defined its own one     |
 +-----------------------+-----------------------+-------------------------+
 | Icon                  | Related icon          | Value list from the     |
 |                       |                       | deployed icon list.     |
