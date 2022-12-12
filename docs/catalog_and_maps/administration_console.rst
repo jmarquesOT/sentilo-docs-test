@@ -969,7 +969,10 @@ the value, as shown in the following picture:
 .. image:: /_static/images/catalog_and_maps/component_additional_info_tab.png
 
 where the following map, stored on the backend, has been rendered
-*{“Comarca”:“Alt Empordà”,“Terme municipal”:“COLERA”,“Provincia”:“Girona”}*
+
+..  code-block:: json
+
+	*{“State”:“Spain”,“City”:“Barcelona”,“Location”:“Right next to the fire hose”}*
 
 It is also possible to edit these parameters from the catalog application, in editing mode:
 
