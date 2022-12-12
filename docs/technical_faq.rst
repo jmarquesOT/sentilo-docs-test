@@ -68,7 +68,9 @@ At startup, the API server performs a call to:
 
 .. code::
 
-   /sentilo-catalog-web/api/entities/permissions in order to mirror the permissions stored in MongoDB with Redis.
+   /sentilo-catalog-web/api/entities/permissions 
+   
+in order to mirror the permissions stored in MongoDB with Redis.
    
    
 If this call fails because the sentilo-catalog-web is not deployed yet, the permissions are not correctly created.
