@@ -16,9 +16,7 @@ the following infrastructure:
    disk
 
 Another deployment configurations should work properly, always keeping in
-mind the expected load by the system. There is also a `virtual
-machine <./use_a_virtual_machine.html>`__ ready for use that can be used
-for testing purposes.
+mind the expected load by the system.
 
 All known Sentilo instances are deployed on Linux servers, mainly CentoOS 6+
 and Ubuntu Server 14.04+.
@@ -65,7 +63,14 @@ The providers are activated in a background job that runs every 5
 minutes. Please wait a moment :-)
 
 Another possible reason is that the Sentilo API server started before the Catalog application (probably deployed on your Tomcat).
-At startup, the API server performs a call to /sentilo-catalog-web/api/entities/permissions in order to mirror the permissions stored in MongoDB with Redis.
+
+At startup, the API server performs a call to:
+
+.. code::
+
+   /sentilo-catalog-web/api/entities/permissions in order to mirror the permissions stored in MongoDB with Redis.
+   
+   
 If this call fails because the sentilo-catalog-web is not deployed yet, the permissions are not correctly created.
 To resolve the issue, reboot your Sentilo and ensure that the API server starts always after the sentilo-catalog-web is fully deployed.
 
