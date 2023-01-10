@@ -33,9 +33,11 @@ All the necessary documentation is available at the **README.md** file from the 
 Once all the services have been started, with the proposed default configuration, and with Docker 
 running in our local environment, we can access the platform through the following urls:
 
-- **Sentilo Catalog Web Application:** http://localhost:8080/sentilo-catalog-web
+- **Sentilo Catalog Web Application:** 
+    - URL: http://localhost:8080/sentilo-catalog-web
     - credentials: admin/1234
-- **Sentilo API Rest endpoint:** http://localhost:8081
+- **Sentilo API Rest endpoint:** 
+    - URL: http://localhost:8081
 
 All your conf files and logs will be available at local directories as data volumes:
 
