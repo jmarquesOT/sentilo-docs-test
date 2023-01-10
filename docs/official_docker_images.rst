@@ -8,7 +8,8 @@ These images can be downloaded from the Docker Hub library at: https://hub.docke
 
 From there you'll can pull and create your own Sentilo containers as needed.
 
-Available Sentilo images:
+Available Sentilo official docker images
+----------------------------------------
 
 - sentilo/agent-activity-monitor
 - sentilo/agent-alert
