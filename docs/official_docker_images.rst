@@ -1,0 +1,39 @@
+Sentilo Official Docker Images
+==============================
+
+Since version 2.0.0, the official docker images of each of the platform modules 
+have been made available to the community.
+
+These images can be downloaded from the Docker Hub library at: https://hub.docker.com/u/sentilo
+
+From there you'll can pull and create your own Sentilo containers as needed.
+
+Sentilo platform as multi-container Docker applications
+-------------------------------------------------------
+
+Alternatively, a **Docker Compose** image script has been created that creates a basic Sentilo 
+instance with the necessary services to be able to test them from our desired development environment.
+
+You can download the project from: https://github.com/sentilo/docker 
+
+Available services:
+
+-  Sentilo Catalog (web application)
+-  Sentilo Platform Server (REST API)
+-  Sentilo Relational Agent (saves the data to mySQL)
+-  Sentilo Alert Agent
+-  Sentilo Location Updater Agent
+
+All the necessary documentation is available at the **README.md** file from the project.
+
+Once all the services have been started, with the proposed default configuration, and with Docker 
+running in our local environment, we can access the platform through the following urls:
+
+- Sentilo Catalog Web Application: http://localhost:8080/sentilo-catalog-web
+    - credentials: admin/1234
+- Sentilo API Rest endpoint: http://localhost:8081
+
+All your conf files and logs will be available at local directories:
+
+- ./logs
+- ./conf
