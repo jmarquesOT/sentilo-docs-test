@@ -16,24 +16,28 @@ instance with the necessary services to be able to test them from our desired de
 
 You can download the project from: https://github.com/sentilo/docker 
 
-Available services:
+Available Sentilo services:
 
--  Sentilo Catalog (web application)
--  Sentilo Platform Server (REST API)
--  Sentilo Relational Agent (saves the data to mySQL)
--  Sentilo Alert Agent
--  Sentilo Location Updater Agent
+- Sentilo Platform Server (REST API)
+- Sentilo Alert Agent
+- Sentilo Location Updater Agent
+- Sentilo Catalog (web application)
+
+Also available external services (non Sentilo official images):
+
+- Redis
+- MongoDB
 
 All the necessary documentation is available at the **README.md** file from the project.
 
 Once all the services have been started, with the proposed default configuration, and with Docker 
 running in our local environment, we can access the platform through the following urls:
 
-- Sentilo Catalog Web Application: http://localhost:8080/sentilo-catalog-web
+- **Sentilo Catalog Web Application:** http://localhost:8080/sentilo-catalog-web
     - credentials: admin/1234
-- Sentilo API Rest endpoint: http://localhost:8081
+- **Sentilo API Rest endpoint:** http://localhost:8081
 
-All your conf files and logs will be available at local directories:
+All your conf files and logs will be available at local directories as data volumes:
 
 - ./logs
 - ./conf
